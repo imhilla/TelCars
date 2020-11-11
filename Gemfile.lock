@@ -47,6 +47,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -104,6 +105,8 @@ GEM
     public_suffix (4.0.6)
     puma (3.12.6)
     rack (2.2.3)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.4.4)
@@ -184,6 +187,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt (~> 3.1, >= 3.1.16)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -193,6 +197,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
+  rack-cors
   rails (~> 5.2.4, >= 5.2.4.4)
   sass-rails (~> 5.0)
   selenium-webdriver
