@@ -15,4 +15,8 @@ class SessionsController < ApplicationController
     }
     end
   end
+
+  def logged_in
+    
+  end
 end
