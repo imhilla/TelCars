@@ -20,7 +20,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
-      user: {},
+      // user: {},
     };
   }
 
@@ -36,7 +36,13 @@ class App extends React.Component {
                 <Home {...props} loggedInStatus={this.state.loggedInStatus} />
               )}
             />
-            <Route exact pa th="/dashboard" component={Dashboard} />
+            <Route
+              exact
+              path="/dashboard"
+              render={props => (
+                <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+              )}
+            />
           </switch>
         </Router>
       </div>

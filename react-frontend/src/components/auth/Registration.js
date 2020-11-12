@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable camelcase */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-unused-state */
@@ -34,7 +36,9 @@ class Registration extends React.Component {
       },
     }, { withCredentials: true })
       .then(response => {
-        console.log('registartion response', response);
+        if (response.data.status === 'created') {
+          this.props.handleSuccessfulAuth(response.data);
+        }
       }).catch(error => {
         console.log('registration', error);
       });
