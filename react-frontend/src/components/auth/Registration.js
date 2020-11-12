@@ -32,7 +32,10 @@ class Registration extends React.Component {
         password,
         password_confirmation,
       },
-    });
+    }, { withCredentials: true })
+      .then(response => {
+        console.log('registartion response', response);
+      });
     event.preventDefault();
   }
 
