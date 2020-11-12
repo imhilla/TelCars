@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
@@ -8,7 +9,7 @@ class Registration extends React.Component {
     this.state = {
       email: '',
       password: '',
-      password_confirmation: '',
+      passwordConfirmation: '',
       registrationErrors: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,11 +26,13 @@ class Registration extends React.Component {
   }
 
   render() {
-    const email = this.state;
+    const { email, password, passwordConfirmation } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
+          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
+          <input type="password" name="password_confirmation" placeholder="Password confirmation" value={passwordConfirmation} onChange={this.handleChange} required />
         </form>
       </div>
     );
