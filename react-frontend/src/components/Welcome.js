@@ -34,6 +34,13 @@ class Welcome extends React.Component {
           <div className="first" />
           <div className="second" />
         </div>
+        <div className="circlebody">
+          <div className="circle1" />
+          <div className="circle2" />
+          <div className="circle3" />
+          <div className="circle4" />
+          <div className="circle5" />
+        </div>
         <div className="slide-container">
           <Slide>
             <div className="each-slide">
