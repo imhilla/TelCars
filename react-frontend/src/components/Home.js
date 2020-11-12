@@ -24,7 +24,7 @@ class Home extends React.Component {
       <div>
         <h1>Status: {this.props.loggedInStatus}</h1>
         <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
-        <Login />
+        <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
       </div>
     );
   }
