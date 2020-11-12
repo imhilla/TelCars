@@ -4,6 +4,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import Login from './auth/Login';
 import Registration from './auth/Registration';
 
 class Home extends React.Component {
@@ -23,6 +24,7 @@ class Home extends React.Component {
       <div>
         <h1>Status: {this.props.loggedInStatus}</h1>
         <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} />
+        <Login />
       </div>
     );
   }
