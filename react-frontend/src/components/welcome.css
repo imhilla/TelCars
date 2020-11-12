@@ -8,8 +8,10 @@
 
 .each-slide span {
   padding: 20px;
-  font-size: 3em;
+  font-size: 2.5em;
   background: NONE;
   text-align: center;
-  color: white;
+  color: black;
+  font-family: "Exo", sans-serif;
+  font-weight: bold;
 }

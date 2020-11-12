@@ -10,7 +10,6 @@ import Welcome2 from '../images/welcome2.jpg';
 import Welcome3 from '../images/welcome3.jpg';
 import Welcome4 from '../images/welcome4.jpg';
 import Welcome5 from '../images/welcome5.jpg';
-import Welcome6 from '../images/welcome6.jpg';
 
 const slideImages = [
   Welcome1,
@@ -18,16 +17,15 @@ const slideImages = [
   Welcome3,
   Welcome4,
   Welcome5,
-  Welcome6,
 ];
 
 class Welcome extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nextImage: false,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     nextImage: false,
+  //   };
+  // }
 
   render() {
     return (
@@ -56,11 +54,6 @@ class Welcome extends React.Component {
             </div>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[4]})` }}>
-                <span>Slide 3</span>
-              </div>
-            </div>
-            <div className="each-slide">
-              <div style={{ backgroundImage: `url(${slideImages[5]})` }}>
                 <span>Slide 3</span>
               </div>
             </div>
