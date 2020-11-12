@@ -19,6 +19,7 @@ import {
 import axios from 'axios';
 import Home from './Home';
 import Dashboard from './Dashboard';
+import Welcome from './Welcome';
 
 class App extends React.Component {
   constructor(props) {
@@ -73,16 +74,31 @@ class App extends React.Component {
         <Router>
           <nav>
             <ul>
-              <Link to="/" className="lii">HOME</Link>
-              <Link to="/" className="lii">HOME</Link>
-              <Link to="/" className="lii">HOME</Link>
-              <Link to="/" className="lii">HOME</Link>
+              <Link to="/">WELCOME</Link>
+              <Link to="/">HOME</Link>
+              <Link to="/">LIFESTYLE & HEALTH</Link>
+              <Link to="/">SHOP</Link>
+              <Link to="/">BOOK APPOINTMENT</Link>
+              <Link to="/">ABOUT</Link>
             </ul>
           </nav>
           <Switch>
             <Route
               exact
               path="/"
+              render={props => (
+                <Welcome
+                  {...props}
+                  loggedInStatus={this.state.loggedInStatus}
+                  handleLogin={this.handleLogin}
+                  handleLogout={this.handleLogout}
+                />
+              )}
+            />
+
+            <Route
+              exact
+              path="/login"
               render={props => (
                 <Home
                   {...props}
