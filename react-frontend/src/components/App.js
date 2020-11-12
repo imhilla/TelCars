@@ -77,7 +77,6 @@ class App extends React.Component {
               <Link to="/" className="lii">HOME</Link>
               <Link to="/" className="lii">HOME</Link>
               <Link to="/" className="lii">HOME</Link>
-              <li />
             </ul>
           </nav>
           <Switch>
