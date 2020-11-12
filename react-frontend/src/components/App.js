@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prefer-stateless-function */
@@ -20,20 +21,28 @@ class App extends React.Component {
     super(props);
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
-      // user: {},
+      user: {},
     };
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+  
+  handleLogin(data) {
+    this.setState({
+      loggedInStatus: 'LOGGED_IN',
+      user: data,
+    })
   }
 
   render() {
     return (
       <div className="App">
         <Router>
-          <switch>
+          <Switch>
             <Route
               exact
               path="/"
               render={props => (
-                <Home {...props} loggedInStatus={this.state.loggedInStatus} />
+                <Home {...props} loggedInStatus={this.state.loggedInStatus} handleLogin={this.handleLogin} />
               )}
             />
             <Route
@@ -43,7 +52,7 @@ class App extends React.Component {
                 <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
               )}
             />
-          </switch>
+          </Switch>
         </Router>
       </div>
     );

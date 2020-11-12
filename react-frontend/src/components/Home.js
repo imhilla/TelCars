@@ -13,6 +13,7 @@ class Home extends React.Component {
   }
 
   handleSuccessfulAuth(data) {
+    this.props.handleLogin(data);
     console.log(data);
     this.props.history.push('/dashboard');
   }
