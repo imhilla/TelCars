@@ -17,7 +17,9 @@ class Welcome extends React.Component {
 
   render() {
     return (
-      <div>Hello world</div>
+      <div>
+        <img src={Welcome3} alt="" />
+      </div>
     );
   }
 }
