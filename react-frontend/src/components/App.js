@@ -72,7 +72,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          <nav>
+          {/* <nav>
             <ul>
               <Link to="/">WELCOME</Link>
               <Link to="/">HOME</Link>
@@ -81,7 +81,7 @@ class App extends React.Component {
               <Link to="/">BOOK APPOINTMENT</Link>
               <Link to="/">ABOUT</Link>
             </ul>
-          </nav>
+          </nav> */}
           <Switch>
             <Route
               exact

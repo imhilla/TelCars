@@ -30,6 +30,10 @@ class Welcome extends React.Component {
   render() {
     return (
       <div>
+        <div className="hello">
+          <div className="first" />
+          <div className="second" />
+        </div>
         <div className="slide-container">
           <Slide>
             <div className="each-slide">

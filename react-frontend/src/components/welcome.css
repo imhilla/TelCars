@@ -15,3 +15,27 @@
   font-family: "Exo", sans-serif;
   font-weight: bold;
 }
+
+.hello {
+  position: absolute;
+  z-index: 100;
+  margin: 1em;
+}
+
+.first {
+  height: 5px;
+  width: 30px;
+  background-color: white;
+  margin: 5px;
+  z-index: 102;
+  border-radius: 5px;
+}
+
+.second {
+  height: 5px;
+  width: 30px;
+  background-color: white;
+  margin: 5px;
+  z-index: 102;
+  border-radius: 5px;
+}
