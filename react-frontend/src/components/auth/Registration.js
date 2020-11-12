@@ -3,6 +3,7 @@
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import axios from 'axios';
 
 class Registration extends React.Component {
   constructor(props) {
@@ -21,11 +22,17 @@ class Registration extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
-    console.log('handle change', event);
   }
 
   handleSubmit(event) {
-    console.log('form submitted');
+    const { email, password, password_confirmation } = this.state;
+    axios.post('https://localhost:3001/registrations', {
+      user: {
+        email,
+        password,
+        password_confirmation,
+      },
+    });
     event.preventDefault();
   }
 
