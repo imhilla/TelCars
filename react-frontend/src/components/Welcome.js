@@ -28,19 +28,24 @@ class Welcome extends React.Component {
   // }
 
   render() {
+    const circleBody = (
+      <div>
+        <h1>HELLO</h1>
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
+    );
+
     return (
       <div>
         <div className="hello">
           <div className="first" />
           <div className="second" />
         </div>
-        <div className="circlebody">
-          <div className="circle1" />
-          <div className="circle2" />
-          <div className="circle3" />
-          <div className="circle4" />
-          <div className="circle5" />
-        </div>
+        <div className="circlebody">{circleBody}</div>
         <div className="slide-container">
           <Slide>
             <div className="each-slide">

@@ -39,3 +39,25 @@
   z-index: 102;
   border-radius: 5px;
 }
+
+.circlebody {
+  position: absolute;
+  z-index: 200;
+  bottom: 0;
+  right: 0;
+  margin: 2em;
+}
+
+.circle1 {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: gray;
+}
