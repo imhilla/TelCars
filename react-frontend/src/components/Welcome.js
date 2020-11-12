@@ -4,16 +4,21 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import './welcome.css';
 import Welcome1 from '../images/welcome1.jpg';
 import Welcome2 from '../images/welcome2.jpg';
 import Welcome3 from '../images/welcome3.jpg';
 import Welcome4 from '../images/welcome4.jpg';
+import Welcome5 from '../images/welcome5.jpg';
+import Welcome6 from '../images/welcome6.jpg';
 
 const slideImages = [
   Welcome1,
   Welcome2,
   Welcome3,
   Welcome4,
+  Welcome5,
+  Welcome6,
 ];
 
 class Welcome extends React.Component {
@@ -27,12 +32,11 @@ class Welcome extends React.Component {
   render() {
     return (
       <div>
-        {/* <img src={slideImages[2]} alt="" /> */}
         <div className="slide-container">
           <Slide>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[0]})` }}>
-                <span>Slide 1</span>
+                <span>SAFE HEAVEN HOSPITAL</span>
               </div>
             </div>
             <div className="each-slide">
@@ -47,6 +51,16 @@ class Welcome extends React.Component {
             </div>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[3]})` }}>
+                <span>Slide 3</span>
+              </div>
+            </div>
+            <div className="each-slide">
+              <div style={{ backgroundImage: `url(${slideImages[4]})` }}>
+                <span>Slide 3</span>
+              </div>
+            </div>
+            <div className="each-slide">
+              <div style={{ backgroundImage: `url(${slideImages[5]})` }}>
                 <span>Slide 3</span>
               </div>
             </div>
