@@ -71,6 +71,15 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
+          <nav>
+            <ul>
+              <Link to="/" className="lii">HOME</Link>
+              <Link to="/" className="lii">HOME</Link>
+              <Link to="/" className="lii">HOME</Link>
+              <Link to="/" className="lii">HOME</Link>
+              <li />
+            </ul>
+          </nav>
           <Switch>
             <Route
               exact
