@@ -17,6 +17,9 @@ class Registration extends React.Component {
   }
 
   handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
     console.log('handle change', event);
   }
 
@@ -33,6 +36,7 @@ class Registration extends React.Component {
           <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
           <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
           <input type="password" name="password_confirmation" placeholder="Password confirmation" value={passwordConfirmation} onChange={this.handleChange} required />
+          <button type="submit">Register</button>
         </form>
       </div>
     );
