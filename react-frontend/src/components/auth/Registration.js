@@ -26,7 +26,7 @@ class Registration extends React.Component {
 
   handleSubmit(event) {
     const { email, password, password_confirmation } = this.state;
-    axios.post('https://localhost:3001/registrations', {
+    axios.post('http://localhost:3001/registrations', {
       user: {
         email,
         password,
@@ -35,6 +35,8 @@ class Registration extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         console.log('registartion response', response);
+      }).catch(error => {
+        console.log('registration', error);
       });
     event.preventDefault();
   }

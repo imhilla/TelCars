@@ -1,3 +1,6 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.css';
@@ -12,17 +15,33 @@ import {
 import Home from './Home';
 import Dashboard from './Dashboard';
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
-        </switch>
-      </Router>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loggedInStatus: 'NOT_LOGGED_IN',
+      user: {},
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <switch>
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Home {...props} loggedInStatus={this.state.loggedInStatus} />
+              )}
+            />
+            <Route exact pa th="/dashboard" component={Dashboard} />
+          </switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
