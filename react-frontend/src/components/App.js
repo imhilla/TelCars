@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable max-len */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -25,12 +26,12 @@ class App extends React.Component {
     };
     this.handleLogin = this.handleLogin.bind(this);
   }
-  
+
   handleLogin(data) {
     this.setState({
       loggedInStatus: 'LOGGED_IN',
       user: data,
-    })
+    });
   }
 
   render() {
