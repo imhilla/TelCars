@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
@@ -67,9 +68,14 @@ class Welcome extends React.Component {
         oneArray.oneArray.map((val, index) => {
           if (value === val) {
             console.log(val, value, this.state.white);
-          } else {
-            console.log(val, value, this.state.transparent);
+            return (
+              <div className={`${this.state.white}`} />
+            );
           }
+          console.log(val, value, this.state.transparent);
+          return (
+            <div className={`${this.state.transparent}`} />
+          );
         });
       });
     };
@@ -120,7 +126,7 @@ class Welcome extends React.Component {
             </div>
           </Slide>
         </div>
-      </div>
+      </div >
     );
   }
 }
