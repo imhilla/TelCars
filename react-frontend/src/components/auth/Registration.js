@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable camelcase */
@@ -6,6 +7,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
+import './registration.css';
 
 class Registration extends React.Component {
   constructor(props) {
@@ -49,15 +51,23 @@ class Registration extends React.Component {
     const { email, password, password_confirmation } = this.state;
     return (
       <div>
-        <div>
 
+        <div className="welcomeBack">
+          <h1>Welcome back!</h1>
+          <p>To keep connected with us, please log in with your personal info</p>
+          <button>SIGN IN</button>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
-          <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
-          <input type="password" name="password_confirmation" placeholder="Password confirmation" value={password_confirmation} onChange={this.handleChange} required />
-          <button type="submit">Register</button>
-        </form>
+        <div>
+          <div className="createAccount">
+            <h1>Create account</h1>
+          </div>
+          <form onSubmit={this.handleSubmit} className="regForm">
+            <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
+            <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
+            <input type="password" name="password_confirmation" placeholder="Password confirmation" value={password_confirmation} onChange={this.handleChange} required />
+            <button type="submit">Register</button>
+          </form>
+        </div>
       </div>
     );
   }
