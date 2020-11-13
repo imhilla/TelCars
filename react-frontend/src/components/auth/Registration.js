@@ -49,6 +49,9 @@ class Registration extends React.Component {
     const { email, password, password_confirmation } = this.state;
     return (
       <div>
+        <div>
+
+        </div>
         <form onSubmit={this.handleSubmit}>
           <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
           <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
