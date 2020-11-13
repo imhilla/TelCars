@@ -51,13 +51,12 @@ class Registration extends React.Component {
     const { email, password, password_confirmation } = this.state;
     return (
       <div>
-
         <div className="welcomeBack">
           <h1>Welcome back!</h1>
           <p>To keep connected with us, please log in with your personal info</p>
           <button>SIGN IN</button>
         </div>
-        <div>
+        <div className="formContainer">
           <div className="createAccount">
             <h1>Create account</h1>
           </div>
