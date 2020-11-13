@@ -62,13 +62,10 @@
   background-color: white;
 }
 
-.circle {
+.default {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: gray;
-}
-
-.default {
-  background-color: red;
+  border: 2px solid gray;
+  margin: 5px;
 }

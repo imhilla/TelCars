@@ -39,7 +39,7 @@ class Welcome extends React.Component {
 
   componentDidMount() {
     const { color } = this.state;
-    setInterval(this.updateColor, 3000);
+    setInterval(this.updateColor, 6000);
   }
 
   updateColor() {
@@ -51,7 +51,7 @@ class Welcome extends React.Component {
         oneArray: [item],
       });
       if (item === 6) {
-        item = 1;
+        item = 0;
         this.setState({
           oneArray: [item],
         });
@@ -65,13 +65,12 @@ class Welcome extends React.Component {
     const circle = (
       intervalNumbers.map((value, index) => {
         const change = oneArray.oneArray[0];
+        console.log(index, change);
         return (
           <div
-            // className="default"
+            className="default"
             style={change === index ? { backgroundColor: `${this.state.white}` } : { backgroundColor: `${this.state.transparent}` }}
-          >
-            Hello
-          </div>
+          />
         );
       })
     );
