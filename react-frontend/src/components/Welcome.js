@@ -16,6 +16,7 @@ import Welcome2 from '../images/welcome2.jpg';
 import Welcome3 from '../images/welcome3.jpg';
 import Welcome4 from '../images/welcome4.jpg';
 import Welcome5 from '../images/welcome5.jpg';
+import Search from '../images/search.png';
 
 const slideImages = [
   Welcome1,
@@ -65,7 +66,6 @@ class Welcome extends React.Component {
     const circle = (
       intervalNumbers.map((value, index) => {
         const change = oneArray.oneArray[0];
-        console.log(index, change);
         return (
           <div
             className="default"
@@ -81,6 +81,9 @@ class Welcome extends React.Component {
           <div className="first" />
           <div className="second" />
         </button>
+        <div>
+          <img src={Search} alt="" />
+        </div>
         <div className="circlebody">
           {circle}
         </div>
