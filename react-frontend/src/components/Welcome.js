@@ -96,7 +96,7 @@ class Welcome extends React.Component {
         </button>
         <div className="loginRegister">
           <button onClick={this.handleLogin} className="login">LOGIN</button>
-          <button onClick={this.handleRegistration} className="register">REGISTER</button>
+          <button onClick={this.handleRegistration} className="register">SIGN UP</button>
         </div>
         <div className="search">
           <img src={Search} alt="" className="simage" />

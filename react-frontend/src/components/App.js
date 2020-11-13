@@ -20,6 +20,7 @@ import axios from 'axios';
 import Home from './Home';
 import Dashboard from './Dashboard';
 import Welcome from './Welcome';
+import Login from './auth/Login';
 
 class App extends React.Component {
   constructor(props) {
@@ -111,6 +112,20 @@ class App extends React.Component {
             <Route
               exact
               path="/dashboard"
+              render={props => (
+                <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+              )}
+            />
+            <Route
+              exact
+              path="/login"
+              render={props => (
+                <Login {...props} loggedInStatus={this.state.loggedInStatus} />
+              )}
+            />
+            <Route
+              exact
+              path="/signup"
               render={props => (
                 <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
               )}
