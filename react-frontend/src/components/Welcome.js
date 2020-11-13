@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-key */
 /* eslint-disable array-callback-return */
 /* eslint-disable react/destructuring-assignment */
@@ -36,11 +37,21 @@ class Welcome extends React.Component {
       oneArray: [0],
     };
     this.updateColor = this.updateColor.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleRegistration = this.handleRegistration.bind(this);
   }
 
   componentDidMount() {
     const { color } = this.state;
     setInterval(this.updateColor, 6000);
+  }
+
+  handleLogin() {
+    console.log('hello');
+  }
+
+  handleRegistration() {
+    console.log('me');
   }
 
   updateColor() {
@@ -81,9 +92,9 @@ class Welcome extends React.Component {
           <div className="first" />
           <div className="second" />
         </button>
-        <div>
-          <button onClick={this.handleLogin}>LOGIN</button>
-          <button onClick={this.handleRegistration}>REGISTER</button>
+        <div className="loginRegister">
+          <button onClick={this.handleLogin} className="login">LOGIN</button>
+          <button onClick={this.handleRegistration} className="register">REGISTER</button>
         </div>
         <div className="search">
           <img src={Search} alt="" className="simage" />
