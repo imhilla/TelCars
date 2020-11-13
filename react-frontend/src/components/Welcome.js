@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-useless-concat */
@@ -26,27 +28,52 @@ class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: 'white',
+      color: 'transparent',
       interval: false,
+      oneArray: [0],
     };
     this.updateColor = this.updateColor.bind(this);
   }
 
   componentDidMount() {
-    const intervalNumbers = [0, 1, 2, 3, 4];
     const { color } = this.state;
     setInterval(this.updateColor, 3000);
-    console.log(color);
   }
 
   updateColor() {
     this.setState({
       color: 'white',
     });
-    console.log('yes');
   }
 
   render() {
+    const circle = () => {
+      const intervalNumbers = [0, 1, 2, 3, 4];
+      const oneArray = [1];
+      // function updateValue() {
+      //   var item = array.find(item => item.id === 3)
+      //   if (item) item.value++
+      // }
+
+      // setTimeout(updateValue, 1000)
+      // const mutateArray = () => {
+      // };
+      intervalNumbers.map((value, index) => {
+        oneArray.map((val, index) => {
+          if (value === val) {
+            console.log(this.state.color);
+          } else {
+            console.log(value);
+          }
+        });
+        if (index !== 4) {
+          // console.log(index);
+        }
+
+        // setInterval(, 3000);
+      });
+      // console.log(this.state.color);
+    };
     const circleBody = (
       <div>
         <h1>HELLO</h1>
@@ -64,7 +91,7 @@ class Welcome extends React.Component {
           <div className="first" />
           <div className="second" />
         </button>
-        <div className="circlebody">{circleBody}</div>
+        <div className="circlebody">{circle()}</div>
         <div className="slide-container">
           <Slide>
             <div className="each-slide">

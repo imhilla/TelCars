@@ -96,9 +96,9 @@ class App extends React.Component {
               )}
             />
 
-            <Route
+            {/* <Route
               exact
-              path="/login"
+              path="/"
               render={props => (
                 <Home
                   {...props}
@@ -107,7 +107,7 @@ class App extends React.Component {
                   handleLogout={this.handleLogout}
                 />
               )}
-            />
+            /> */}
             <Route
               exact
               path="/dashboard"
