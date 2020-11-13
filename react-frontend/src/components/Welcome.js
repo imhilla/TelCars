@@ -47,10 +47,12 @@ class Welcome extends React.Component {
   }
 
   handleLogin() {
+    this.props.history.push('/login');
     console.log('hello');
   }
 
   handleRegistration() {
+    this.props.history.push('/register');
     console.log('me');
   }
 
