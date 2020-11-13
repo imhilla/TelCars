@@ -81,8 +81,8 @@ class Welcome extends React.Component {
           <div className="first" />
           <div className="second" />
         </button>
-        <div>
-          <img src={Search} alt="" />
+        <div className="search">
+          <img src={Search} alt="" className="simage" />
         </div>
         <div className="circlebody">
           {circle}

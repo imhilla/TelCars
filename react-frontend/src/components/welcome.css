@@ -69,3 +69,16 @@
   border: 2px solid gray;
   margin: 5px;
 }
+
+.search {
+  position: absolute;
+  z-index: 1005;
+  right: 0;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.simage {
+  height: 50px;
+  width: 50px;
+}
