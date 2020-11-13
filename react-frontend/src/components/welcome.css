@@ -74,11 +74,14 @@
   position: absolute;
   z-index: 1005;
   right: 0;
-  background-color: white;
   border-radius: 50%;
+  margin: 1em;
 }
 
 .simage {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: auto;
+  background-color: white;
 }
