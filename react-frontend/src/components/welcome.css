@@ -68,3 +68,7 @@
   border-radius: 50%;
   background-color: gray;
 }
+
+.default {
+  background-color: red;
+}

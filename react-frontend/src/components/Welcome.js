@@ -56,38 +56,42 @@ class Welcome extends React.Component {
           oneArray: [item],
         });
       }
-      // console.log(this.state.oneArray);
     }
   }
 
   render() {
-    const circle = () => {
-      const intervalNumbers = [0, 1, 2, 3, 4, 5];
-      const oneArray = this.state;
+    const intervalNumbers = [0, 1, 2, 3, 4, 5];
+    const oneArray = this.state;
+    const circle = (
       intervalNumbers.map((value, index) => {
-        oneArray.oneArray.map((val, index) => {
-          if (value === val) {
-            console.log(val, value, this.state.white);
-            return (
-              <div className={`${this.state.white}`} />
-            );
-          }
-          console.log(val, value, this.state.transparent);
-          return (
-            <div className={`${this.state.transparent}`} />
-          );
-        });
-      });
-    };
-    const circleBody = (
-      <div>
-        <h1>HELLO</h1>
-        <div className={'circle' + `${0}`} />
-        <div className={`${1}`} />
-        <div className={`${2}`} />
-        <div className={`${3}`} />
-        <div className={`${4}`} />
-      </div>
+        const change = oneArray.oneArray[0];
+        console.log(change);
+        return (
+          <div
+            className="default"
+            style={
+              { backgroundImage: `url(${slideImages[1]})` }
+            }
+          >
+            Hello
+          </div>
+        );
+        //   return (
+        //     <div>
+        //       <div className={`${this.state.white}`}>Hello</div>
+        //       <div>hello</div>
+        //     </div>
+        //   );
+        // }
+        // console.log(val, value, this.state.transparent);
+        // return (
+        //   <div>
+        //     <div>groups</div>
+        //     <div className={`${this.state.transparent}`} />
+        //   </div>
+        // );
+        // });
+      })
     );
 
     return (
@@ -96,7 +100,9 @@ class Welcome extends React.Component {
           <div className="first" />
           <div className="second" />
         </button>
-        <div className="circlebody">{circle()}</div>
+        <div className="circlebody">
+          {circle}
+        </div>
         <div className="slide-container">
           <Slide>
             <div className="each-slide">
@@ -126,7 +132,7 @@ class Welcome extends React.Component {
             </div>
           </Slide>
         </div>
-      </div >
+      </div>
     );
   }
 }
