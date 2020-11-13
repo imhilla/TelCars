@@ -41,9 +41,21 @@ class Welcome extends React.Component {
   }
 
   updateColor() {
-    this.setState({
-      color: 'white',
-    });
+    const { oneArray } = this.state;
+    let item = oneArray[0];
+    if (item <= 5) {
+      item += 1;
+      this.setState({
+        oneArray: [item],
+      });
+      if (item === 6) {
+        item = 1;
+        this.setState({
+          oneArray: [item],
+        });
+      }
+      console.log(this.state.oneArray);
+    }
   }
 
   render() {
@@ -61,9 +73,9 @@ class Welcome extends React.Component {
       intervalNumbers.map((value, index) => {
         oneArray.map((val, index) => {
           if (value === val) {
-            console.log(this.state.color);
+            // console.log(this.state.color);
           } else {
-            console.log(value);
+            // console.log(value);
           }
         });
         if (index !== 4) {
