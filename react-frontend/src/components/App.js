@@ -21,6 +21,7 @@ import Home from './Home';
 import Dashboard from './Dashboard';
 import Welcome from './Welcome';
 import Login from './auth/Login';
+import Registration from './auth/Registration';
 
 class App extends React.Component {
   constructor(props) {
@@ -127,7 +128,7 @@ class App extends React.Component {
               exact
               path="/signup"
               render={props => (
-                <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                <Registration {...props} loggedInStatus={this.state.loggedInStatus} />
               )}
             />
           </Switch>
