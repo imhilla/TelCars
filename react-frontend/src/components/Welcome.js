@@ -28,7 +28,8 @@ class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      color: 'transparent',
+      transparent: 'transparent',
+      white: 'white',
       interval: false,
       oneArray: [0],
     };
@@ -54,37 +55,23 @@ class Welcome extends React.Component {
           oneArray: [item],
         });
       }
-      console.log(this.state.oneArray);
+      // console.log(this.state.oneArray);
     }
   }
 
   render() {
     const circle = () => {
-      const intervalNumbers = [0, 1, 2, 3, 4];
-      const oneArray = [1];
-      // function updateValue() {
-      //   var item = array.find(item => item.id === 3)
-      //   if (item) item.value++
-      // }
-
-      // setTimeout(updateValue, 1000)
-      // const mutateArray = () => {
-      // };
+      const intervalNumbers = [0, 1, 2, 3, 4, 5];
+      const oneArray = this.state;
       intervalNumbers.map((value, index) => {
-        oneArray.map((val, index) => {
+        oneArray.oneArray.map((val, index) => {
           if (value === val) {
-            // console.log(this.state.color);
+            console.log(val, value, this.state.white);
           } else {
-            // console.log(value);
+            console.log(val, value, this.state.transparent);
           }
         });
-        if (index !== 4) {
-          // console.log(index);
-        }
-
-        // setInterval(, 3000);
       });
-      // console.log(this.state.color);
     };
     const circleBody = (
       <div>
