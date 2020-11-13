@@ -65,32 +65,14 @@ class Welcome extends React.Component {
     const circle = (
       intervalNumbers.map((value, index) => {
         const change = oneArray.oneArray[0];
-        console.log(change);
         return (
           <div
-            className="default"
-            style={
-              { backgroundImage: `url(${slideImages[1]})` }
-            }
+            // className="default"
+            style={change === index ? { backgroundColor: `${this.state.white}` } : { backgroundColor: `${this.state.transparent}` }}
           >
             Hello
           </div>
         );
-        //   return (
-        //     <div>
-        //       <div className={`${this.state.white}`}>Hello</div>
-        //       <div>hello</div>
-        //     </div>
-        //   );
-        // }
-        // console.log(val, value, this.state.transparent);
-        // return (
-        //   <div>
-        //     <div>groups</div>
-        //     <div className={`${this.state.transparent}`} />
-        //   </div>
-        // );
-        // });
       })
     );
 
