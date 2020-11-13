@@ -20,6 +20,13 @@
   position: absolute;
   z-index: 100;
   margin: 1em;
+  left: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.hello:hover {
+  outline: none;
 }
 
 .first {

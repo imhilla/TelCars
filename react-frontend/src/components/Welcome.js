@@ -1,3 +1,6 @@
+/* eslint-disable class-methods-use-this */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-useless-concat */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
@@ -20,31 +23,47 @@ const slideImages = [
 ];
 
 class Welcome extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     nextImage: false,
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      color: 'white',
+      interval: false,
+    };
+    this.updateColor = this.updateColor.bind(this);
+  }
+
+  componentDidMount() {
+    const intervalNumbers = [0, 1, 2, 3, 4];
+    const { color } = this.state;
+    setInterval(this.updateColor, 3000);
+    console.log(color);
+  }
+
+  updateColor() {
+    this.setState({
+      color: 'white',
+    });
+    console.log('yes');
+  }
 
   render() {
     const circleBody = (
       <div>
         <h1>HELLO</h1>
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
+        <div className={'circle' + `${0}`} />
+        <div className={`${1}`} />
+        <div className={`${2}`} />
+        <div className={`${3}`} />
+        <div className={`${4}`} />
       </div>
     );
 
     return (
       <div>
-        <div className="hello">
+        <button type="button" className="hello">
           <div className="first" />
           <div className="second" />
-        </div>
+        </button>
         <div className="circlebody">{circleBody}</div>
         <div className="slide-container">
           <Slide>
