@@ -6,6 +6,10 @@ class NavBar extends React.Component {
     return (
       <div>
         <h1>Side bar</h1>
+        <h1>Side bar</h1>
+        <h1>Side bar</h1>
+        <h1>Side bar</h1>
+        <h1>Side bar</h1>
       </div>
     );
   }

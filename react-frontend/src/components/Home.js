@@ -7,6 +7,7 @@
 import React from 'react';
 import axios from 'axios';
 import NavBar from './Navbar';
+import './home.css';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';
@@ -33,7 +34,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="home">
         <div>
           <NavBar />
         </div>
