@@ -7,11 +7,10 @@ class Shop extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="homeContainer">
           <Logo />
           <NavBar />
         </div>
-        <h1>This is the latest</h1>
       </div>
     );
   }
