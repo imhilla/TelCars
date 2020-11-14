@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/sort-comp */
 /* eslint-disable react/no-unused-state */
@@ -71,7 +72,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.loggedInStatus);
     return (
       <div className="App">
         <Router>

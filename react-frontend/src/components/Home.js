@@ -33,10 +33,11 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Status: {this.props.loggedInStatus}</h1>
-        <Logout />
+        {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
+        {/* <Logout /> */}
         {/* <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         {/* <Login handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
+        <div />
       </div>
     );
   }
