@@ -20,12 +20,17 @@ class Registration extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
+  }
+
+  handleLogin() {
+    this.props.history.push('/login');
   }
 
   handleSubmit(event) {
@@ -54,7 +59,7 @@ class Registration extends React.Component {
         <div className="welcomeBack">
           <h1>Welcome back!</h1>
           <p>To keep connected with us, please log in with your personal info</p>
-          <button>SIGN IN</button>
+          <button onClick={this.handleLogin}>LOG IN</button>
         </div>
         <div className="formContainer">
           <div className="createAccount">

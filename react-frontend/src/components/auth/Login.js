@@ -50,7 +50,7 @@ class Login extends React.Component {
         <form onSubmit={this.handleSubmit} autoComplete="off">
           <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} autoComplete="off" required />
           <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} autoComplete="off" required />
-          <button type="submit">Login</button>
+          <button type="submit">LOG IN</button>
         </form>
       </div>
     );
