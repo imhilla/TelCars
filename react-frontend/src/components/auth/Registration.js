@@ -20,7 +20,8 @@ class Registration extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
+    // this.handleLogin = this.handleLogin.bind(this);
+    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
   }
 
   handleChange(event) {
@@ -29,8 +30,13 @@ class Registration extends React.Component {
     });
   }
 
-  handleLogin() {
-    this.props.history.push('/login');
+  // handleLogin() {
+  //   this.props.history.push('/login');
+  // }
+
+  handleSuccessfulAuth(data) {
+    this.props.handleLogin(data);
+    this.props.history.push('/dashboard');
   }
 
   handleSubmit(event) {
@@ -44,7 +50,8 @@ class Registration extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
-          this.props.handleSuccessfulAuth(response.data);
+          console.log(response.data);
+          this.handleSuccessfulAuth(response.data);
         }
       }).catch(error => {
         console.log('registration', error);
