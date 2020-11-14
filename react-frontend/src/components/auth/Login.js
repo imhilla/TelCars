@@ -47,7 +47,10 @@ class Login extends React.Component {
     const { email, password } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit} autoComplete="off">
+        <div>
+          <h1>Welcome back</h1>
+        </div>
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="loginpage">
           <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} autoComplete="off" required />
           <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} autoComplete="off" required />
           <button type="submit">LOG IN</button>

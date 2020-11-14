@@ -35,3 +35,15 @@
 .regForm button {
   margin: 1.2em 0;
 }
+
+.loginpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginpage input {
+  margin: 1em 0;
+  height: 20px;
+  width: 80%;
+}

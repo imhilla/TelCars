@@ -69,7 +69,7 @@ class Registration extends React.Component {
             <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
             <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
             <input type="password" name="password_confirmation" placeholder="Password confirmation" value={password_confirmation} onChange={this.handleChange} required />
-            <button type="submit">Register</button>
+            <button type="submit">SIGN UP</button>
           </form>
         </div>
       </div>
