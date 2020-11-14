@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
@@ -17,7 +18,7 @@ class NavBar extends React.Component {
           to="/"
           // className="Nav_link"
           activeClassName="activeRoute"
-          activeStyle={{ color: 'red' }}
+          activeStyle={{ backgroundColor: 'red' }}
           className="lii"
         >
           HOME
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
         <NavLink
           to="/lifestyle"
           activeClassName="activeRoute"
-          activeStyle={{ color: 'red' }}
+          activeStyle={{ backgroundColor: 'red' }}
           className="lii"
         >
           LIFESTYLE
@@ -36,7 +37,7 @@ class NavBar extends React.Component {
           to="/shop"
           className="lii"
           activeClassName="activeRoute"
-          activeStyle={{ color: 'red' }}
+          activeStyle={{ backgroundColor: 'red' }}
         >
           SHOP
         </NavLink>
@@ -45,7 +46,7 @@ class NavBar extends React.Component {
           to="/book"
           className="lii"
           activeClassName="activeRoute"
-          activeStyle={{ color: 'red' }}
+          activeStyle={{ backgroundColor: 'red' }}
         >
           BOOK
         </NavLink>
