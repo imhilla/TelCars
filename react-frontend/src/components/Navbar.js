@@ -4,7 +4,9 @@ import React from 'react';
 class NavBar extends React.Component {
   render() {
     return (
-      <div />
+      <div>
+        <h1>Side bar</h1>
+      </div>
     );
   }
 }
