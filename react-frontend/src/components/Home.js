@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/order */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable react/prop-types */
@@ -8,6 +11,17 @@ import React from 'react';
 import axios from 'axios';
 import NavBar from './Navbar';
 import './home.css';
+import Logo from './Logo';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from 'react-router-dom';
+import Latest from './Latest';
+import Life from './Lifestyle';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';
@@ -36,16 +50,55 @@ class Home extends React.Component {
     return (
       <div className="home">
         <div>
+          <Logo />
           <NavBar />
         </div>
         <div>
           <h1>Other items</h1>
+          <Router>
+            <Switch>
+              <Route
+                exact
+                path="/latest"
+                render={props => (
+                  <Latest
+                    {...props}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/lifstyle"
+                render={props => (
+                  <Life
+                    {...props}
+                  />
+                )}
+              />
+            </Switch>
+          </Router>
         </div>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
         {/* <Logout /> */}
         {/* <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         {/* <Login handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         <div />
+        {/* <Router>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={props => (
+                <Home
+                  {...props}
+                  loggedInStatus={this.state.loggedInStatus}
+                  handleLogin={this.handleLogin}
+                  handleLogout={this.handleLogout}
+                />
+              )}
+            />
+          </Switch>
+        </Router> */}
       </div>
     );
   }
