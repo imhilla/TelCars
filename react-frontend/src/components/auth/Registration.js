@@ -20,7 +20,7 @@ class Registration extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
     this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
   }
 
@@ -30,9 +30,9 @@ class Registration extends React.Component {
     });
   }
 
-  // handleLogin() {
-  //   this.props.history.push('/login');
-  // }
+  handleLogin() {
+    this.props.history.push('/login');
+  }
 
   handleSuccessfulAuth(data) {
     this.props.handleLogin(data);
