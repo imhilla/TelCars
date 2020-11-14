@@ -23,6 +23,10 @@ import Dashboard from './Dashboard';
 import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
+import Latest from './Latest';
+import Life from './Lifestyle';
+import Shop from './Shop';
+import Book from './Book';
 
 class App extends React.Component {
   constructor(props) {
@@ -100,18 +104,42 @@ class App extends React.Component {
                     />
                   )}
                 />
-                {/* <Route
+                <Route
                   exact
-                  path="/home"
+                  path="/latest"
                   render={props => (
-                    <Dashboard
+                    <Latest
                       {...props}
-                      loggedInStatus={this.state.loggedInStatus}
-                      handleLogin={this.handleLogin}
-                      handleLogout={this.handleLogout}
                     />
                   )}
-                /> */}
+                />
+                <Route
+                  exact
+                  path="/lifstyle"
+                  render={props => (
+                    <Life
+                      {...props}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/shop"
+                  render={props => (
+                    <Shop
+                      {...props}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/shop"
+                  render={props => (
+                    <Book
+                      {...props}
+                    />
+                  )}
+                />
               </Switch>
             ) : (
               <Switch>
