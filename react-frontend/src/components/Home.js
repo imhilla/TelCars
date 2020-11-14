@@ -42,7 +42,7 @@ class Home extends React.Component {
       <div>
         <div className="homeContainer">
           <Logo />
-          <NavBar />
+          <NavBar className="mynav" />
           <Footer />
         </div>
         <div>

@@ -1,18 +1,22 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { FaTwitter, FaFacebookF, FaGooglePlusG, FaPinterestP } from 'react-icons/fa';
+import './footer.css';
+import {
+  FaTwitter, FaFacebookF, FaGooglePlusG, FaPinterestP, FaWhatsapp,
+} from 'react-icons/fa';
 
 class Footer extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <FaTwitter />
-          <FaFacebookF />
-          <FaGooglePlusG />
-          <FaPinterestP />
+        <div className="footer">
+          <FaTwitter className="icons" />
+          <FaFacebookF className="icons" />
+          <FaGooglePlusG className="icons" />
+          <FaPinterestP className="icons" />
+          <FaWhatsapp className="icons" />
         </div>
-        Footer
+        <p className="copyright">@2020 Hillary K.O - FIVA</p>
       </div>
     );
   }
