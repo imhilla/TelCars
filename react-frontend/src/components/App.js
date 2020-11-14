@@ -23,7 +23,6 @@ import Dashboard from './Dashboard';
 import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
-import Latest from './Latest';
 import Life from './Lifestyle';
 import Shop from './Shop';
 import Book from './Book';
@@ -79,16 +78,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <Router>
-          {/* <nav>
-            <ul>
-              <Link to="/">WELCOME</Link>
-              <Link to="/">HOME</Link>
-              <Link to="/">LIFESTYLE & HEALTH</Link>
-              <Link to="/">SHOP</Link>
-              <Link to="/">BOOK APPOINTMENT</Link>
-              <Link to="/">ABOUT</Link>
-            </ul>
-          </nav> */}
           {
             this.state.loggedInStatus === 'LOGGED_IN' ? (
               <Switch>
@@ -173,69 +162,6 @@ class App extends React.Component {
               </Switch>
             )
           }
-          {/* <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <Welcome
-                  {...props}
-                  loggedInStatus={this.state.loggedInStatus}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                />
-              )}
-            />
-
-            <Route
-              exact
-              path="/home"
-              render={props => (
-                <Home
-                  {...props}
-                  loggedInStatus={this.state.loggedInStatus}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/dashboard"
-              render={props => (
-                <Dashboard
-                  {...props}
-                  loggedInStatus={this.state.loggedInStatus}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/login"
-              render={props => (
-                <Login
-                  {...props}
-                  loggedInStatus={this.state.loggedInStatus}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/signup"
-              render={props => (
-                <Registration
-                  {...props}
-                  loggedInStatus={this.state.loggedInStatus}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                />
-              )}
-            />
-          </Switch> */}
         </Router>
       </div>
     );
