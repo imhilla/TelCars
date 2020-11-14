@@ -28,7 +28,7 @@ class Login extends React.Component {
 
   handleSuccessfulAuth(data) {
     this.props.handleLogin(data);
-    this.props.history.push('/home');
+    this.props.history.push('/');
   }
 
   handleSubmit(event) {
