@@ -1,12 +1,13 @@
 .nav {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .lii {
-  font-size: 2em;
-  padding: 0 0 0.5em 1em;
+  text-align: start;
+  font-size: 1.5em;
+  padding: 0.5em 0 0.5em 2em;
   text-decoration: none;
   font-weight: bold;
+  width: 100%;
 }
