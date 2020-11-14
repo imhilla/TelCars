@@ -12,6 +12,7 @@ import axios from 'axios';
 import NavBar from './Navbar';
 import './home.css';
 import Logo from './Logo';
+import Footer from './Footer';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';
@@ -42,6 +43,7 @@ class Home extends React.Component {
         <div className="homeContainer">
           <Logo />
           <NavBar />
+          <Footer />
         </div>
         <div>
           Latest
