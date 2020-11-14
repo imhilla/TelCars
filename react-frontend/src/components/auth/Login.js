@@ -17,12 +17,18 @@ class Login extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
+  }
+
+  handleSuccessfulAuth(data) {
+    this.props.handleLogin(data);
+    this.props.history.push('/dashboard');
   }
 
   handleSubmit(event) {
@@ -35,7 +41,8 @@ class Login extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
-          this.props.handleSuccessfulAuth(response.data);
+          console.log(this.props);
+          this.handleSuccessfulAuth(response.data);
         }
       }).catch(error => {
         console.log('registration', error);
@@ -47,7 +54,7 @@ class Login extends React.Component {
     const { email, password } = this.state;
     return (
       <div>
-        <div>
+        <div className="loginwelcome">
           <h1>Welcome back</h1>
         </div>
         <form onSubmit={this.handleSubmit} autoComplete="off" className="loginpage">

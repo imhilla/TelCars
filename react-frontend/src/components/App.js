@@ -98,9 +98,9 @@ class App extends React.Component {
               )}
             />
 
-            {/* <Route
+            <Route
               exact
-              path="/"
+              path="/home"
               render={props => (
                 <Home
                   {...props}
@@ -109,26 +109,41 @@ class App extends React.Component {
                   handleLogout={this.handleLogout}
                 />
               )}
-            /> */}
+            />
             <Route
               exact
               path="/dashboard"
               render={props => (
-                <Dashboard {...props} loggedInStatus={this.state.loggedInStatus} />
+                <Dashboard
+                  {...props}
+                  loggedInStatus={this.state.loggedInStatus}
+                  handleLogin={this.handleLogin}
+                  handleLogout={this.handleLogout}
+                />
               )}
             />
             <Route
               exact
               path="/login"
               render={props => (
-                <Login {...props} loggedInStatus={this.state.loggedInStatus} />
+                <Login
+                  {...props}
+                  loggedInStatus={this.state.loggedInStatus}
+                  handleLogin={this.handleLogin}
+                  handleLogout={this.handleLogout}
+                />
               )}
             />
             <Route
               exact
               path="/signup"
               render={props => (
-                <Registration {...props} loggedInStatus={this.state.loggedInStatus} />
+                <Registration
+                  {...props}
+                  loggedInStatus={this.state.loggedInStatus}
+                  handleLogin={this.handleLogin}
+                  handleLogout={this.handleLogout}
+                />
               )}
             />
           </Switch>
