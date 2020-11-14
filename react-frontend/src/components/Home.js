@@ -23,6 +23,7 @@ import {
 import Latest from './Latest';
 import Life from './Lifestyle';
 import Shop from './Shop';
+import Book from './Book';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';
@@ -81,6 +82,15 @@ class Home extends React.Component {
                 path="/shop"
                 render={props => (
                   <Shop
+                    {...props}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/shop"
+                render={props => (
+                  <Book
                     {...props}
                   />
                 )}
