@@ -12,15 +12,7 @@ import axios from 'axios';
 import NavBar from './Navbar';
 import './home.css';
 import Logo from './Logo';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from 'react-router-dom';
-
+import Latest from './Latest';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';
@@ -53,30 +45,13 @@ class Home extends React.Component {
           <NavBar />
         </div>
         <div>
-          <h1>Other items</h1>
-          
+          <Latest />
         </div>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
         {/* <Logout /> */}
         {/* <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         {/* <Login handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         <div />
-        {/* <Router>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <Home
-                  {...props}
-                  loggedInStatus={this.state.loggedInStatus}
-                  handleLogin={this.handleLogin}
-                  handleLogout={this.handleLogout}
-                />
-              )}
-            />
-          </Switch>
-        </Router> */}
       </div>
     );
   }

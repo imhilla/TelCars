@@ -106,16 +106,7 @@ class App extends React.Component {
                 />
                 <Route
                   exact
-                  path="/latest"
-                  render={props => (
-                    <Latest
-                      {...props}
-                    />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/lifstyle"
+                  path="/lifestyle"
                   render={props => (
                     <Life
                       {...props}
@@ -133,7 +124,7 @@ class App extends React.Component {
                 />
                 <Route
                   exact
-                  path="/shop"
+                  path="/book"
                   render={props => (
                     <Book
                       {...props}
