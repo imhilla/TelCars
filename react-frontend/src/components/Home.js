@@ -22,6 +22,7 @@ import {
 } from 'react-router-dom';
 import Latest from './Latest';
 import Life from './Lifestyle';
+import Shop from './Shop';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';
@@ -71,6 +72,15 @@ class Home extends React.Component {
                 path="/lifstyle"
                 render={props => (
                   <Life
+                    {...props}
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/shop"
+                render={props => (
+                  <Shop
                     {...props}
                   />
                 )}
