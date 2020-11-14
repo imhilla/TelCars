@@ -51,3 +51,11 @@
 .loginwelcome h1 {
 font-size: 18px;
 }
+
+.welcomeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding-top: 20%;
+}

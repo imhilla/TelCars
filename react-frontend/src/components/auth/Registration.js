@@ -50,7 +50,6 @@ class Registration extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
-          console.log(response.data);
           this.handleSuccessfulAuth(response.data);
         }
       }).catch(error => {

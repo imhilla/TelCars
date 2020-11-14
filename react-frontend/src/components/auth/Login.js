@@ -28,7 +28,7 @@ class Login extends React.Component {
 
   handleSuccessfulAuth(data) {
     this.props.handleLogin(data);
-    this.props.history.push('/dashboard');
+    this.props.history.push('/home');
   }
 
   handleSubmit(event) {
@@ -53,7 +53,7 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div>
+      <div className="welcomeContainer">
         <div className="loginwelcome">
           <h1>Welcome back</h1>
         </div>

@@ -71,6 +71,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.loggedInStatus);
     return (
       <div className="App">
         <Router>
@@ -84,7 +85,76 @@ class App extends React.Component {
               <Link to="/">ABOUT</Link>
             </ul>
           </nav> */}
-          <Switch>
+          {
+            this.state.loggedInStatus === 'LOGGED_IN' ? (
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={props => (
+                    <Home
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                      handleLogin={this.handleLogin}
+                      handleLogout={this.handleLogout}
+                    />
+                  )}
+                />
+                {/* <Route
+                  exact
+                  path="/home"
+                  render={props => (
+                    <Dashboard
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                      handleLogin={this.handleLogin}
+                      handleLogout={this.handleLogout}
+                    />
+                  )}
+                /> */}
+              </Switch>
+            ) : (
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={props => (
+                    <Welcome
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                      handleLogin={this.handleLogin}
+                      handleLogout={this.handleLogout}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/signup"
+                  render={props => (
+                    <Registration
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                      handleLogin={this.handleLogin}
+                      handleLogout={this.handleLogout}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/login"
+                  render={props => (
+                    <Login
+                      {...props}
+                      loggedInStatus={this.state.loggedInStatus}
+                      handleLogin={this.handleLogin}
+                      handleLogout={this.handleLogout}
+                    />
+                  )}
+                />
+              </Switch>
+            )
+          }
+          {/* <Switch>
             <Route
               exact
               path="/"
@@ -146,7 +216,7 @@ class App extends React.Component {
                 />
               )}
             />
-          </Switch>
+          </Switch> */}
         </Router>
       </div>
     );
