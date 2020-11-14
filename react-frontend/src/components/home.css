@@ -2,3 +2,9 @@
   display: flex;
   flex-direction: row;
 }
+
+.homeContainer {
+  width: 30%;
+  height: 100vh;
+  background-color: blue;
+}

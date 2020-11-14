@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lii {
+  font-size: 2em;
+  padding: 0 0 0.5em 1em;
+  text-decoration: none;
+}
