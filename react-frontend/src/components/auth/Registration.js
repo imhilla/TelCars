@@ -16,6 +16,7 @@ class Registration extends React.Component {
       email: '',
       password: '',
       password_confirmation: '',
+      username: '',
       registrationErrors: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,16 +37,19 @@ class Registration extends React.Component {
 
   handleSuccessfulAuth(data) {
     this.props.handleLogin(data);
-    this.props.history.push('/dashboard');
+    this.props.history.push('/welcome');
   }
 
   handleSubmit(event) {
-    const { email, password, password_confirmation } = this.state;
+    const {
+      email, password, password_confirmation, username,
+    } = this.state;
     axios.post('http://localhost:3001/registrations', {
       user: {
         email,
         password,
         password_confirmation,
+        username,
       },
     }, { withCredentials: true })
       .then(response => {
@@ -59,7 +63,9 @@ class Registration extends React.Component {
   }
 
   render() {
-    const { email, password, password_confirmation } = this.state;
+    const {
+      email, password, password_confirmation, username,
+    } = this.state;
     return (
       <div>
         <div className="welcomeBack">
@@ -73,6 +79,7 @@ class Registration extends React.Component {
           </div>
           <form onSubmit={this.handleSubmit} className="regForm">
             <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} required />
+            <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange} required />
             <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
             <input type="password" name="password_confirmation" placeholder="Password confirmation" value={password_confirmation} onChange={this.handleChange} required />
             <button type="submit">SIGN UP</button>
