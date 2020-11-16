@@ -2,7 +2,7 @@
 <p><%= @item.services %></p>
 <p><%= @item.objectives %></p>
 <% if @item.image.attached? %>
-  <image src="<%=(url_for(@item.image)) %>", :class => "style_image">
+  <image src="<%=(url_for(@item.image)) %>", class= "style_image">
 <% end %>
 <p><%= @item.body %></p>
 
