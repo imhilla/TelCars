@@ -8,17 +8,22 @@ class Items extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: '',
+      data: '',
     };
   }
   componentDidMount() {
     axios.get('http://localhost:3001/items', { withCredentials: true })
-      .then(error => {
-        console.log('logout errors', error);
+      .then(response => {
+        console.log('logout errors', response.data);
+        this.setState({
+          data: response.data,
+        });
       });
   }
 
   render() {
+    const { data } = this.state;
+    console.log(data);
     return (
       <div>Items component</div>
     );
