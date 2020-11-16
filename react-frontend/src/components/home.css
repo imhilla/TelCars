@@ -13,5 +13,30 @@
 }
 
 .descriptionContainer {
+  width: 100%;
   margin: 0 4em;
+  padding-top: 1em;
+}
+
+.descriptionContainer h1 {
+font-size: 16px;
+}
+
+.descriptionContainer p {
+  font-size: 14px;
+}
+
+.descriptionContainer a {
+  margin-top: 20px;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 0.3em;
+  width: 100%;
+  background-color: pink;
+  color: black;
+}
+
+.descriptionContainer a:hover {
+  background-color: blue;
+  color: white;
 }
