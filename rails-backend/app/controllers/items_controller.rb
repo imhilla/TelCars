@@ -10,4 +10,10 @@ class ItemsController < ApplicationController
   def new 
     @item = Item.new
   end
+
+  def create 
+    @item = Item.new(params[:item])
+    @item.save
+    redirect_to item_path(@item)
+  end
 end
