@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  include ItemsHelper
   def index
     @items = Item.all
   end
@@ -12,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def create 
-    @item = Item.new(params[:item])
+    @item = Item.new(item_params)
     @item.save
     redirect_to item_path(@item)
   end
