@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 /* eslint-disable lines-between-class-members */
@@ -5,6 +6,8 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
+
+const jsonQuery = require('json-query');
 
 class Items extends React.Component {
   constructor(props) {
@@ -16,7 +19,7 @@ class Items extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:3001/items', { withCredentials: true })
       .then(response => {
-        // console.log('logout errors', response.data);
+        console.log('logout errors', response.data);
         this.setState({
           data: response.data,
         });
@@ -25,18 +28,36 @@ class Items extends React.Component {
 
   render() {
     const { data } = this.state;
-    const items = data.length === undefined ? (<div>Loading</div>) : (
-      <div>
-        {
-        
-        }
-
-      </div>
-    );
+    const title = jsonQuery('[*][title]', { data }).value;
+    const body = jsonQuery('[*][body]', { data }).value;
+    const services = jsonQuery('[*][services]', { data }).value;
+    const objectives = jsonQuery('[*][objectives]', { data }).value;
+    const myitems = Object.keys(data);
+    const display = data.length !== undefined
+      ? (myitems.map((post, i) => (
+        <div className="utopian-items">
+          <p>
+            <strong>Author: </strong>
+            {console.log(title[i])}
+          </p>
+          <p>
+            <strong>Title: </strong>
+            {title[i]}
+          </p>
+          <p>
+            <strong>Body: </strong>
+            {body[i]}
+          </p>
+          <p>
+            <strong>Objectives: </strong>
+            {objectives[i]}
+          </p>
+        </div>
+      ))) : (<div>Loading</div>);
 
     return (
       <div>
-        {items}
+        {display}
       </div>
     );
   }
