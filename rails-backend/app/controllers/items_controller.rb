@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   include ItemsHelper
   def index
     @items = Item.all
+    render json: @items
   end
 
   def show
