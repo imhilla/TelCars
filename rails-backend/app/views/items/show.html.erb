@@ -1,3 +1,9 @@
 <h1><%= @item.title %></h1>
+<p><%= @item.services %></p>
+<p><%= @item.objectives %></p>
+<% if @item.image.attached? %>
+  <image src="<%=(url_for(@item.image)) %>">
+<% end %>
 <p><%= @item.body %></p>
+
 <%= link_to "<< Back to Articles List", items_path %>
