@@ -39,14 +39,14 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="home">
         <div className="homeContainer">
           <Logo />
           <NavBar className="mynav" />
           <Footer />
         </div>
-        <div>
-          Latest
+        <div className="descriptionContainer">
+          <p>Welcome to Safe heaven hospital, your health our treasure</p>
         </div>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
         {/* <Logout /> */}

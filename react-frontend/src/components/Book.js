@@ -13,6 +13,9 @@ class Book extends React.Component {
           <NavBar />
           <Footer />
         </div>
+        <div>
+          Latest
+        </div>
       </div>
     );
   }
