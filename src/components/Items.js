@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-key */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
@@ -17,7 +18,7 @@ class Items extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get('http://localhost:3001/items', { withCredentials: true })
+    axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
         console.log('response data', response.data);
         this.setState({
@@ -28,29 +29,34 @@ class Items extends React.Component {
 
   render() {
     const { data } = this.state;
-    const title = jsonQuery('[*][title]', { data }).value;
-    const body = jsonQuery('[*][body]', { data }).value;
-    const services = jsonQuery('[*][services]', { data }).value;
-    const objectives = jsonQuery('[*][objectives]', { data }).value;
+    const name = jsonQuery('[*][title]', { data }).value;
+    const model = jsonQuery('[*][body]', { data }).value;
+    const reviews = jsonQuery('[*][services]', { data }).value;
+    const price = jsonQuery('[*][objectives]', { data }).value;
     const myitems = Object.keys(data);
+    const url = 'https://res.cloudinary.com/dhxgtfnci/image/upload/v1605605870/hospital/tesla.webp';
     const display = data.length !== undefined
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <p>
-            <strong>Title: </strong>
-            {title[i]}
+            <strong>Name </strong>
+            {name[i]}
           </p>
           <p>
-            <strong>Body: </strong>
-            {body[i]}
+            <strong>Model </strong>
+            {model[i]}
           </p>
           <p>
-            <strong>Objectives: </strong>
-            {objectives[i]}
+            <strong>Image </strong>
+            <img src={url} />
           </p>
           <p>
-            <strong>Objectives: </strong>
-            {services[i]}
+            <strong>Reviews </strong>
+            {reviews[i]}
+          </p>
+          <p>
+            <strong>Price </strong>
+            {price[i]}
           </p>
         </div>
       ))) : (<div>Loading</div>);

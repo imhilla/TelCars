@@ -42,7 +42,6 @@ class Home extends React.Component {
   }
 
   render() {
-    const url = 'https://www.who.int/home';
     return (
       <div className="home">
         <div className="homeContainer">
@@ -51,24 +50,8 @@ class Home extends React.Component {
           <Footer />
         </div>
         <div className="descriptionContainer">
-          <a href={url}>Quick links on COVID19</a>
-          <h1>Welcome to Safe Heaven hospital, your health our treasure</h1>
-          <p>
-            We have built a long standing relationship based on trust.
-            Safe heaven Hospital stands out as one of the nation’s top Hospital,
-            attracting talented faculty, staff , superb clinical affiliates and global outlook.
-          </p>
+          <h1>Latest 2020 Cars models</h1>
           <Items />
-          <div>
-            <h1>
-              MODERN MEDICAL FACILITIES
-            </h1>
-            <p>
-              Personalized patient care is what sets Safe Heaven Hospital apart.
-              Expert physician specialists and caring  staff provide you with an
-              exceptional health care experience.
-            </p>
-          </div>
         </div>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
         {/* <Logout /> */}
