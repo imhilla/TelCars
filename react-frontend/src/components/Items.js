@@ -19,7 +19,7 @@ class Items extends React.Component {
   componentDidMount() {
     axios.get('http://localhost:3001/items', { withCredentials: true })
       .then(response => {
-        console.log('logout errors', response.data);
+        console.log('response data', response.data);
         this.setState({
           data: response.data,
         });
@@ -37,10 +37,6 @@ class Items extends React.Component {
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <p>
-            <strong>Author: </strong>
-            {console.log(title[i])}
-          </p>
-          <p>
             <strong>Title: </strong>
             {title[i]}
           </p>
@@ -51,6 +47,10 @@ class Items extends React.Component {
           <p>
             <strong>Objectives: </strong>
             {objectives[i]}
+          </p>
+          <p>
+            <strong>Objectives: </strong>
+            {services[i]}
           </p>
         </div>
       ))) : (<div>Loading</div>);
