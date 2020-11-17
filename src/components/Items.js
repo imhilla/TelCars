@@ -29,34 +29,35 @@ class Items extends React.Component {
 
   render() {
     const { data } = this.state;
-    const name = jsonQuery('[*][title]', { data }).value;
-    const model = jsonQuery('[*][body]', { data }).value;
-    const reviews = jsonQuery('[*][services]', { data }).value;
-    const price = jsonQuery('[*][objectives]', { data }).value;
+    const name = jsonQuery('[*][title]', { data }).parents[0].value;
+    const model = jsonQuery('[*][body]', { data }).parents[0].value;
+    const reviews = jsonQuery('[*][services]', { data }).parents[0].value;
+    const price = jsonQuery('[*][objectives]', { data }).parents[0].value;
     const myitems = Object.keys(data);
-    const url = 'https://res.cloudinary.com/dhxgtfnci/image/upload/v1605605870/hospital/tesla.webp';
+    const url = 'https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla.webp';
     const display = data.length !== undefined
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <p>
+            <strong>Image </strong>
+            <img src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${i}.webp`} />
+            {console.log(i)}
+          </p>
+          <p>
             <strong>Name </strong>
-            {name[i]}
+            {name[i].name}
           </p>
           <p>
             <strong>Model </strong>
-            {model[i]}
-          </p>
-          <p>
-            <strong>Image </strong>
-            <img src={url} />
+            {model[i].model}
           </p>
           <p>
             <strong>Reviews </strong>
-            {reviews[i]}
+            {reviews[i].reviews}
           </p>
           <p>
             <strong>Price </strong>
-            {price[i]}
+            {price[i].price}
           </p>
         </div>
       ))) : (<div>Loading</div>);
