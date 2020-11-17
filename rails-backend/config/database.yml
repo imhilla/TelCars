@@ -18,7 +18,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # host: localhost
+  host: localhost
 
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -88,7 +88,7 @@ test:
 production:
   <<: *default
   database: hospital-book-appointment-app_production
-  username: Hillary
+  username: postgres
   password: <%= ENV['HOSPITAL-BOOK-APPOINTMENT-APP_DATABASE_PASSWORD'] %>
 # psql -U postgres -c "CREATE ROLE Hillary LOGIN NOSUPERUSER INHERIT CREATEDB CREATEROLE;" postgres
 #  scram-sha-256
