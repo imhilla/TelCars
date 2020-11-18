@@ -1,3 +1,4 @@
+/* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable prefer-const */
@@ -77,16 +78,15 @@ class Items extends React.Component {
       threeIndex[2] -= 1;
     }
     const newdata = this.state.data;
-    const workingdata = this.state.workingdata;
-    if (workingdata.length === 3) {
-      console.log('yes');
-    }
+    let workingdata = this.state.workingdata;
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
-        const workingdata = this.state.workingdata;
+        let workingdata = this.state.workingdata;
         if (index === val) {
           // console.log(value);
-          workingdata.push(value);
+          workingdata[ind] = value;
+          // workingdata.push(value);
+          console.log(workingdata);
         }
         return workingdata;
       });
@@ -134,6 +134,7 @@ class Items extends React.Component {
         const workingdata = this.state.workingdata;
         if (index + 1 === val) {
           // console.log(value, index);
+          console.log(workingdata);
           workingdata.push(value);
         }
         return workingdata;
@@ -147,7 +148,7 @@ class Items extends React.Component {
 
   render() {
     const { data } = this.state;
-    console.log(this.state.workingdata);
+    // console.log(this.state.workingdata);
     const name = jsonQuery('[*][name]', { data }).value;
     const model = jsonQuery('[*][model]', { data }).value;
     const reviews = jsonQuery('[*][reviews]', { data }).value;
