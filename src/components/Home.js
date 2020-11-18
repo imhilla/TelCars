@@ -52,9 +52,9 @@ class Home extends React.Component {
         <div className="descriptionContainer">
           <h1>Latest 2020 Cars models</h1>
           <Items />
+          {/* <Logout /> */}
         </div>
         {/* <h1>Status: {this.props.loggedInStatus}</h1> */}
-        {/* <Logout /> */}
         {/* <Registration handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         {/* <Login handleSuccessfulAuth={this.handleSuccessfulAuth} /> */}
         <div />

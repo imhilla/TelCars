@@ -1,3 +1,6 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-key */
 /* eslint-disable array-callback-return */
@@ -15,24 +18,39 @@ class Items extends React.Component {
     super(props);
     this.state = {
       data: {},
+      newData: [],
     };
+    this.handleChangeLeft = this.handleChangeLeft.bind(this);
+    this.handleChangeRight = this.handleChangeRight.bind(this);
   }
+
   componentDidMount() {
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
-        console.log('response data', response.data);
+        // console.log('response data', response.data);
         this.setState({
           data: response.data,
         });
       });
   }
 
+  handleChangeLeft() {
+    const wholeArray = this.state.data;
+    const threeData = this.state.newData;
+    console.log(wholeArray);
+    console.log(threeData);
+  }
+
+  handleChangeRight() {
+    console.log('right');
+  }
+
   render() {
     const { data } = this.state;
-    const name = jsonQuery('[*][title]', { data }).parents[0].value;
-    const model = jsonQuery('[*][body]', { data }).parents[0].value;
-    const reviews = jsonQuery('[*][services]', { data }).parents[0].value;
-    const price = jsonQuery('[*][objectives]', { data }).parents[0].value;
+    const name = jsonQuery('[*][name]', { data }).value;
+    const model = jsonQuery('[*][model]', { data }).value;
+    const reviews = jsonQuery('[*][reviews]', { data }).value;
+    const price = jsonQuery('[*][price]', { data }).value;
     const myitems = Object.keys(data);
     const url = 'https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla.webp';
     const display = data.length !== undefined
@@ -41,30 +59,31 @@ class Items extends React.Component {
           <p>
             <strong>Image </strong>
             <img src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${i}.webp`} />
-            {console.log(i)}
           </p>
           <p>
             <strong>Name </strong>
-            {name[i].name}
+            {name[i]}
           </p>
           <p>
             <strong>Model </strong>
-            {model[i].model}
+            {model[i]}
           </p>
           <p>
             <strong>Reviews </strong>
-            {reviews[i].reviews}
+            {reviews[i]}
           </p>
           <p>
             <strong>Price </strong>
-            {price[i].price}
+            {price[i]}
           </p>
         </div>
       ))) : (<div>Loading</div>);
 
     return (
       <div>
+        <button onClick={this.handleChangeLeft}>Click left</button>
         {display}
+        <button onClick={this.handleChangeRight}>Click right</button>
       </div>
     );
   }
