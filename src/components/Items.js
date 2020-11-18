@@ -83,10 +83,7 @@ class Items extends React.Component {
       threeIndex.map((val, ind) => {
         let workingdata = this.state.workingdata;
         if (index === val) {
-          // console.log(value);
           workingdata[ind] = value;
-          // workingdata.push(value);
-          console.log(workingdata);
         }
         return workingdata;
       });
@@ -100,47 +97,26 @@ class Items extends React.Component {
     console.log('right');
     const wholeArray = this.state.data;
     let threeData = this.state.newData;
-    // if (threeData.length === 3) {
-    //   threeData = [];
-    // }
     const mylength = wholeArray.length;
     let half = mylength / 2;
     half = Math.floor(half);
     const threeIndex = this.state.threeIndex;
-    // console.log(threeIndex);
     const limit = mylength;
-    // threeIndex.map((value, index) => {
-    //   console.log(half);
-    //   let num = value + half;
-    //   console.log(num);
-    //   if (Math.sign(num) !== limit - 3) {
-    //     threeData.push(wholeArray[num]);
-    //   }
-    //   this.setState({
-    //     newData: threeData,
-    //   });
-    //   return threeData;
-    // });
     if (threeIndex[0] <= limit - 3) {
       threeIndex[0] += 1;
       threeIndex[1] += 1;
       threeIndex[2] += 1;
     }
-    // console.log(threeIndex);
     const newdata = this.state.data;
-    // console.log(newdata);
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
         if (index + 1 === val) {
-          // console.log(value, index);
-          console.log(workingdata);
-          workingdata.push(value);
+          workingdata[ind] = value;
         }
         return workingdata;
       });
     });
-    // console.log(threeIndex);
     this.setState({
       threeIndex,
     });
