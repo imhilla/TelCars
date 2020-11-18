@@ -1,3 +1,5 @@
+/* eslint-disable react/no-access-state-in-setstate */
+/* eslint-disable prefer-destructuring */
 /* eslint-disable prefer-const */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
@@ -29,17 +31,17 @@ class Items extends React.Component {
   componentDidMount() {
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
-        console.log(this.state.threeIndex);
-        console.log(response.data.length);
+        // console.log(this.state.threeIndex);
+        // console.log(response.data.length);
         let middle = Math.floor(response.data.length / 2);
-        console.log(middle);
+        // console.log(middle);
         const first = middle;
         middle += 1;
         const last = middle + 1;
         this.state.threeIndex.push(first);
         this.state.threeIndex.push(middle);
         this.state.threeIndex.push(last);
-        console.log(this.state.threeIndex);
+        // console.log(this.state.threeIndex);
         // console.log('response data', response.data);
         this.setState({
           data: response.data,
@@ -57,7 +59,7 @@ class Items extends React.Component {
     let half = mylength / 2;
     half = Math.floor(half);
     // console.log(half);
-    const threeIndex = [3, 4, 5];
+    const threeIndex = this.state.threeIndex;
     threeIndex.map((value, index) => {
       // console.log(value);
       let num = value - half;
@@ -70,6 +72,18 @@ class Items extends React.Component {
       });
       return threeData;
     });
+    if (threeIndex[0] >= 1) {
+      threeIndex[0] -= 1;
+      threeIndex[1] -= 1;
+      threeIndex[2] -= 1;
+    }
+    console.log(threeIndex[0]);
+    console.log(threeIndex[1]);
+    console.log(threeIndex[2]);
+    this.setState({
+      threeIndex,
+    });
+
     // console.log(this.state.newData);
     // console.log(threeData);
   }
