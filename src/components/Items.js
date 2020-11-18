@@ -23,6 +23,7 @@ class Items extends React.Component {
       data: {},
       newData: [],
       threeIndex: [],
+      workingdata: [],
     };
     this.handleChangeLeft = this.handleChangeLeft.bind(this);
     this.handleChangeRight = this.handleChangeRight.bind(this);
@@ -58,34 +59,36 @@ class Items extends React.Component {
     const mylength = wholeArray.length;
     let half = mylength / 2;
     half = Math.floor(half);
-    // console.log(half);
     const threeIndex = this.state.threeIndex;
     threeIndex.map((value, index) => {
-      // console.log(value);
       let num = value - half;
       if (Math.sign(num) !== -1) {
         threeData.push(wholeArray[num]);
-        // console.log('yes');
       }
       this.setState({
         newData: threeData,
       });
       return threeData;
     });
-    if (threeIndex[0] >= 1) {
+    if (threeIndex[0] >= 2) {
       threeIndex[0] -= 1;
       threeIndex[1] -= 1;
       threeIndex[2] -= 1;
     }
-    console.log(threeIndex[0]);
-    console.log(threeIndex[1]);
-    console.log(threeIndex[2]);
+    const newdata = this.state.data;
+    newdata.map((value, index) => {
+      threeIndex.map((val, ind) => {
+        const workingdata = this.state.workingdata;
+        if (index === val) {
+          console.log(value);
+          workingdata.push(value);
+        }
+        return workingdata;
+      });
+    });
     this.setState({
       threeIndex,
     });
-
-    // console.log(this.state.newData);
-    // console.log(threeData);
   }
 
   handleChangeRight() {
