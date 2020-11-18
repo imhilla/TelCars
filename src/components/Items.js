@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/button-has-type */
@@ -36,11 +37,28 @@ class Items extends React.Component {
 
   handleChangeLeft() {
     const wholeArray = this.state.data;
-    const threeData = this.state.newData;
+    let threeData = this.state.newData;
+    if (threeData.length === 3) {
+      threeData = [];
+    }
     const mylength = wholeArray.length;
-    const half = mylength / 2;
-    console.log(Math.floor(half));
-    console.log(threeData);
+    let half = mylength / 2;
+    half = Math.floor(half);
+    // console.log(half);
+    const threeIndex = [3, 4, 5];
+    threeIndex.map((value, index) => {
+      let num = value - half;
+      if (Math.sign(num) !== -1) {
+        threeData.push(wholeArray[num]);
+        console.log('yes');
+      }
+      this.setState({
+        newData: threeData,
+      });
+      return threeData;
+    });
+    console.log(this.state.newData);
+    // console.log(threeData);
   }
 
   handleChangeRight() {
