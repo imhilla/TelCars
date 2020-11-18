@@ -37,7 +37,9 @@ class Items extends React.Component {
   handleChangeLeft() {
     const wholeArray = this.state.data;
     const threeData = this.state.newData;
-    console.log(wholeArray);
+    const mylength = wholeArray.length;
+    const half = mylength / 2;
+    console.log(Math.floor(half));
     console.log(threeData);
   }
 
