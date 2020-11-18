@@ -20,6 +20,7 @@ class Items extends React.Component {
     this.state = {
       data: {},
       newData: [],
+      threeIndex: [],
     };
     this.handleChangeLeft = this.handleChangeLeft.bind(this);
     this.handleChangeRight = this.handleChangeRight.bind(this);
@@ -47,6 +48,7 @@ class Items extends React.Component {
     // console.log(half);
     const threeIndex = [3, 4, 5];
     threeIndex.map((value, index) => {
+      console.log(value);
       let num = value - half;
       if (Math.sign(num) !== -1) {
         threeData.push(wholeArray[num]);
