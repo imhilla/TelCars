@@ -122,22 +122,23 @@ class Items extends React.Component {
       threeIndex[1] += 1;
       threeIndex[2] += 1;
     }
-    console.log(threeIndex);
+    // console.log(threeIndex);
     const newdata = this.state.data;
-    console.log(newdata);
+    // console.log(newdata);
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
         if (index + 1 === val) {
-          console.log(value, index);
-          // workingdata.push(value);
+          // console.log(value, index);
+          workingdata.push(value);
         }
         return workingdata;
       });
     });
-    // this.setState({
-    //   threeIndex,
-    // });
+    // console.log(threeIndex);
+    this.setState({
+      threeIndex,
+    });
   }
 
   render() {
