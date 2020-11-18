@@ -51,6 +51,7 @@ class Items extends React.Component {
   }
 
   handleChangeLeft() {
+    console.log('left');
     const wholeArray = this.state.data;
     let threeData = this.state.newData;
     if (threeData.length === 3) {
@@ -60,7 +61,6 @@ class Items extends React.Component {
     let half = mylength / 2;
     half = Math.floor(half);
     const threeIndex = this.state.threeIndex;
-    console.log(threeIndex);
     threeIndex.map((value, index) => {
       let num = value - half;
       if (Math.sign(num) !== -1) {
@@ -77,6 +77,10 @@ class Items extends React.Component {
       threeIndex[2] -= 1;
     }
     const newdata = this.state.data;
+    const workingdata = this.state.workingdata;
+    if (workingdata.length === 3) {
+      console.log('yes');
+    }
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
@@ -143,6 +147,7 @@ class Items extends React.Component {
 
   render() {
     const { data } = this.state;
+    console.log(this.state.workingdata);
     const name = jsonQuery('[*][name]', { data }).value;
     const model = jsonQuery('[*][model]', { data }).value;
     const reviews = jsonQuery('[*][reviews]', { data }).value;
