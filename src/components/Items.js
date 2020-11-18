@@ -117,18 +117,18 @@ class Items extends React.Component {
     //   });
     //   return threeData;
     // });
-    if (threeIndex[0] <= limit - 4) {
+    if (threeIndex[0] <= limit - 3) {
       threeIndex[0] += 1;
       threeIndex[1] += 1;
       threeIndex[2] += 1;
     }
     console.log(threeIndex);
     const newdata = this.state.data;
-    // console.log(newdata);
+    console.log(newdata);
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
-        if (index === val) {
+        if (index + 1 === val) {
           console.log(value, index);
           // workingdata.push(value);
         }
