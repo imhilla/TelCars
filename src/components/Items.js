@@ -29,6 +29,17 @@ class Items extends React.Component {
   componentDidMount() {
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
+        console.log(this.state.threeIndex);
+        console.log(response.data.length);
+        let middle = Math.floor(response.data.length / 2);
+        console.log(middle);
+        const first = middle;
+        middle += 1;
+        const last = middle + 1;
+        this.state.threeIndex.push(first);
+        this.state.threeIndex.push(middle);
+        this.state.threeIndex.push(last);
+        console.log(this.state.threeIndex);
         // console.log('response data', response.data);
         this.setState({
           data: response.data,
@@ -48,18 +59,18 @@ class Items extends React.Component {
     // console.log(half);
     const threeIndex = [3, 4, 5];
     threeIndex.map((value, index) => {
-      console.log(value);
+      // console.log(value);
       let num = value - half;
       if (Math.sign(num) !== -1) {
         threeData.push(wholeArray[num]);
-        console.log('yes');
+        // console.log('yes');
       }
       this.setState({
         newData: threeData,
       });
       return threeData;
     });
-    console.log(this.state.newData);
+    // console.log(this.state.newData);
     // console.log(threeData);
   }
 
