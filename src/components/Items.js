@@ -15,8 +15,6 @@
 import React from 'react';
 import axios from 'axios';
 
-const jsonQuery = require('json-query');
-
 class Items extends React.Component {
   constructor(props) {
     super(props);
@@ -70,7 +68,6 @@ class Items extends React.Component {
       threeIndex[2] -= 1;
     }
     const newdata = this.state.data;
-    let workingdata = this.state.workingdata;
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
         let workingdata = this.state.workingdata;
@@ -87,7 +84,6 @@ class Items extends React.Component {
 
   handleChangeRight() {
     const wholeArray = this.state.data;
-    let threeData = this.state.newData;
     const mylength = wholeArray.length;
     let half = mylength / 2;
     half = Math.floor(half);
@@ -114,12 +110,7 @@ class Items extends React.Component {
   }
 
   render() {
-    const { data, workingdata, threeIndex } = this.state;
-    // console.log(data);
-    const name = jsonQuery('[*][name]', { workingdata });
-    const model = jsonQuery('[*][model]', { workingdata }).value;
-    const reviews = jsonQuery('[*][reviews]', { workingdata }).value;
-    const price = jsonQuery('[*][price]', { workingdata }).value;
+    const { workingdata, threeIndex } = this.state;
     const myitems = Object.keys(workingdata);
     const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
