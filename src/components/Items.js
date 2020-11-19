@@ -45,13 +45,15 @@ class Items extends React.Component {
           this.state.threeIndex.map((val, ind) => {
             if (index + 1 === val) {
               fill.push(value);
+              this.setState({
+                workingdata: fill,
+              });
             }
             return fill;
           });
         });
         this.setState({
           data: response.data,
-          workingdata: fill,
         });
       });
   }
@@ -113,7 +115,8 @@ class Items extends React.Component {
 
   render() {
     const { data, workingdata, threeIndex } = this.state;
-    const name = jsonQuery('[*][name]', { workingdata }).value;
+    // console.log(data);
+    const name = jsonQuery('[*][name]', { workingdata });
     const model = jsonQuery('[*][model]', { workingdata }).value;
     const reviews = jsonQuery('[*][reviews]', { workingdata }).value;
     const price = jsonQuery('[*][price]', { workingdata }).value;
@@ -127,19 +130,19 @@ class Items extends React.Component {
           </p>
           <p>
             <strong>Name </strong>
-            {name[i]}
+            {workingdata[i].name}
           </p>
           <p>
             <strong>Model </strong>
-            {model[i]}
+            {workingdata[i].model}
           </p>
           <p>
             <strong>Reviews </strong>
-            {reviews[i]}
+            {workingdata[i].reviews}
           </p>
           <p>
             <strong>Price </strong>
-            {price[i]}
+            {workingdata[i].price}
           </p>
         </div>
       ))) : (<div>Loading</div>);
