@@ -53,14 +53,10 @@ class Items extends React.Component {
 
   handleChangeLeft() {
     console.log('left');
-    const wholeArray = this.state.data;
     let threeData = this.state.newData;
     if (threeData.length === 3) {
       threeData = [];
     }
-    // const mylength = wholeArray.length;
-    // let half = mylength / 2;
-    // half = Math.floor(half);
     const threeIndex = this.state.threeIndex;
     if (threeIndex[0] >= 1) {
       threeIndex[0] -= 1;
@@ -102,6 +98,7 @@ class Items extends React.Component {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
         if (index + 1 === val) {
+          console.log(val);
           workingdata[ind] = value;
         }
         return workingdata;
