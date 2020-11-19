@@ -62,16 +62,6 @@ class Items extends React.Component {
     // let half = mylength / 2;
     // half = Math.floor(half);
     const threeIndex = this.state.threeIndex;
-    // threeIndex.map((value, index) => {
-    //   let num = value - half;
-    //   if (Math.sign(num) !== -1) {
-    //     threeData.push(wholeArray[num]);
-    //   }
-    //   this.setState({
-    //     newData: threeData,
-    //   });
-    //   return threeData;
-    // });
     if (threeIndex[0] >= 1) {
       threeIndex[0] -= 1;
       threeIndex[1] -= 1;
@@ -82,7 +72,7 @@ class Items extends React.Component {
     newdata.map((value, index) => {
       threeIndex.map((val, ind) => {
         let workingdata = this.state.workingdata;
-        if (index === val) {
+        if (index === val - 1) {
           workingdata[ind] = value;
         }
         return workingdata;
