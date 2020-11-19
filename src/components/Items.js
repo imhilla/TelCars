@@ -43,7 +43,7 @@ class Items extends React.Component {
         this.state.threeIndex.push(first);
         this.state.threeIndex.push(middle);
         this.state.threeIndex.push(last);
-        // console.log(this.state.threeIndex);
+        console.log(this.state.threeIndex);
         // console.log('response data', response.data);
         this.setState({
           data: response.data,
@@ -58,21 +58,21 @@ class Items extends React.Component {
     if (threeData.length === 3) {
       threeData = [];
     }
-    const mylength = wholeArray.length;
-    let half = mylength / 2;
-    half = Math.floor(half);
+    // const mylength = wholeArray.length;
+    // let half = mylength / 2;
+    // half = Math.floor(half);
     const threeIndex = this.state.threeIndex;
-    threeIndex.map((value, index) => {
-      let num = value - half;
-      if (Math.sign(num) !== -1) {
-        threeData.push(wholeArray[num]);
-      }
-      this.setState({
-        newData: threeData,
-      });
-      return threeData;
-    });
-    if (threeIndex[0] >= 2) {
+    // threeIndex.map((value, index) => {
+    //   let num = value - half;
+    //   if (Math.sign(num) !== -1) {
+    //     threeData.push(wholeArray[num]);
+    //   }
+    //   this.setState({
+    //     newData: threeData,
+    //   });
+    //   return threeData;
+    // });
+    if (threeIndex[0] >= 1) {
       threeIndex[0] -= 1;
       threeIndex[1] -= 1;
       threeIndex[2] -= 1;
@@ -124,7 +124,7 @@ class Items extends React.Component {
 
   render() {
     const { data } = this.state;
-    // console.log(this.state.workingdata);
+    console.log(this.state.workingdata);
     const name = jsonQuery('[*][name]', { data }).value;
     const model = jsonQuery('[*][model]', { data }).value;
     const reviews = jsonQuery('[*][reviews]', { data }).value;
