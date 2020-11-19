@@ -57,7 +57,6 @@ class Items extends React.Component {
   }
 
   handleChangeLeft() {
-    console.log('left');
     let threeData = this.state.newData;
     if (threeData.length === 3) {
       threeData = [];
@@ -85,7 +84,6 @@ class Items extends React.Component {
   }
 
   handleChangeRight() {
-    console.log('right');
     const wholeArray = this.state.data;
     let threeData = this.state.newData;
     const mylength = wholeArray.length;
@@ -103,9 +101,7 @@ class Items extends React.Component {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
         if (index + 1 === val) {
-          // console.log(val);
           workingdata[ind] = value;
-          // console.log(workingdata);
         }
         return workingdata;
       });
@@ -117,13 +113,11 @@ class Items extends React.Component {
 
   render() {
     const { data, workingdata, threeIndex } = this.state;
-    // console.log(this.state.workingdata);
     const name = jsonQuery('[*][name]', { workingdata }).value;
     const model = jsonQuery('[*][model]', { workingdata }).value;
     const reviews = jsonQuery('[*][reviews]', { workingdata }).value;
     const price = jsonQuery('[*][price]', { workingdata }).value;
     const myitems = Object.keys(workingdata);
-    console.log(threeIndex[0]);
     const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
@@ -131,7 +125,6 @@ class Items extends React.Component {
             <strong>Image </strong>
             <img src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
           </p>
-          {console.log(threeIndex[0] + i)}
           <p>
             <strong>Name </strong>
             {name[i]}
