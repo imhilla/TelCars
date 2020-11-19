@@ -33,29 +33,22 @@ class Items extends React.Component {
   componentDidMount() {
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
-        // console.log(this.state.threeIndex);
-        // console.log(response.data.length);
         let middle = Math.floor(response.data.length / 2);
-        // console.log(middle);
         const first = middle;
         middle += 1;
         const last = middle + 1;
         this.state.threeIndex.push(first);
         this.state.threeIndex.push(middle);
         this.state.threeIndex.push(last);
-        console.log(this.state.threeIndex);
         let fill = [];
         response.data.map((value, index) => {
           this.state.threeIndex.map((val, ind) => {
             if (index + 1 === val) {
-              console.log(value);
               fill.push(value);
             }
             return fill;
           });
         });
-        // console.log(this.state.workingdata);
-        // console.log('response data', response.data);
         this.setState({
           data: response.data,
           workingdata: fill,
@@ -123,20 +116,22 @@ class Items extends React.Component {
   }
 
   render() {
-    const { data, workingdata } = this.state;
+    const { data, workingdata, threeIndex } = this.state;
     // console.log(this.state.workingdata);
     const name = jsonQuery('[*][name]', { workingdata }).value;
     const model = jsonQuery('[*][model]', { workingdata }).value;
     const reviews = jsonQuery('[*][reviews]', { workingdata }).value;
     const price = jsonQuery('[*][price]', { workingdata }).value;
     const myitems = Object.keys(workingdata);
+    console.log(threeIndex[0]);
     const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <p>
             <strong>Image </strong>
-            <img src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${i}.webp`} />
+            <img src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
           </p>
+          {console.log(threeIndex[0] + i)}
           <p>
             <strong>Name </strong>
             {name[i]}
