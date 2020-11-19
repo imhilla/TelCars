@@ -14,6 +14,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
+import './items.css';
 
 class Items extends React.Component {
   constructor(props) {
@@ -139,7 +140,7 @@ class Items extends React.Component {
       ))) : (<div>Loading</div>);
 
     return (
-      <div>
+      <div className="itemsContainer">
         <button onClick={this.handleChangeLeft}>Click left</button>
         {display}
         <button onClick={this.handleChangeRight}>Click right</button>
