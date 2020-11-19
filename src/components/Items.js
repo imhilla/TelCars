@@ -44,9 +44,21 @@ class Items extends React.Component {
         this.state.threeIndex.push(middle);
         this.state.threeIndex.push(last);
         console.log(this.state.threeIndex);
+        let fill = [];
+        response.data.map((value, index) => {
+          this.state.threeIndex.map((val, ind) => {
+            if (index + 1 === val) {
+              console.log(value);
+              fill.push(value);
+            }
+            return fill;
+          });
+        });
+        // console.log(this.state.workingdata);
         // console.log('response data', response.data);
         this.setState({
           data: response.data,
+          workingdata: fill,
         });
       });
   }
@@ -98,8 +110,9 @@ class Items extends React.Component {
       threeIndex.map((val, ind) => {
         const workingdata = this.state.workingdata;
         if (index + 1 === val) {
-          console.log(val);
+          // console.log(val);
           workingdata[ind] = value;
+          // console.log(workingdata);
         }
         return workingdata;
       });
@@ -110,15 +123,14 @@ class Items extends React.Component {
   }
 
   render() {
-    const { data } = this.state;
-    console.log(this.state.workingdata);
-    const name = jsonQuery('[*][name]', { data }).value;
-    const model = jsonQuery('[*][model]', { data }).value;
-    const reviews = jsonQuery('[*][reviews]', { data }).value;
-    const price = jsonQuery('[*][price]', { data }).value;
-    const myitems = Object.keys(data);
-    const url = 'https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla.webp';
-    const display = data.length !== undefined
+    const { data, workingdata } = this.state;
+    // console.log(this.state.workingdata);
+    const name = jsonQuery('[*][name]', { workingdata }).value;
+    const model = jsonQuery('[*][model]', { workingdata }).value;
+    const reviews = jsonQuery('[*][reviews]', { workingdata }).value;
+    const price = jsonQuery('[*][price]', { workingdata }).value;
+    const myitems = Object.keys(workingdata);
+    const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <p>
