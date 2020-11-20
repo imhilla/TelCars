@@ -117,8 +117,8 @@ class Items extends React.Component {
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <p>
-            <strong>Image </strong>
-            <img src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
+            {/* <strong>Image </strong> */}
+            <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
           </p>
           <p>
             <strong>Name </strong>

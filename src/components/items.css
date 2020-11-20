@@ -4,5 +4,13 @@
   justify-content: space-between;
   align-items: center;
   height: 100vh;
-  padding-top: 3m;
+}
+
+.itemsImg {
+  background-color: blue;
+  padding: 1em;
+  height: auto;
+  margin: 1em;
+  width: 100px;
+  border-radius: 50%;
 }
