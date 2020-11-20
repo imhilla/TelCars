@@ -122,7 +122,7 @@ class App extends React.Component {
                   )}
                 />
                 <Route
-                  path="/pokemon/:pokemon_id"
+                  path="/model/:model_id"
                   component={Carview}
                 />
 
