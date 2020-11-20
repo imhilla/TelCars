@@ -20,6 +20,7 @@ import {
 import axios from 'axios';
 import Home from './Home';
 import Dashboard from './Dashboard';
+import Carview from './Carview';
 import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
@@ -120,6 +121,11 @@ class App extends React.Component {
                     />
                   )}
                 />
+                <Route
+                  path="/pokemon/:pokemon_id"
+                  component={Carview}
+                />
+
               </Switch>
             ) : (
               <Switch>

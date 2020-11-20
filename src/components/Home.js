@@ -45,9 +45,9 @@ class Home extends React.Component {
     return (
       <div className="home">
         <div className="homeContainer">
-          <Logo />
+          <Logo className="logoo" />
           <NavBar className="mynav" />
-          <Footer />
+          <Footer className="footerr" />
         </div>
         <div className="descriptionContainer">
           <h1>LATEST 2020 CAR MODELS</h1>

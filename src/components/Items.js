@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/no-direct-mutation-state */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable prefer-destructuring */
@@ -17,6 +18,7 @@ import axios from 'axios';
 import {
   FaTwitter, FaFacebookF, FaPinterestP,
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './items.css';
 
 class Items extends React.Component {
@@ -120,7 +122,9 @@ class Items extends React.Component {
         <div className="utopian-items">
           <p>
             {/* <strong>Image </strong> */}
-            <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
+            <Link to={`/model/${workingdata[i].id}`}>
+              <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
+            </Link>
           </p>
           {/* <p>
             <strong>Id </strong>
