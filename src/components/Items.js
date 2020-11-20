@@ -14,6 +14,9 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
+import {
+  FaTwitter, FaFacebookF, FaPinterestP,
+} from 'react-icons/fa';
 import './items.css';
 
 class Items extends React.Component {
@@ -119,36 +122,42 @@ class Items extends React.Component {
             {/* <strong>Image </strong> */}
             <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
           </p>
-          <p>
+          {/* <p>
             <strong>Id </strong>
             {workingdata[i].id}
             {console.log(workingdata[i].id)}
-          </p>
+          </p> */}
           <p>
-            <strong>Name </strong>
+            {/* <strong>Name </strong> */}
             {workingdata[i].name}
             {console.log(workingdata[i].id)}
           </p>
-          <p>
+          {/* <p>
             <strong>Model </strong>
             {workingdata[i].model}
-          </p>
-          <p>
+          </p> */}
+          {/* <p>
             <strong>Reviews </strong>
             {workingdata[i].reviews}
-          </p>
-          <p>
+          </p> */}
+          <p>Descrption, remember to create an extra column</p>
+          {/* <p>
             <strong>Price </strong>
             {workingdata[i].price}
-          </p>
+          </p> */}
+          <div className="footer">
+            <FaTwitter className="icons" />
+            <FaFacebookF className="icons" />
+            <FaPinterestP className="icons" />
+          </div>
         </div>
       ))) : (<div>Loading</div>);
 
     return (
       <div className="itemsContainer">
-        <button onClick={this.handleChangeLeft}>Click left</button>
+        <button onClick={this.handleChangeLeft}>left</button>
         {display}
-        <button onClick={this.handleChangeRight}>Click right</button>
+        <button onClick={this.handleChangeRight}>right</button>
       </div>
     );
   }

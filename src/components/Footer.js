@@ -16,7 +16,7 @@ class Footer extends React.Component {
           <FaPinterestP className="icons" />
           <FaWhatsapp className="icons" />
         </div>
-        <p className="copyright">@2020 Hillary K.O - FIVA</p>
+        <p className="copyright">@2020 Hillary</p>
       </div>
     );
   }

@@ -8,9 +8,9 @@
 
 .itemsImg {
   background-color: blue;
-  padding: 1em;
+  padding: 0.5em;
   height: auto;
-  margin: 1em;
-  width: 100px;
-  border-radius: 50%;
+  margin: 0.5em;
+  width: 90px;
+  /* border-radius: 50%; */
 }
