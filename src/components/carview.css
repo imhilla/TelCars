@@ -1,0 +1,27 @@
+.carviewContainer {
+  display: flex;
+}
+
+.carveiw {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+.carim img {
+  width: 130%;
+  padding-top: 30vh;
+  margin: auto;
+}
+
+.loading {
+  text-align: center;
+  margin: auto;
+  padding: 20em 0 0 15em;
+}
+
+.cardetails {
+  padding-top: 30vh;
+  padding-left: 20vw;
+}

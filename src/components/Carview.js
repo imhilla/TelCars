@@ -11,6 +11,7 @@ import axios from 'axios';
 import Logo from './Logo';
 import Footer from './Footer';
 import NavBar from './Navbar';
+import './carview.css';
 
 class Carview extends React.Component {
   constructor(props) {
@@ -24,10 +25,8 @@ class Carview extends React.Component {
     const { match } = this.props;
     const { params } = match;
     const id = params.model_id;
-    // console.log(id);
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
-        // console.log(response.data);
         response.data.map((value, index) => {
           if (value.id === parseInt(id, 10)) {
             this.setState({
@@ -40,19 +39,19 @@ class Carview extends React.Component {
   }
 
   render() {
-    const img = this.state.car.id === undefined ? (<div>Loading</div>) : (
+    const img = this.state.car.id === undefined ? (<div className="loading">Loading</div>) : (
       <img
-        className="itemsImg"
+        className="itemimage"
         src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${this.state.car.id}.webp`}
       />
     );
     const display = this.state.car !== undefined
       ? (
-        <div>
-          <div>
+        <div className="carveiw">
+          <div className="carim">
             {img}
           </div>
-          <div>
+          <div className="cardetails">
             <p>{this.state.car.name}</p>
             <p>{this.state.car.reviews}</p>
             <p>{this.state.car.model}</p>
@@ -61,18 +60,16 @@ class Carview extends React.Component {
 
         </div>
       )
-      : (<div>Loading</div>);
+      : (<div className="loading">Loading</div>);
 
     return (
-      <div>
+      <div className="carviewContainer">
         <div className="homeContainer">
           <Logo className="logoo" />
           <NavBar className="mynav" />
           <Footer className="footerr" />
         </div>
-        <div className="descriptionContainer">
-          <h1>LATEST 2020 CAR MODELS</h1>
-          <h2>Please select our top lates cars of choice</h2>
+        <div>
           {display}
         </div>
         <div />
