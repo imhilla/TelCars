@@ -48,7 +48,6 @@ class Items extends React.Component {
                 workingdata: fill,
               });
             }
-            return fill;
           });
         });
         this.setState({
@@ -63,7 +62,7 @@ class Items extends React.Component {
       threeData = [];
     }
     const threeIndex = this.state.threeIndex;
-    if (threeIndex[0] >= 1) {
+    if (threeIndex[0] >= 2) {
       threeIndex[0] -= 1;
       threeIndex[1] -= 1;
       threeIndex[2] -= 1;
@@ -121,8 +120,14 @@ class Items extends React.Component {
             <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
           </p>
           <p>
+            <strong>Id </strong>
+            {workingdata[i].id}
+            {console.log(workingdata[i].id)}
+          </p>
+          <p>
             <strong>Name </strong>
             {workingdata[i].name}
+            {console.log(workingdata[i].id)}
           </p>
           <p>
             <strong>Model </strong>
