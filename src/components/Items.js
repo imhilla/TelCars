@@ -126,11 +126,11 @@ class Items extends React.Component {
               <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
             </Link>
           </p>
-          {/* <p>
+          <p>
             <strong>Id </strong>
             {workingdata[i].id}
             {console.log(workingdata[i].id)}
-          </p> */}
+          </p>
           <p>
             {/* <strong>Name </strong> */}
             {workingdata[i].name}
