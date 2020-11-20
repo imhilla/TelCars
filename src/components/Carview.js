@@ -40,12 +40,17 @@ class Carview extends React.Component {
   }
 
   render() {
-    // console.log(this.state.car);
+    const img = this.state.car.id === undefined ? (<div>Loading</div>) : (
+      <img
+        className="itemsImg"
+        src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${this.state.car.id}.webp`}
+      />
+    );
     const display = this.state.car !== undefined
       ? (
         <div>
           <div>
-            <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${this.state.car.id}.webp`} />
+            {img}
           </div>
           <div>
             <p>{this.state.car.name}</p>
