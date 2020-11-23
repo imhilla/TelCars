@@ -13,12 +13,14 @@ class Book extends React.Component {
     super(props);
     this.state = {
       user: '',
+      user_id: '',
     };
   }
 
   componentDidMount() {
     this.setState({
       user: this.props.user,
+      user_id: this.props.user_id,
     });
   }
 
@@ -31,7 +33,7 @@ class Book extends React.Component {
           <Footer />
         </div>
         <div>
-          <Appointment user={this.state.user} />
+          <Appointment user={this.state.user} user_id={this.state.user_id} />
         </div>
       </div>
     );
