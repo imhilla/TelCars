@@ -28,11 +28,14 @@ export default function Appointment() {
     <option value={item}>{item}</option>
   ));
 
-  console.log(models);
-  const allModels = [];
+  const allModels = ['All MODELS'];
   models.map((value, index) => {
-    console.log(value.model);
+    allModels.push(value.model);
   });
+  console.log(allModels);
+  const renderModels = allModels.map(item => (
+    <option value={item}>{item}</option>
+  ));
 
   return (
     <div className="appointmentContainer">
@@ -54,9 +57,9 @@ export default function Appointment() {
           // id="inputGroupSelect01"
           // value={filter}
           // onChange={handleFilterChange}
-          className="locations"
+          className="models"
         >
-          {renderLocation}
+          {renderModels}
         </select>
         <select
           // id="inputGroupSelect01"
