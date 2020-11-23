@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable arrow-parens */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
@@ -28,6 +29,10 @@ export default function Appointment() {
   ));
 
   console.log(models);
+  const allModels = [];
+  models.map((value, index) => {
+    console.log(value.model);
+  });
 
   return (
     <div className="appointmentContainer">
