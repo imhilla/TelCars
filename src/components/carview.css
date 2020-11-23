@@ -10,9 +10,10 @@
 }
 
 .carim img {
-  width: 130%;
+  width: 100%;
   padding-top: 30vh;
   margin: auto;
+  padding-left: 1em;
 }
 
 .loading {
@@ -23,5 +24,21 @@
 
 .cardetails {
   padding-top: 30vh;
-  padding-left: 20vw;
+  padding-left: 10vw;
+  background-color: green;
+}
+
+.carname {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.total {
+  font-size: 10px;
+}
+
+.payable {
+  font-size: 10px;
+  font-weight: bold;
 }

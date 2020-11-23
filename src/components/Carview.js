@@ -8,6 +8,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import Footer from './Footer';
 import NavBar from './Navbar';
@@ -52,12 +53,21 @@ class Carview extends React.Component {
             {img}
           </div>
           <div className="cardetails">
-            <p>{this.state.car.name}</p>
+            <p className="carname">
+              {this.state.car.name}
+            </p>
             <p>{this.state.car.reviews}</p>
             <p>{this.state.car.model}</p>
-            <p>{this.state.car.price}</p>
+            <div>
+              <p className="total">Total amount payable</p>
+              <p className="payable">{this.state.car.price}</p>
+            </div>
+            <div>
+              <Link to="/book">
+                Book
+              </Link>
+            </div>
           </div>
-
         </div>
       )
       : (<div className="loading">Loading</div>);

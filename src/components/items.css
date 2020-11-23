@@ -1,4 +1,4 @@
-.itemsContainer {
+ .itemsContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -7,10 +7,8 @@
 }
 
 .itemsImg {
-  background-color: blue;
   padding: 0.5em;
   height: auto;
   margin: 0.5em;
-  width: 90px;
-  /* border-radius: 50%; */
+  width: 100px;
 }
