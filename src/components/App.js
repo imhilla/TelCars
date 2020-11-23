@@ -118,6 +118,7 @@ class App extends React.Component {
                   render={props => (
                     <Book
                       {...props}
+                      user={this.state.user}
                     />
                   )}
                 />

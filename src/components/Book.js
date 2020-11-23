@@ -6,7 +6,15 @@ import NavBar from './Navbar';
 import Appointment from './Appointment';
 
 class Book extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div className="home">
         <div className="homeContainer">
