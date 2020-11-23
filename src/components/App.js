@@ -34,6 +34,7 @@ class App extends React.Component {
     this.state = {
       loggedInStatus: 'NOT_LOGGED_IN',
       user: {},
+      user_id: '',
     };
     this.handleLogin = this.handleLogin.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
@@ -45,11 +46,13 @@ class App extends React.Component {
         this.setState({
           loggedInStatus: 'LOGGED_IN',
           user: response.data.user,
+          user_id: response.data.user_id,
         });
       } else if (!response.data.logged_in && this.state.loggedInStatus === 'LOGGED_IN') {
         this.setState({
           loggedInStatus: 'NOT_LOGGED_IN',
           user: {},
+          user_id: '',
         });
       }
     }).catch(error => {
@@ -119,6 +122,7 @@ class App extends React.Component {
                     <Book
                       {...props}
                       user={this.state.user}
+                      user_id={this.state.user_id}
                     />
                   )}
                 />
