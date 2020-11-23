@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unused-state */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import Footer from './Footer';
@@ -9,12 +12,17 @@ class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      user: '',
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      user: this.props.user,
+    });
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div className="home">
         <div className="homeContainer">
@@ -23,7 +31,7 @@ class Book extends React.Component {
           <Footer />
         </div>
         <div>
-          <Appointment />
+          <Appointment user={this.state.user} />
         </div>
       </div>
     );

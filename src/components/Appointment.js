@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable array-callback-return */
 /* eslint-disable arrow-parens */
 /* eslint-disable react/destructuring-assignment */
@@ -9,7 +10,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './appointment.css';
 
-export default function Appointment() {
+export default function Appointment({ user }) {
   let [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   let [location, setLocation] = useState('');
@@ -50,7 +51,7 @@ export default function Appointment() {
   };
 
   const handleSubmission = () => {
-    console.log(model, location);
+    console.log(model, location, user.username);
   };
 
   return (
