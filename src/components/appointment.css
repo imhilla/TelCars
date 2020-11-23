@@ -7,3 +7,28 @@
 .appointmentcontent {
   width: 70%;
 }
+
+.booksection {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 2em;
+}
+
+.models {
+  border-radius: 5px;
+  padding: 5px 10px;
+  /* border-color: white; */
+}
+
+.locations {
+  border-radius: 5px;
+  padding: 5px 10px;
+  /* border-color: white; */
+}
+
+.appbutton {
+  border-radius: 5px;
+  padding: 5px 10px;
+  /* border-color: white; */
+}

@@ -10,7 +10,7 @@ import axios from 'axios';
 import './appointment.css';
 
 export default function Appointment() {
-  let [models, setModels] = useState([]);
+  let [models, model, location, setLocation, setModel, setModels] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,10 +32,22 @@ export default function Appointment() {
   models.map((value, index) => {
     allModels.push(value.model);
   });
-  console.log(allModels);
+
   const renderModels = allModels.map(item => (
     <option value={item}>{item}</option>
   ));
+
+  const handleModelChange = e => {
+    const model = e.target.value;
+    console.log(model);
+    // changeFilter(filter);
+  };
+
+  const handleLocationChange = e => {
+    const location = e.target.value;
+    console.log(location);
+    // changeFilter(filter);
+  };
 
   return (
     <div className="appointmentContainer">
@@ -52,11 +64,11 @@ export default function Appointment() {
           Fusce eget ipsum vitae tortor sollicitudin rutrum
         </p>
       </div>
-      <div>
+      <div className="booksection">
         <select
           // id="inputGroupSelect01"
           // value={filter}
-          // onChange={handleFilterChange}
+          onChange={handleModelChange}
           className="models"
         >
           {renderModels}
@@ -64,12 +76,12 @@ export default function Appointment() {
         <select
           // id="inputGroupSelect01"
           // value={filter}
-          // onChange={handleFilterChange}
+          onChange={handleLocationChange}
           className="locations"
         >
           {renderLocation}
         </select>
-        <button>
+        <button className="appbutton">
           Book now
         </button>
       </div>
