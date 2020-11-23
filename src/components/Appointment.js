@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable react/prop-types */
 /* eslint-disable array-callback-return */
 /* eslint-disable arrow-parens */
@@ -41,17 +42,39 @@ export default function Appointment({ user }) {
   ));
 
   const handleModelChange = e => {
-    const mymodel = e.target.value;
-    setModel(mymodel);
+    model = e.target.value;
+    setModel(model);
   };
 
   const handleLocationChange = e => {
     const mylocation = e.target.value;
     setLocation(mylocation);
   };
+  console.log(model);
 
-  const handleSubmission = () => {
+  const handleSubmission = (event) => {
+    const { username } = user;
+    const mymodel = model;
+    const date = '11/23/2020';
+    const city = location;
     console.log(model, location, user.username);
+    axios.post('http://localhost:3001/appointments', {
+      appointment: {
+        username,
+        model: mymodel,
+        date,
+        city,
+      },
+    }, { withCredentials: true })
+      .then(response => {
+        // if (response.data.status === 'created') {
+        //   this.handleSuccessfulAuth(response.data);
+        // }
+        console.log(response);
+      }).catch(error => {
+        console.log('registration', error);
+      });
+    event.preventDefault();
   };
 
   return (
