@@ -1,0 +1,9 @@
+.appointmentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointmentcontent {
+  width: 70%;
+}

@@ -8,7 +8,7 @@ import Appointment from './Appointment';
 class Book extends React.Component {
   render() {
     return (
-      <div>
+      <div className="home">
         <div className="homeContainer">
           <Logo />
           <NavBar />
