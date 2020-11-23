@@ -10,7 +10,9 @@ import axios from 'axios';
 import './appointment.css';
 
 export default function Appointment() {
-  let [models, model, location, setLocation, setModel, setModels] = useState([]);
+  let [models, setModels] = useState([]);
+  let [model, setModel] = useState('');
+  let [location, setLocation] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,15 +40,17 @@ export default function Appointment() {
   ));
 
   const handleModelChange = e => {
-    const model = e.target.value;
-    console.log(model);
-    // changeFilter(filter);
+    const mymodel = e.target.value;
+    setModel(mymodel);
   };
 
   const handleLocationChange = e => {
-    const location = e.target.value;
-    console.log(location);
-    // changeFilter(filter);
+    const mylocation = e.target.value;
+    setLocation(mylocation);
+  };
+
+  const handleSubmission = () => {
+    console.log(model, location);
   };
 
   return (
@@ -81,7 +85,7 @@ export default function Appointment() {
         >
           {renderLocation}
         </select>
-        <button className="appbutton">
+        <button className="appbutton" onClick={handleSubmission}>
           Book now
         </button>
       </div>
