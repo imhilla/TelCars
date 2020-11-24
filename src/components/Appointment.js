@@ -11,7 +11,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './appointment.css';
 
-export default function Appointment({ user }) {
+export default function Appointment({ user, userId }) {
   let [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   let [location, setLocation] = useState('');
@@ -50,20 +50,20 @@ export default function Appointment({ user }) {
     const mylocation = e.target.value;
     setLocation(mylocation);
   };
-  console.log(model);
 
   const handleSubmission = (event) => {
     const { username } = user;
     const mymodel = model;
     const date = '11/23/2020';
     const city = location;
-    console.log(model, location, user.username);
+    const myuserId = userId;
     axios.post('http://localhost:3001/appointments', {
       appointment: {
         username,
         model: mymodel,
         date,
         city,
+        userId: myuserId,
       },
     }, { withCredentials: true })
       .then(response => {

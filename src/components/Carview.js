@@ -63,7 +63,12 @@ class Carview extends React.Component {
               <p className="payable">{this.state.car.price}</p>
             </div>
             <div>
-              <Link to="/book">
+              <Link
+                to={{
+                  pathname: '/book',
+                  state: { fromDashboard: true },
+                }}
+              >
                 Book
               </Link>
             </div>

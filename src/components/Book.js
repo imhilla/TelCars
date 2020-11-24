@@ -33,7 +33,7 @@ class Book extends React.Component {
           <Footer />
         </div>
         <div>
-          <Appointment user={this.state.user} user_id={this.state.user_id} />
+          <Appointment user={this.state.user} userId={this.state.user_id} />
         </div>
       </div>
     );
