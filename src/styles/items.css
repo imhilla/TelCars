@@ -7,10 +7,8 @@
 }
 
  .itemsImg {
-  padding: 0.5em;
   height: auto;
-  margin: 0.5em;
-  width: 100px;
+  width: 140px;
 } 
 
 .teslanames {
@@ -19,7 +17,9 @@
 }
 
 .utopian-items {
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .leftbutton {
@@ -44,4 +44,31 @@
 
 .leftbutton:hover, .rightbutton:hover {
   outline: none;
+}
+
+.teslanames {
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+.itemdescrption {
+  font-size: 12px;
+  padding: 3px;
+  color: gray;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
+
+.itemContainer {
+  position: relative;
+}
+
+.backgroundc {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  top: 30;
+  z-index: -1;
 }

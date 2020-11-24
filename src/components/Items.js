@@ -120,16 +120,18 @@ class Items extends React.Component {
     const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
-          <p>
+          <div className="itemContainer">
             {/* <strong>Image </strong> */}
+            <div className="backgroundc" />
             <Link to={`/model/${workingdata[i].id}`}>
               <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
             </Link>
-          </p>
+          </div>
           <p className="teslanames">
             {workingdata[i].name}
           </p>
-          <p>Descrption, remember to create an extra column</p>
+          <div className="dots">............</div>
+          <p className="itemdescrption">Descrption, remember to create an extra column</p>
           <div className="footer">
             <FaTwitter className="icons" />
             <FaFacebookF className="icons" />
