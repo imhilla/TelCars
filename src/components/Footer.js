@@ -9,7 +9,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div>
-        <div className="footer">
+        <div className="footerr">
           <FaTwitter className="icons" />
           <FaFacebookF className="icons" />
           <FaGooglePlusG className="icons" />

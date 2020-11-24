@@ -1,5 +1,6 @@
-/* .footer {
+.footerr {
   color: gray;
+  padding-top: 30vh;
 }
 
 .icons {
@@ -7,6 +8,11 @@
   margin: 3px;
 }
 
+.footer {
+  color: gray;
+}
+
+
 .copyright {
   font-size: 10px;
-} */
+}
