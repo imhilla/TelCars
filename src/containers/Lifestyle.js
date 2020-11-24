@@ -3,9 +3,9 @@
 import React from 'react';
 import teslaWhite from '../images/itemimages/teslawhite.webp';
 import teslay from '../images/itemimages/teslay.webp';
-import Footer from './Footer';
-import Logo from './Logo';
-import NavBar from './Navbar';
+import Footer from '../components/Footer';
+import Logo from '../components/Logo';
+import NavBar from '../components/Navbar';
 
 class Life extends React.Component {
   render() {

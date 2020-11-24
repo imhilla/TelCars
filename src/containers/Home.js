@@ -12,11 +12,11 @@ import {
   Route,
 } from 'react-router-dom';
 import axios from 'axios';
-import NavBar from './Navbar';
+import NavBar from '../components/Navbar';
 import '../styles/home.css';
-import Logo from './Logo';
-import Footer from './Footer';
-import Items from './Items';
+import Logo from '../components/Logo';
+import Footer from '../components/Footer';
+import Items from '../components/Items';
 // import Login from './auth/Login';
 // import Logout from './auth/Logout';
 // import Registration from './auth/Registration';

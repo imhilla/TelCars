@@ -25,7 +25,7 @@ import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
 import Life from './Lifestyle';
-import Shop from './Shop';
+import Shop from '../containers/Shop';
 import Book from './Book';
 
 class App extends React.Component {

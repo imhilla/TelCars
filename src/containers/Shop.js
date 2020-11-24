@@ -3,9 +3,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Footer from './Footer';
-import Logo from './Logo';
-import NavBar from './Navbar';
+import Footer from '../components/Footer';
+import Logo from '../components/Logo';
+import NavBar from '../components/Navbar';
 import '../styles/shop.css';
 
 export default function Shop() {

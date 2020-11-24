@@ -3,10 +3,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import Footer from './Footer';
-import Logo from './Logo';
-import NavBar from './Navbar';
-import Appointment from './Appointment';
+import Footer from '../components/Footer';
+import Logo from '../components/Logo';
+import NavBar from '../components/Navbar';
+import Appointment from '../components/Appointment';
 
 class Book extends React.Component {
   constructor(props) {
