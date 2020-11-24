@@ -116,13 +116,14 @@ class Items extends React.Component {
 
   render() {
     const { workingdata, threeIndex } = this.state;
+    const colorArray = ['wheat', ' rgb(59, 59, 92)', 'rgb(23, 23, 119)'];
     const myitems = Object.keys(workingdata);
     const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <div className="itemContainer">
             {/* <strong>Image </strong> */}
-            <div className="backgroundc" />
+            <div className="backgroundc" style={{ backgroundColor: `${colorArray[i]}` }} />
             <Link to={`/model/${workingdata[i].id}`}>
               <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
             </Link>

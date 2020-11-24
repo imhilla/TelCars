@@ -64,11 +64,12 @@
 }
 
 .backgroundc {
-  height: 100px;
-  width: 100px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
-  background-color: blue;
+  /* background-color: blue; */
   position: absolute;
-  top: 30;
+  top: -10%;
+  left: 15%;
   z-index: -1;
 }
