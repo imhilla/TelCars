@@ -27,6 +27,11 @@ export default function Shop() {
     cars.map((value, index) => (
       <div>
         <p>{console.log(value)}</p>
+        <img
+          className="itemsImg"
+          alt="none"
+          src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${index + 1}.webp`}
+        />
         <p>{value.name}</p>
         <p>{value.model}</p>
         <p>{value.price}</p>
