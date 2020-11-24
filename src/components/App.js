@@ -18,15 +18,15 @@ import {
   useParams,
 } from 'react-router-dom';
 import axios from 'axios';
-import Home from './Home';
+import Home from '../containers/Home';
 import Dashboard from './Dashboard';
 import Carview from './Carview';
 import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
-import Life from './Lifestyle';
+import Life from '../containers/Lifestyle';
 import Shop from '../containers/Shop';
-import Book from './Book';
+import Book from '../containers/Book';
 
 class App extends React.Component {
   constructor(props) {
