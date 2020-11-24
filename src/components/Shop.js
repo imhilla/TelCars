@@ -22,11 +22,9 @@ export default function Shop() {
     fetchData();
   }, []);
 
-  // console.log(cars.length);
   const renderCars = cars.length !== 0 ? (
     cars.map((value, index) => (
       <div>
-        <p>{console.log(value)}</p>
         <img
           className="itemsImg"
           alt="none"
