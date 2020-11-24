@@ -1,4 +1,4 @@
-.appointmentContainer {
+/* .appointmentContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,17 +18,14 @@
 .models {
   border-radius: 5px;
   padding: 5px 10px;
-  /* border-color: white; */
 }
 
 .locations {
   border-radius: 5px;
   padding: 5px 10px;
-  /* border-color: white; */
 }
 
 .appbutton {
   border-radius: 5px;
   padding: 5px 10px;
-  /* border-color: white; */
-}
+} */

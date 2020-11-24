@@ -16,7 +16,7 @@
 import React from 'react';
 import axios from 'axios';
 import {
-  FaTwitter, FaFacebookF, FaPinterestP,
+  FaTwitter, FaFacebookF, FaPinterestP, FaAngleLeft, FaAngleRight,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '../styles/items.css';
@@ -126,29 +126,10 @@ class Items extends React.Component {
               <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
             </Link>
           </p>
-          <p>
-            <strong>Id </strong>
-            {workingdata[i].id}
-            {console.log(workingdata[i].id)}
-          </p>
-          <p>
-            {/* <strong>Name </strong> */}
+          <p className="teslanames">
             {workingdata[i].name}
-            {console.log(workingdata[i].id)}
           </p>
-          {/* <p>
-            <strong>Model </strong>
-            {workingdata[i].model}
-          </p> */}
-          {/* <p>
-            <strong>Reviews </strong>
-            {workingdata[i].reviews}
-          </p> */}
           <p>Descrption, remember to create an extra column</p>
-          {/* <p>
-            <strong>Price </strong>
-            {workingdata[i].price}
-          </p> */}
           <div className="footer">
             <FaTwitter className="icons" />
             <FaFacebookF className="icons" />
@@ -159,9 +140,18 @@ class Items extends React.Component {
 
     return (
       <div className="itemsContainer">
-        <button onClick={this.handleChangeLeft}>left</button>
+        <button
+          className="leftbutton"
+          onClick={this.handleChangeLeft}
+        >
+          <FaAngleLeft />
+        </button>
         {display}
-        <button onClick={this.handleChangeRight}>right</button>
+        <button
+          onClick={this.handleChangeRight}
+        >
+          <FaAngleRight />
+        </button>
       </div>
     );
   }
