@@ -19,7 +19,7 @@ import {
   FaTwitter, FaFacebookF, FaPinterestP,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import './items.css';
+import '../styles/items.css';
 
 class Items extends React.Component {
   constructor(props) {

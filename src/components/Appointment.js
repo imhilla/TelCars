@@ -9,7 +9,7 @@
 /* eslint-disable react/jsx-key */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './appointment.css';
+import '../styles/appointment.css';
 
 export default function Appointment({ user, userId }) {
   let [models, setModels] = useState([]);

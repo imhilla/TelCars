@@ -1,6 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import './footer.css';
+import '../styles/footer.css';
 import {
   FaTwitter, FaFacebookF, FaGooglePlusG, FaPinterestP, FaWhatsapp,
 } from 'react-icons/fa';

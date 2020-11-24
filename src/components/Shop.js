@@ -6,7 +6,7 @@ import axios from 'axios';
 import Footer from './Footer';
 import Logo from './Logo';
 import NavBar from './Navbar';
-import './shop.css';
+import '../styles/shop.css';
 
 export default function Shop() {
   const [cars, setCars] = useState([]);

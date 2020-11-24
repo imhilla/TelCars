@@ -11,7 +11,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import './welcome.css';
+import '../styles/welcome.css';
 import Welcome1 from '../images/welcome1.jpg';
 import Welcome2 from '../images/welcome2.jpg';
 import Welcome3 from '../images/welcome3.jpg';

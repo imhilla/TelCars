@@ -36,6 +36,52 @@ class Life extends React.Component {
             alt="empty"
           />
         </div>
+        <div>
+          <div className="videoContainer">
+            <iframe
+              width="200"
+              height="auto"
+              src="https://www.youtube.com/embed/A5PIgmXGIdI"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <img
+            src={teslaWhite}
+            alt="empty"
+          />
+          <div className="videoContainer">
+            <iframe
+              width="200"
+              height="auto"
+              src="https://www.youtube.com/embed/A5PIgmXGIdI"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+        <div>
+          <img
+            src={teslaWhite}
+            alt="empty"
+          />
+          <div className="videoContainer">
+            <iframe
+              width="200"
+              height="auto"
+              src="https://www.youtube.com/embed/A5PIgmXGIdI"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <img
+            src={teslay}
+            alt="empty"
+          />
+        </div>
       </div>
     );
   }

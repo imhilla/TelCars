@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import Footer from './Footer';
 import NavBar from './Navbar';
-import './carview.css';
+import '../styles/carview.css';
 
 class Carview extends React.Component {
   constructor(props) {

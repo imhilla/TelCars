@@ -13,7 +13,7 @@ import {
 } from 'react-router-dom';
 import axios from 'axios';
 import NavBar from './Navbar';
-import './home.css';
+import '../styles/home.css';
 import Logo from './Logo';
 import Footer from './Footer';
 import Items from './Items';

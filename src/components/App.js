@@ -8,7 +8,7 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
 import {
   BrowserRouter as Router,
   Switch,
