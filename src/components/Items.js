@@ -148,6 +148,7 @@ class Items extends React.Component {
         </button>
         {display}
         <button
+          className="rightbutton"
           onClick={this.handleChangeRight}
         >
           <FaAngleRight />
