@@ -50,8 +50,9 @@ class Home extends React.Component {
           <Footer />
         </div>
         <div className="descriptionContainer">
-          <h1>LATEST 2020 CAR MODELS</h1>
+          <h1>LATEST CAR MODELS</h1>
           <h2>Best 2020 Electric Cars for Mileage Range</h2>
+          <div className="dots">.................</div>
           <Items />
           {/* <Logout /> */}
         </div>

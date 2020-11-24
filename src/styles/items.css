@@ -3,19 +3,23 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 80%;
+  height: 100%;
 }
 
-.itemsImg {
+ .itemsImg {
   padding: 0.5em;
   height: auto;
   margin: 0.5em;
   width: 100px;
-}
+} 
 
 .teslanames {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.utopian-items {
+  background-color: red;
 }
 
 .leftbutton {
