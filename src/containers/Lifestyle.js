@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import '../styles/lifestyle.css';
 import teslaWhite from '../images/itemimages/teslawhite.webp';
 import teslay from '../images/itemimages/teslay.webp';
 import Footer from '../components/Footer';
@@ -16,14 +17,15 @@ class Life extends React.Component {
           <NavBar />
           <Footer />
         </div>
-        <div>
+        <div className="lifestyleContainer">
           <img
             src={teslaWhite}
             alt="empty"
+            className="lifeimg"
           />
           <div className="videoContainer">
             <iframe
-              width="200"
+              width="160"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -34,12 +36,11 @@ class Life extends React.Component {
           <img
             src={teslay}
             alt="empty"
+            className="lifeimg"
           />
-        </div>
-        <div>
           <div className="videoContainer">
             <iframe
-              width="200"
+              width="160"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -50,10 +51,11 @@ class Life extends React.Component {
           <img
             src={teslaWhite}
             alt="empty"
+            className="lifeimg"
           />
           <div className="videoContainer">
             <iframe
-              width="200"
+              width="160"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -61,15 +63,14 @@ class Life extends React.Component {
               allowFullScreen
             />
           </div>
-        </div>
-        <div>
           <img
             src={teslaWhite}
             alt="empty"
+            className="lifeimg"
           />
           <div className="videoContainer">
             <iframe
-              width="200"
+              width="160"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -80,6 +81,7 @@ class Life extends React.Component {
           <img
             src={teslay}
             alt="empty"
+            className="lifeimg"
           />
         </div>
       </div>
