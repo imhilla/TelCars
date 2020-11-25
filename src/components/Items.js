@@ -118,7 +118,6 @@ class Items extends React.Component {
   }
 
   backColor(index) {
-    console.log(index);
     return this.state.colorArray[index - 1];
   }
 
