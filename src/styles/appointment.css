@@ -28,4 +28,7 @@
 .appbutton {
   border-radius: 5px;
   padding: 5px 10px;
+  background-color: blue;
+  border: none;
+  color: white;
 } 
