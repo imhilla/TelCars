@@ -7,7 +7,6 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
-  background-color: red;
 }
 
 .carim img {
@@ -23,7 +22,6 @@
 .cardetails {
   padding-top: 50vh;
   padding: 5vw;
-  background-color: green;
 }
 
 .carname {
@@ -43,6 +41,8 @@
 .reviewsContainer {
   display: flex;
   font-size: 12px;
+  background-color: rgb(142, 255, 142);
+  padding: 5px 10px;
 }
 
 .reviewsContainer p {
@@ -51,10 +51,14 @@
 
 .modelContainer {
   font-size: 12px;
+  background-color: rgb(231, 231, 231);
+  padding: 5px 10px;
 }
 
 .total {
   font-size: 12px;
+  background-color: rgb(142, 255, 142);
+  padding: 5px 10px;
 }
 
 .buttonbook {
