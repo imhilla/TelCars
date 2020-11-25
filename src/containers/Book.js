@@ -32,9 +32,7 @@ class Book extends React.Component {
           <NavBar />
           <Footer />
         </div>
-        <div>
-          <Appointment user={this.state.user} userId={this.state.user_id} />
-        </div>
+        <Appointment user={this.state.user} userId={this.state.user_id} />
       </div>
     );
   }
