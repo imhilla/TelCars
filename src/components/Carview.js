@@ -56,11 +56,20 @@ class Carview extends React.Component {
             <p className="carname">
               {this.state.car.name}
             </p>
-            <p>{this.state.car.reviews}</p>
-            <p>{this.state.car.model}</p>
+            <p className="upon">$3000 deposit upon purchase</p>
+            <p className="reviewsContainer">
+              Reviews:
+              {this.state.car.reviews}
+            </p>
+            <p className="modelContainer">
+              Model:
+              {this.state.car.model}
+            </p>
             <div>
-              <p className="total">Total amount payable</p>
-              <p className="payable">{this.state.car.price}</p>
+              <p className="total">
+                Total amount payable
+                {this.state.car.price}
+              </p>
             </div>
             <div>
               <Link
@@ -68,6 +77,7 @@ class Carview extends React.Component {
                   pathname: '/book',
                   state: { fromDashboard: true },
                 }}
+                className="buttonbook"
               >
                 Book
               </Link>
@@ -84,9 +94,7 @@ class Carview extends React.Component {
           <NavBar className="mynav" />
           <Footer className="footerr" />
         </div>
-        <div>
-          {display}
-        </div>
+        {display}
         <div />
       </div>
     );

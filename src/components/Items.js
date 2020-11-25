@@ -30,7 +30,7 @@ class Items extends React.Component {
       newData: [],
       threeIndex: [],
       workingdata: [],
-      colorArray: ['wheat', 'wheat', ' rgb(59, 59, 92)', 'rgb(23, 23, 119)', 'rgb(23, 23, 119)', 'wheat'],
+      colorArray: ['wheat', 'wheat', ' rgb(59, 59, 92)', 'rgb(23, 23, 119)', 'rgb(59, 59, 119)', 'wheat'],
     };
     this.handleChangeLeft = this.handleChangeLeft.bind(this);
     this.handleChangeRight = this.handleChangeRight.bind(this);
