@@ -62,16 +62,16 @@ class Carview extends React.Component {
             </p>
             <p className="upon">$3000 deposit upon purchase</p>
             <p className="reviewsContainer">
-              Reviews:
+              Reviews:&nbsp;
               {this.state.car.reviews}
             </p>
             <p className="modelContainer">
-              Model:
+              Model:&nbsp;
               {this.state.car.model}
             </p>
             <div>
               <p className="total">
-                Total amount payable
+                Total amount payable&nbsp;
                 {this.state.car.price}
               </p>
             </div>
