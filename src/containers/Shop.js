@@ -27,6 +27,7 @@ export default function Shop() {
       <div className="shopitems">
         <img
           className="itemsImg"
+          id="itemsimage"
           alt="none"
           src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${index + 1}.webp`}
         />
