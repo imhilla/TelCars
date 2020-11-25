@@ -25,7 +25,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
-              width="160"
+              width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -40,7 +40,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
-              width="160"
+              width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -55,7 +55,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
-              width="160"
+              width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
@@ -70,7 +70,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
-              width="160"
+              width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
               frameBorder="0"
