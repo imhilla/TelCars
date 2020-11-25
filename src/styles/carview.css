@@ -71,4 +71,26 @@
 
 .configure {
   margin-top: 2em;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background-color: rgb(78, 194, 78);
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.rightfa {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.regsum {
+  padding: 3px;
+}
+
+.config {
+  padding: 3px;
 }

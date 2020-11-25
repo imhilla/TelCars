@@ -87,9 +87,9 @@ class Carview extends React.Component {
               </Link>
             </div>
             <button className="configure">
-              <FaRegSun />
-              Configure
-              <FaAngleRight />
+              <FaRegSun className="regsum" />
+              <div className="config">Configure</div>
+              <FaAngleRight className="rightfa" />
             </button>
           </div>
         </div>
