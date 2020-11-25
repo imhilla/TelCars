@@ -128,10 +128,8 @@ class Items extends React.Component {
       ? (myitems.map((post, i) => (
         <div className="utopian-items">
           <div className="itemContainer">
-            {/* <strong>Image </strong> */}
             <div className="backgroundc" style={{ backgroundColor: `${this.backColor(threeIndex[0] + i)}` }} />
             <Link to={`/model/${workingdata[i].id}`}>
-              {/* {console.log(threeIndex[0] + i)} */}
               <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
             </Link>
           </div>

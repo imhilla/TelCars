@@ -79,7 +79,12 @@ export default function Appointment({ user, userId }) {
 
   return (
     <div className="appointmentContainer">
-      <h1>Book a ride</h1>
+      <h1>
+        B&nbsp;&nbsp; o &nbsp;&nbsp;o&nbsp;&nbsp; k&nbsp;&nbsp; &nbsp;&nbsp;a
+        &nbsp;&nbsp;&nbsp;&nbsp;t &nbsp;&nbsp;e&nbsp;&nbsp;
+        s&nbsp;&nbsp; t &nbsp;-&nbsp; r&nbsp;&nbsp; i&nbsp;&nbsp; d&nbsp;&nbsp; e
+      </h1>
+      <div className="hardline" />
       <div className="appointmentcontent">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dapibus elit id tortor

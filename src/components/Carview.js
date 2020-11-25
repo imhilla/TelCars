@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/jsx-no-undef */
@@ -9,6 +10,9 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import {
+  FaRegSun, FaAngleRight,
+} from 'react-icons/fa';
 import Logo from './Logo';
 import Footer from './Footer';
 import NavBar from './Navbar';
@@ -82,6 +86,11 @@ class Carview extends React.Component {
                 Book
               </Link>
             </div>
+            <button className="configure">
+              <FaRegSun />
+              Configure
+              <FaAngleRight />
+            </button>
           </div>
         </div>
       )
