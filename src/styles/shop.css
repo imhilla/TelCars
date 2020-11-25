@@ -1,9 +1,21 @@
-/* .shopcars {
-  display: flex;
-  justify-content: center;
+.shopcars {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+  grid-gap: 10px;
 }
 
-.videoContainer {
-  height: auto;
-  width: 100px;
-} */
+.shopitems {
+}
+
+.shopname {
+}
+
+.shopmodel {
+}
+
+.shopprice {
+}
+.shopreview {
+}

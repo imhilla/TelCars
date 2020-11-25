@@ -24,16 +24,16 @@ export default function Shop() {
 
   const renderCars = cars.length !== 0 ? (
     cars.map((value, index) => (
-      <div>
+      <div className="shopitems">
         <img
           className="itemsImg"
           alt="none"
           src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${index + 1}.webp`}
         />
-        <p>{value.name}</p>
-        <p>{value.model}</p>
-        <p>{value.price}</p>
-        <p>{value.review}</p>
+        <p className="shopname">{value.name}</p>
+        <p className="shopmodel">{value.model}</p>
+        <p className="shopprice">{value.price}</p>
+        <p className="shopreview">{value.review}</p>
       </div>
     ))
   ) : (<div>Loading</div>);
