@@ -30,10 +30,14 @@ export default function Shop() {
           alt="none"
           src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${index + 1}.webp`}
         />
-        <p className="shopname">{value.name}</p>
         <p className="shopmodel">{value.model}</p>
-        <p className="shopprice">{value.price}</p>
         <p className="shopreview">{value.review}</p>
+        <div>
+          <p className="price">Price range</p>
+          <p className="shopprice">
+            {value.price}
+          </p>
+        </div>
       </div>
     ))
   ) : (<div>Loading</div>);

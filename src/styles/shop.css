@@ -6,16 +6,22 @@
   grid-gap: 10px;
 }
 
-.shopitems {
-}
-
-.shopname {
+.itemsImg {
+  background-color: gray;
 }
 
 .shopmodel {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
 }
 
 .shopprice {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
-.shopreview {
+
+.price {
+  color: gray;
+  font-family: 'Roboto', sans-serif;
 }
