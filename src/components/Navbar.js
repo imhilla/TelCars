@@ -18,7 +18,7 @@ class NavBar extends React.Component {
           to="/"
           // className="Nav_link"
           activeClassName="activeRoute"
-          activeStyle={{ backgroundColor: 'red' }}
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
           className="lii"
         >
           HOME
@@ -27,7 +27,7 @@ class NavBar extends React.Component {
         <NavLink
           to="/lifestyle"
           activeClassName="activeRoute"
-          activeStyle={{ backgroundColor: 'red' }}
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
           className="lii"
         >
           LIFESTYLE
@@ -37,7 +37,7 @@ class NavBar extends React.Component {
           to="/shop"
           className="lii"
           activeClassName="activeRoute"
-          activeStyle={{ backgroundColor: 'red' }}
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
         >
           SHOP
         </NavLink>
@@ -46,7 +46,7 @@ class NavBar extends React.Component {
           to="/book"
           className="lii"
           activeClassName="activeRoute"
-          activeStyle={{ backgroundColor: 'red' }}
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
         >
           BOOK
         </NavLink>
