@@ -1,8 +1,7 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import NavBar from '../components/Navbar';
@@ -24,7 +23,10 @@ export default function Shop() {
 
   const renderCars = cars.length !== 0 ? (
     cars.map((value, index) => (
-      <div className="shopitems">
+      <div
+        key={uuidv4()}
+        className="shopitems"
+      >
         <img
           className="itemsImg"
           id="itemsimage"
