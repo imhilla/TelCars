@@ -1,10 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable camelcase */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 class Login extends React.Component {
@@ -13,7 +9,6 @@ class Login extends React.Component {
     this.state = {
       email: '',
       password: '',
-      loginErrors: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -27,8 +22,9 @@ class Login extends React.Component {
   }
 
   handleSuccessfulAuth(data) {
-    this.props.handleLogin(data);
-    this.props.history.push('/');
+    const { handleLogin, history } = this.props;
+    handleLogin(data);
+    history.push('/');
   }
 
   handleSubmit(event) {
@@ -63,4 +59,14 @@ class Login extends React.Component {
     );
   }
 }
+
+Login.propTypes = {
+  handleLogin: PropTypes.func,
+  history: PropTypes.string,
+};
+
+Login.defaultProps = {
+  handleLogin: {},
+  history: '',
+};
 export default Login;
