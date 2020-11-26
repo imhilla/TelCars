@@ -1,16 +1,9 @@
 /* eslint-disable class-methods-use-this */
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prop-types */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   FaRegSun, FaAngleRight,
 } from 'react-icons/fa';
@@ -34,7 +27,7 @@ class Carview extends React.Component {
     const id = params.model_id;
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
-        response.data.map((value, index) => {
+        response.data.map(value => {
           if (value.id === parseInt(id, 10)) {
             this.setState({
               car: value,
@@ -46,17 +39,20 @@ class Carview extends React.Component {
   }
 
   handleChange() {
-    this.props.history.push('/configure');
+    const { history } = this.props;
+    history.push('/configure');
   }
 
   render() {
-    const img = this.state.car.id === undefined ? (<div className="loading">Loading</div>) : (
+    const { car } = this.state;
+    const img = car.id === undefined ? (<div className="loading">Loading</div>) : (
       <img
+        alt="img"
         className="itemimage"
-        src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${this.state.car.id}.webp`}
+        src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${car.id}.webp`}
       />
     );
-    const display = this.state.car !== undefined
+    const display = car !== undefined
       ? (
         <div className="carveiw">
           <div className="carim">
@@ -64,21 +60,21 @@ class Carview extends React.Component {
           </div>
           <div className="cardetails">
             <p className="carname">
-              {this.state.car.name}
+              {car.name}
             </p>
             <p className="upon">$3000 deposit upon purchase</p>
             <p className="reviewsContainer">
               Reviews:&nbsp;
-              {this.state.car.reviews}
+              {car.reviews}
             </p>
             <p className="modelContainer">
               Model:&nbsp;
-              {this.state.car.model}
+              {car.model}
             </p>
             <div>
               <p className="total">
                 Total amount payable&nbsp;
-                {this.state.car.price}
+                {car.price}
               </p>
             </div>
             <div>
@@ -93,6 +89,7 @@ class Carview extends React.Component {
               </Link>
             </div>
             <button
+              type="button"
               onClick={this.handleChange}
               className="configure"
             >
@@ -118,4 +115,18 @@ class Carview extends React.Component {
     );
   }
 }
+
+Carview.propTypes = {
+  match: PropTypes.func,
+  params: PropTypes.string,
+  model_id: PropTypes.string,
+  history: PropTypes.string,
+};
+
+Carview.defaultProps = {
+  match: {},
+  params: '',
+  model_id: 1,
+  history: '',
+};
 export default Carview;

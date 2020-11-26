@@ -1,5 +1,5 @@
+/* eslint-disable prefer-const */
 /* eslint-disable array-callback-return */
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/button-has-type */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -9,7 +9,6 @@ import '../styles/appointment.css';
 
 export default function Appointment({ user, userId }) {
   const [models, setModels] = useState([]);
-  // eslint-disable-next-line prefer-const
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
 
@@ -30,7 +29,7 @@ export default function Appointment({ user, userId }) {
   ));
 
   const allModels = ['All MODELS'];
-  models.map((value, index) => {
+  models.map(value => {
     allModels.push(value.model);
   });
 
