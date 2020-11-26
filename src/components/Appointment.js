@@ -65,15 +65,7 @@ export default function Appointment({ user, userId }) {
         city,
         userId: myuserId,
       },
-    }, { withCredentials: true })
-      .then(response => {
-        // if (response.data.status === 'created') {
-        //   this.handleSuccessfulAuth(response.data);
-        // }
-        console.log(response);
-      }).catch(error => {
-        console.log('registration', error);
-      });
+    }, { withCredentials: true });
     event.preventDefault();
   };
 

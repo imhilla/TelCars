@@ -46,12 +46,10 @@ class Configure extends React.Component {
 
   handleLogin() {
     this.props.history.push('/login');
-    console.log('hello');
   }
 
   handleRegistration() {
     this.props.history.push('/signup');
-    console.log('me');
   }
 
   updateColor() {

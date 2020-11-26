@@ -56,8 +56,6 @@ class App extends React.Component {
           user_id: '',
         });
       }
-    }).catch(error => {
-      console.log(error);
     });
   }
 
