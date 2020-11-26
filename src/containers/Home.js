@@ -1,25 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/order */
-/* eslint-disable react/button-has-type */
-/* eslint-disable no-useless-constructor */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import {
-  Route,
-} from 'react-router-dom';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import NavBar from '../components/Navbar';
 import '../styles/home.css';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
 import Items from '../components/Items';
-// import Login from './auth/Login';
 import Logout from '../components/auth/Logout';
-// import Registration from './auth/Registration';
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,13 +18,15 @@ class Home extends React.Component {
   }
 
   handleSuccessfulAuth(data) {
-    this.props.handleLogin(data);
-    this.props.history.push('/dashboard');
+    const { handleLogin, history } = this.props;
+    handleLogin(data);
+    history.push('/dashboard');
   }
 
   handleLogoutClick() {
+    const { handleLogout } = this.props;
     axios.delete('http://localhost:3001/logout', { withCredentials: true });
-    this.props.handleLogout();
+    handleLogout();
   }
 
   render() {
@@ -44,8 +35,8 @@ class Home extends React.Component {
         <div className="homeContainer">
           <Logo />
           <NavBar />
-          <Footer />
           <Logout />
+          <Footer />
         </div>
         <div className="descriptionContainer">
           <h1>LATEST CAR MODELS</h1>
@@ -58,4 +49,16 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.propTypes = {
+  handleLogout: PropTypes.func,
+  handleLogin: PropTypes.func,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
+Home.defaultProps = {
+  handleLogout: () => { },
+  handleLogin: () => { },
+};
+
 export default Home;

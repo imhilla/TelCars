@@ -1,8 +1,7 @@
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
+/* eslint-disable camelcase */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import NavBar from '../components/Navbar';
@@ -18,13 +17,15 @@ class Book extends React.Component {
   }
 
   componentDidMount() {
+    const { user, user_id } = this.props;
     this.setState({
-      user: this.props.user,
-      user_id: this.props.user_id,
+      user,
+      user_id,
     });
   }
 
   render() {
+    const { user, user_id } = this.state;
     return (
       <div className="home">
         <div className="homeContainer">
@@ -32,9 +33,15 @@ class Book extends React.Component {
           <NavBar />
           <Footer />
         </div>
-        <Appointment user={this.state.user} userId={this.state.user_id} />
+        <Appointment user={user} userId={user_id} />
       </div>
     );
   }
 }
+
+Book.propTypes = {
+  user: PropTypes.objectOf(PropTypes.any).isRequired,
+  user_id: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
 export default Book;
