@@ -1,9 +1,4 @@
-/* eslint-disable react/no-unused-state */
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/button-has-type */
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
@@ -11,6 +6,8 @@ import '../styles/configure.css';
 import {
   FaRegSun, FaAngleRight,
 } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import Welcome1 from '../images/welcome1.jpg';
 import Welcome2 from '../images/welcome2.jpg';
 import Welcome3 from '../images/welcome3.jpg';
@@ -31,7 +28,6 @@ class Configure extends React.Component {
     this.state = {
       transparent: 'transparent',
       white: 'white',
-      interval: false,
       oneArray: [0],
     };
     this.updateColor = this.updateColor.bind(this);
@@ -45,11 +41,13 @@ class Configure extends React.Component {
   }
 
   handleLogin() {
-    this.props.history.push('/login');
+    const { history } = this.props;
+    history.push('/login');
   }
 
   handleRegistration() {
-    this.props.history.push('/signup');
+    const { history } = this.props;
+    history.push('/signup');
   }
 
   updateColor() {
@@ -72,13 +70,15 @@ class Configure extends React.Component {
   render() {
     const intervalNumbers = [0, 1, 2, 3, 4, 5];
     const oneArray = this.state;
+    const { white, transparent } = this.state;
     const circle = (
       intervalNumbers.map((value, index) => {
         const change = oneArray.oneArray[0];
         return (
           <div
+            key={uuidv4()}
             className="default"
-            style={change === index ? { backgroundColor: `${this.state.white}` } : { backgroundColor: `${this.state.transparent}` }}
+            style={change === index ? { backgroundColor: `${white}` } : { backgroundColor: `${transparent}` }}
           />
         );
       })
@@ -91,7 +91,7 @@ class Configure extends React.Component {
           <div className="second" />
         </button>
         <div className="loginRegister">
-          <button className="configure">
+          <button type="button" className="configure">
             <FaRegSun className="regsum" />
             <div className="config">Configure</div>
             <FaAngleRight className="rightfa" />
@@ -136,4 +136,12 @@ class Configure extends React.Component {
     );
   }
 }
+
+Configure.propTypes = {
+  history: PropTypes.string,
+};
+
+Configure.defaultProps = {
+  history: '',
+};
 export default Configure;
