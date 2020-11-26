@@ -1,6 +1,4 @@
 /* eslint-disable prefer-const */
-/* eslint-disable array-callback-return */
-/* eslint-disable react/button-has-type */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -29,7 +27,7 @@ export default function Appointment({ user, userId }) {
   ));
 
   const allModels = ['All MODELS'];
-  models.map(value => {
+  models.forEach(value => {
     allModels.push(value.model);
   });
 
@@ -103,7 +101,7 @@ export default function Appointment({ user, userId }) {
         >
           {renderLocation}
         </select>
-        <button className="appbutton" onClick={handleSubmission}>
+        <button type="button" className="appbutton" onClick={handleSubmission}>
           Book now
         </button>
       </div>
