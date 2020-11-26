@@ -1,25 +1,18 @@
+/* eslint-disable camelcase */
 /* eslint-disable react/prop-types */
 /* eslint-disable class-methods-use-this */
-/* eslint-disable react/sort-comp */
 /* eslint-disable react/no-unused-state */
-/* eslint-disable max-len */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prefer-stateless-function */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams,
 } from 'react-router-dom';
 import axios from 'axios';
 import Home from '../containers/Home';
-import Dashboard from './Dashboard';
 import Carview from './Carview';
 import Welcome from './Welcome';
 import Login from './auth/Login';
@@ -41,24 +34,6 @@ class App extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
-  checkLoginStatus() {
-    axios.get('http://localhost:3001/logged_in', { withCredentials: true }).then(response => {
-      if (response.data.logged_in && this.state.loggedInStatus === 'NOT_LOGGED_IN') {
-        this.setState({
-          loggedInStatus: 'LOGGED_IN',
-          user: response.data.user,
-          user_id: response.data.user_id,
-        });
-      } else if (!response.data.logged_in && this.state.loggedInStatus === 'LOGGED_IN') {
-        this.setState({
-          loggedInStatus: 'NOT_LOGGED_IN',
-          user: {},
-          user_id: '',
-        });
-      }
-    });
-  }
-
   componentDidMount() {
     this.checkLoginStatus();
   }
@@ -77,12 +52,32 @@ class App extends React.Component {
     });
   }
 
+  checkLoginStatus() {
+    const { loggedInStatus } = this.state;
+    axios.get('http://localhost:3001/logged_in', { withCredentials: true }).then(response => {
+      if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
+        this.setState({
+          loggedInStatus: 'LOGGED_IN',
+          user: response.data.user,
+          user_id: response.data.user_id,
+        });
+      } else if (!response.data.logged_in && loggedInStatus === 'LOGGED_IN') {
+        this.setState({
+          loggedInStatus: 'NOT_LOGGED_IN',
+          user: {},
+          user_id: '',
+        });
+      }
+    });
+  }
+
   render() {
+    const { loggedInStatus, user, user_id } = this.state;
     return (
       <div className="App">
         <Router>
           {
-            this.state.loggedInStatus === 'LOGGED_IN' ? (
+            loggedInStatus === 'LOGGED_IN' ? (
               <Switch>
                 <Route
                   exact
@@ -90,7 +85,7 @@ class App extends React.Component {
                   render={props => (
                     <Home
                       {...props}
-                      loggedInStatus={this.state.loggedInStatus}
+                      loggedInStatus={loggedInStatus}
                       handleLogin={this.handleLogin}
                       handleLogout={this.handleLogout}
                     />
@@ -120,8 +115,8 @@ class App extends React.Component {
                   render={props => (
                     <Book
                       {...props}
-                      user={this.state.user}
-                      user_id={this.state.user_id}
+                      user={user}
+                      user_id={user_id}
                     />
                   )}
                 />
@@ -144,7 +139,7 @@ class App extends React.Component {
                   render={props => (
                     <Welcome
                       {...props}
-                      loggedInStatus={this.state.loggedInStatus}
+                      loggedInStatus={loggedInStatus}
                       handleLogin={this.handleLogin}
                       handleLogout={this.handleLogout}
                     />
@@ -156,7 +151,7 @@ class App extends React.Component {
                   render={props => (
                     <Registration
                       {...props}
-                      loggedInStatus={this.state.loggedInStatus}
+                      loggedInStatus={loggedInStatus}
                       handleLogin={this.handleLogin}
                       handleLogout={this.handleLogout}
                     />
@@ -168,7 +163,7 @@ class App extends React.Component {
                   render={props => (
                     <Login
                       {...props}
-                      loggedInStatus={this.state.loggedInStatus}
+                      loggedInStatus={loggedInStatus}
                       handleLogin={this.handleLogin}
                       handleLogout={this.handleLogout}
                     />
