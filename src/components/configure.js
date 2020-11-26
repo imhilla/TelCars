@@ -87,7 +87,7 @@ class Configure extends React.Component {
     );
 
     return (
-      <div>
+      <div className="wholec">
         <button type="button" className="hello">
           <div className="first" />
           <div className="second" />

@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-key */
@@ -24,6 +25,7 @@ class Carview extends React.Component {
     this.state = {
       car: [],
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +43,11 @@ class Carview extends React.Component {
           return value;
         });
       });
+  }
+
+  handleChange() {
+    this.props.history.push('/configure');
+    console.log('yes');
   }
 
   render() {
@@ -86,7 +93,10 @@ class Carview extends React.Component {
                 Book
               </Link>
             </div>
-            <button className="configure">
+            <button
+              onClick={this.handleChange}
+              className="configure"
+            >
               <FaRegSun className="regsum" />
               <div className="config">Configure</div>
               <FaAngleRight className="rightfa" />
