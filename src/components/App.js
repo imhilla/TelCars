@@ -25,6 +25,7 @@ import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
 import Life from '../containers/Lifestyle';
+import Configure from './Configure';
 import Shop from '../containers/Shop';
 import Book from '../containers/Book';
 
@@ -129,6 +130,11 @@ class App extends React.Component {
                 <Route
                   path="/model/:model_id"
                   component={Carview}
+                />
+                <Route
+                  exact
+                  path="/configure"
+                  component={Configure}
                 />
 
               </Switch>
