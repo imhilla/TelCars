@@ -1,11 +1,8 @@
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable camelcase */
 /* eslint-disable class-methods-use-this */
-/* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import './registration.css';
 
@@ -17,7 +14,6 @@ class Registration extends React.Component {
       password: '',
       password_confirmation: '',
       username: '',
-      registrationErrors: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -32,12 +28,14 @@ class Registration extends React.Component {
   }
 
   handleLogin() {
-    this.props.history.push('/login');
+    const { history } = this.props;
+    history.push('/login');
   }
 
   handleSuccessfulAuth(data) {
-    this.props.handleLogin(data);
-    this.props.history.push('/welcome');
+    const { handleLogin, history } = this.props;
+    handleLogin(data);
+    history.push('/welcome');
   }
 
   handleSubmit(event) {
@@ -69,7 +67,7 @@ class Registration extends React.Component {
         <div className="welcomeBack">
           <h1>Welcome back!</h1>
           <p>To keep connected with us, please log in with your personal info</p>
-          <button onClick={this.handleLogin}>LOG IN</button>
+          <button type="button" onClick={this.handleLogin}>LOG IN</button>
         </div>
         <div className="formContainer">
           <div className="createAccount">
@@ -87,4 +85,14 @@ class Registration extends React.Component {
     );
   }
 }
+
+Registration.propTypes = {
+  handleLogin: PropTypes.func,
+  history: PropTypes.string,
+};
+
+Registration.defaultProps = {
+  handleLogin: {},
+  history: '',
+};
 export default Registration;
