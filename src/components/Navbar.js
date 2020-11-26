@@ -1,8 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import { withRouter } from 'react-router';
@@ -16,7 +11,6 @@ class NavBar extends React.Component {
         <NavLink
           exact
           to="/"
-          // className="Nav_link"
           activeClassName="activeRoute"
           activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
           className="lii"
