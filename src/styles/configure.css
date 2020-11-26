@@ -4,6 +4,7 @@
   justify-content: center;
   background-size: cover;
   height: 100vh;
+  background-position: center;
 }
 
 .each-slide span {
