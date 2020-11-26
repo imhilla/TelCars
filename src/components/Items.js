@@ -4,21 +4,14 @@
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable prefer-const */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable class-methods-use-this */
-/* eslint-disable react/button-has-type */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable react/jsx-key */
-/* eslint-disable array-callback-return */
-/* eslint-disable no-unused-vars */
-/* eslint-disable lines-between-class-members */
-/* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import axios from 'axios';
 import {
   FaTwitter, FaFacebookF, FaPinterestP, FaAngleLeft, FaAngleRight,
 } from 'react-icons/fa';
+import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import '../styles/items.css';
 
@@ -38,18 +31,19 @@ class Items extends React.Component {
   }
 
   componentDidMount() {
+    const { threeIndex } = this.state;
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
         let middle = Math.floor(response.data.length / 2);
         const first = middle;
         middle += 1;
         const last = middle + 1;
-        this.state.threeIndex.push(first);
-        this.state.threeIndex.push(middle);
-        this.state.threeIndex.push(last);
+        threeIndex.push(first);
+        threeIndex.push(middle);
+        threeIndex.push(last);
         let fill = [];
-        response.data.map((value, index) => {
-          this.state.threeIndex.map((val, ind) => {
+        response.data.forEach((value, index) => {
+          threeIndex.forEach(val => {
             if (index + 1 === val) {
               fill.push(value);
               this.setState({
@@ -65,20 +59,20 @@ class Items extends React.Component {
   }
 
   handleChangeLeft() {
-    let threeData = this.state.newData;
+    const { newData, threeIndex } = this.state;
+    let threeData = newData;
     if (threeData.length === 3) {
       threeData = [];
     }
-    const threeIndex = this.state.threeIndex;
     if (threeIndex[0] >= 2) {
       threeIndex[0] -= 1;
       threeIndex[1] -= 1;
       threeIndex[2] -= 1;
     }
-    const newdata = this.state.data;
-    newdata.map((value, index) => {
-      threeIndex.map((val, ind) => {
-        let workingdata = this.state.workingdata;
+    const { data } = this.state;
+    data.forEach((value, index) => {
+      threeIndex.forEach((val, ind) => {
+        let { workingdata } = this.state;
         if (index === val - 1) {
           workingdata[ind] = value;
         }
@@ -91,21 +85,16 @@ class Items extends React.Component {
   }
 
   handleChangeRight() {
-    const wholeArray = this.state.data;
-    const mylength = wholeArray.length;
-    let half = mylength / 2;
-    half = Math.floor(half);
-    const threeIndex = this.state.threeIndex;
+    const { threeIndex, data, workingdata } = this.state;
+    const mylength = data.length;
     const limit = mylength;
     if (threeIndex[0] <= limit - 3) {
       threeIndex[0] += 1;
       threeIndex[1] += 1;
       threeIndex[2] += 1;
     }
-    const newdata = this.state.data;
-    newdata.map((value, index) => {
-      threeIndex.map((val, ind) => {
-        const workingdata = this.state.workingdata;
+    data.forEach((value, index) => {
+      threeIndex.forEach((val, ind) => {
         if (index + 1 === val) {
           workingdata[ind] = value;
         }
@@ -118,7 +107,8 @@ class Items extends React.Component {
   }
 
   backColor(index) {
-    return this.state.colorArray[index - 1];
+    const { colorArray } = this.state;
+    return colorArray[index - 1];
   }
 
   render() {
@@ -126,11 +116,11 @@ class Items extends React.Component {
     const myitems = Object.keys(workingdata);
     const display = workingdata.length !== 0
       ? (myitems.map((post, i) => (
-        <div className="utopian-items">
+        <div key={uuidv4()} className="utopian-items">
           <div className="itemContainer">
             <div className="backgroundc" style={{ backgroundColor: `${this.backColor(threeIndex[0] + i)}` }} />
             <Link to={`/model/${workingdata[i].id}`}>
-              <img className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
+              <img alt="img" className="itemsImg" src={`https://res.cloudinary.com/dhxgtfnci/image/upload//hospital/tesla${threeIndex[0] + i}.webp`} />
             </Link>
           </div>
           <p className="teslanames">
@@ -149,6 +139,7 @@ class Items extends React.Component {
     return (
       <div className="itemsContainer">
         <button
+          type="button"
           className="leftbutton"
           onClick={this.handleChangeLeft}
         >
@@ -156,6 +147,7 @@ class Items extends React.Component {
         </button>
         {display}
         <button
+          type="button"
           className="rightbutton"
           onClick={this.handleChangeRight}
         >
