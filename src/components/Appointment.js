@@ -1,20 +1,17 @@
-/* eslint-disable no-use-before-define */
-/* eslint-disable react/prop-types */
 /* eslint-disable array-callback-return */
-/* eslint-disable arrow-parens */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
-/* eslint-disable prefer-const */
 /* eslint-disable react/button-has-type */
-/* eslint-disable react/jsx-key */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import '../styles/appointment.css';
 
 export default function Appointment({ user, userId }) {
-  let [models, setModels] = useState([]);
+  const [models, setModels] = useState([]);
+  // eslint-disable-next-line prefer-const
   let [model, setModel] = useState('');
-  let [location, setLocation] = useState('');
+  const [location, setLocation] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +26,7 @@ export default function Appointment({ user, userId }) {
   const locations = ['LOCATIONS', 'Nairobi', 'Kisumu', 'Mombasa', 'Eldoret', 'Kiambu', 'Migori', 'Isiolo'];
 
   const renderLocation = locations.map(item => (
-    <option value={item}>{item}</option>
+    <option key={uuidv4()} value={item}>{item}</option>
   ));
 
   const allModels = ['All MODELS'];
@@ -38,7 +35,12 @@ export default function Appointment({ user, userId }) {
   });
 
   const renderModels = allModels.map(item => (
-    <option value={item}>{item}</option>
+    <option
+      key={uuidv4()}
+      value={item}
+    >
+      {item}
+    </option>
   ));
 
   const handleModelChange = e => {
@@ -51,7 +53,7 @@ export default function Appointment({ user, userId }) {
     setLocation(mylocation);
   };
 
-  const handleSubmission = (event) => {
+  const handleSubmission = event => {
     const { username } = user;
     const mymodel = model;
     const date = '11/23/2020';
@@ -109,3 +111,13 @@ export default function Appointment({ user, userId }) {
     </div>
   );
 }
+
+Appointment.propTypes = {
+  user: PropTypes.string,
+  userId: PropTypes.string,
+};
+
+Appointment.defaultProps = {
+  userId: 18,
+  user: '',
+};

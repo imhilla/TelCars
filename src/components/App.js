@@ -1,7 +1,4 @@
 /* eslint-disable camelcase */
-/* eslint-disable react/prop-types */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable react/no-unused-state */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
