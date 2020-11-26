@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
@@ -36,7 +35,6 @@ class Configure extends React.Component {
   }
 
   componentDidMount() {
-    const { color } = this.state;
     setInterval(this.updateColor, 6000);
   }
 
