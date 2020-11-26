@@ -47,7 +47,6 @@ class Carview extends React.Component {
 
   handleChange() {
     this.props.history.push('/configure');
-    console.log('yes');
   }
 
   render() {

@@ -90,16 +90,9 @@ class Welcome extends React.Component {
 
     return (
       <div>
-        <button type="button" className="hello">
-          <div className="first" />
-          <div className="second" />
-        </button>
         <div className="loginRegister">
           <button onClick={this.handleLogin} className="login">LOGIN</button>
           <button onClick={this.handleRegistration} className="register">SIGN UP</button>
-        </div>
-        <div className="search">
-          <img src={Search} alt="" className="simage" />
         </div>
         <div className="circlebody">
           {circle}
@@ -108,27 +101,27 @@ class Welcome extends React.Component {
           <Slide>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[0]})` }}>
-                <span>SAFE HEAVEN HOSPITAL</span>
+                <span style={{ color: 'white' }}>T E L C A R S</span>
               </div>
             </div>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[1]})` }}>
-                <span>Slide 2</span>
+                <span style={{ color: 'white' }}>2020 Tesla Model Y</span>
               </div>
             </div>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[2]})` }}>
-                <span>Slide 3</span>
+                <span style={{ color: 'white' }}>2020 Tesla Model X</span>
               </div>
             </div>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[3]})` }}>
-                <span>Slide 3</span>
+                <span style={{ color: 'white' }}>2020 Hyundai Kona EV</span>
               </div>
             </div>
             <div className="each-slide">
               <div style={{ backgroundImage: `url(${slideImages[4]})` }}>
-                <span>Slide 3</span>
+                <span style={{ color: 'white' }}>2020 Nissan LEAF</span>
               </div>
             </div>
           </Slide>

@@ -18,7 +18,7 @@ import Logo from '../components/Logo';
 import Footer from '../components/Footer';
 import Items from '../components/Items';
 // import Login from './auth/Login';
-// import Logout from './auth/Logout';
+import Logout from '../components/auth/Logout';
 // import Registration from './auth/Registration';
 
 class Home extends React.Component {
@@ -48,13 +48,13 @@ class Home extends React.Component {
           <Logo />
           <NavBar />
           <Footer />
+          <Logout />
         </div>
         <div className="descriptionContainer">
           <h1>LATEST CAR MODELS</h1>
           <h2>Best 2020 Electric Cars for Mileage Range</h2>
           <div className="dots">.................</div>
           <Items />
-          {/* <Logout /> */}
         </div>
         <div />
       </div>
