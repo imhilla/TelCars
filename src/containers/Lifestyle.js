@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import '../styles/lifestyle.css';
@@ -25,6 +24,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
+              title="Vedio"
               width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
@@ -40,6 +40,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
+              title="Vedio"
               width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
@@ -55,6 +56,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
+              title="Vedio"
               width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
@@ -70,6 +72,7 @@ class Life extends React.Component {
           />
           <div className="videoContainer">
             <iframe
+              title="Vedio"
               width="180"
               height="auto"
               src="https://www.youtube.com/embed/A5PIgmXGIdI"
