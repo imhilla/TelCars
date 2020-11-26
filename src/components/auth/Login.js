@@ -24,7 +24,6 @@ class Login extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
-    console.log(this.state);
   }
 
   handleSuccessfulAuth(data) {
@@ -42,11 +41,8 @@ class Login extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
-          console.log(this.props);
           this.handleSuccessfulAuth(response.data);
         }
-      }).catch(error => {
-        console.log('registration', error);
       });
     event.preventDefault();
   }

@@ -9,19 +9,11 @@ class Logout extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    // this.handleLogout = this.handleLogout.bind(this);
   }
 
-  // handleLogout() {
-  //   this.props.history.push('/');
-  // }
-
   handleLogoutClick() {
-    axios.delete('http://localhost:3001/logout', { withCredentials: true })
-      .then(error => {
-        console.log('logout errors', error);
-      });
-    // this.handleLogout();
+    axios.delete('http://localhost:3001/logout', { withCredentials: true });
+    window.location.reload(false);
   }
 
   render() {
