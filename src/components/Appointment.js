@@ -99,16 +99,12 @@ export default function Appointment({ user, userId }) {
       </div>
       <div className="booksection">
         <select
-          // id="inputGroupSelect01"
-          // value={filter}
           onChange={handleModelChange}
           className="models"
         >
           {renderModels}
         </select>
         <select
-          // id="inputGroupSelect01"
-          // value={filter}
           onChange={handleLocationChange}
           className="locations"
         >

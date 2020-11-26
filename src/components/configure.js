@@ -8,6 +8,9 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import '../styles/configure.css';
+import {
+  FaRegSun, FaAngleRight,
+} from 'react-icons/fa';
 import Welcome1 from '../images/welcome1.jpg';
 import Welcome2 from '../images/welcome2.jpg';
 import Welcome3 from '../images/welcome3.jpg';
@@ -90,8 +93,11 @@ class Configure extends React.Component {
           <div className="second" />
         </button>
         <div className="loginRegister">
-          <button onClick={this.handleLogin} className="login">LOGIN</button>
-          <button onClick={this.handleRegistration} className="register">SIGN UP</button>
+          <button className="configure">
+            <FaRegSun className="regsum" />
+            <div className="config">Configure</div>
+            <FaAngleRight className="rightfa" />
+          </button>
         </div>
         <div className="search">
           <img src={Search} alt="" className="simage" />
@@ -102,28 +108,28 @@ class Configure extends React.Component {
         <div className="slide-container">
           <Slide>
             <div className="each-slide">
-              <div style={{ backgroundImage: `url(${slideImages[0]})` }}>
-                <span>SAFE HEAVEN HOSPITAL</span>
+              <div className="conffont" style={{ backgroundImage: `url(${slideImages[0]})` }}>
+                <span style={{ color: 'white' }}>2020 Tesla Model Y</span>
               </div>
             </div>
             <div className="each-slide">
-              <div style={{ backgroundImage: `url(${slideImages[1]})` }}>
-                <span>Slide 2</span>
+              <div className="conffont" style={{ backgroundImage: `url(${slideImages[1]})` }}>
+                <span style={{ color: 'white' }}>2020 Tesla Model X</span>
               </div>
             </div>
             <div className="each-slide">
-              <div style={{ backgroundImage: `url(${slideImages[2]})` }}>
-                <span>Slide 3</span>
+              <div className="conffont" style={{ backgroundImage: `url(${slideImages[2]})` }}>
+                <span style={{ color: 'white' }}>2020 Hyundai Kona EV</span>
               </div>
             </div>
             <div className="each-slide">
-              <div style={{ backgroundImage: `url(${slideImages[3]})` }}>
-                <span>Slide 3</span>
+              <div className="conffont" style={{ backgroundImage: `url(${slideImages[3]})` }}>
+                <span style={{ color: 'white' }}>2020 Nissan LEAF</span>
               </div>
             </div>
             <div className="each-slide">
-              <div style={{ backgroundImage: `url(${slideImages[4]})` }}>
-                <span>Slide 3</span>
+              <div className="conffont" style={{ backgroundImage: `url(${slideImages[4]})` }}>
+                <span style={{ color: 'white' }}>2020 Toyota I-PACE</span>
               </div>
             </div>
           </Slide>

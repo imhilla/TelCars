@@ -114,3 +114,7 @@
 .register:hover {
   outline: none;
 }
+
+.conffont {
+  font-size: 10px;
+}
