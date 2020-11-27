@@ -10,14 +10,14 @@ module.exports = function (app) {
 
   app.use(
     proxy('sessions', {
-      target: 'https://infinite-ocean-27248.herokuapp.com/',
+      target: 'https://infinite-ocean-27248.herokuapp.com',
       changeOrigin: true,
     }),
   );
 
   app.use(
     proxy('logged_in', {
-      target: 'https://infinite-ocean-27248.herokuapp.com/',
+      target: 'https://infinite-ocean-27248.herokuapp.com',
       changeOrigin: true,
     }),
   );
