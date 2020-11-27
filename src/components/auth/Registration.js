@@ -59,6 +59,8 @@ class Registration extends React.Component {
         if (response.data.status === 'created') {
           this.handleSuccessfulAuth(response.data);
         }
+      }).catch(errors => {
+        console.log(errors);
       });
     event.preventDefault();
   }
