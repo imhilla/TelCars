@@ -29,23 +29,16 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
-    axios.post('/sessions', {
+    axios.post('https://infinite-ocean-27248.herokuapp.com/sessions', {
       user: {
         email,
         password,
       },
-    }, {
-      withCredentials: true,
-      headers: {
-        'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json',
-      },
-    })
+    }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
           this.handleSuccessfulAuth(response.data);
         }
-      }).catch(errors => {
-        console.log(errors);
       });
     event.preventDefault();
   }
