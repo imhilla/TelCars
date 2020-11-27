@@ -51,8 +51,8 @@ class Registration extends React.Component {
         username,
       },
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
