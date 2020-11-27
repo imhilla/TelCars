@@ -51,7 +51,7 @@ class App extends React.Component {
 
   checkLoginStatus() {
     const { loggedInStatus } = this.state;
-    axios.get('http://localhost:3001/logged_in', { withCredentials: true }).then(response => {
+    axios.get('https://infinite-ocean-27248.herokuapp.com/logged_in', { withCredentials: true }).then(response => {
       if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
         this.setState({
           loggedInStatus: 'LOGGED_IN',
