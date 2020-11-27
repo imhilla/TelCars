@@ -37,6 +37,7 @@ class Login extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
+          console.log('created');
           this.handleSuccessfulAuth(response.data);
         }
       });
