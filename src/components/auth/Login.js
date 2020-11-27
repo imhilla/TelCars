@@ -34,7 +34,12 @@ class Login extends React.Component {
         email,
         password,
       },
-    }, { withCredentials: true })
+    }, {
+      withCredentials: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json',
+      },
+    })
       .then(response => {
         if (response.data.status === 'created') {
           this.handleSuccessfulAuth(response.data);
