@@ -23,7 +23,7 @@ module.exports = function (app) {
   );
 
   app.use(
-    proxy('items', {
+    proxy('appointments', {
       target: 'https://infinite-ocean-27248.herokuapp.com',
       changeOrigin: true,
     }),
