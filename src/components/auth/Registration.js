@@ -42,10 +42,6 @@ class Registration extends React.Component {
     const {
       email, password, password_confirmation, username,
     } = this.state;
-    const headers = {
-      'Content-Type': 'application/json',
-      Authorization: 'JWT fefege...',
-    };
     axios.post('/registrations', {
       user: {
         email,
@@ -53,7 +49,6 @@ class Registration extends React.Component {
         password_confirmation,
         username,
       },
-      headers,
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
