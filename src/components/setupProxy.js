@@ -21,4 +21,11 @@ module.exports = function (app) {
       changeOrigin: true,
     }),
   );
+
+  app.use(
+    proxy('items', {
+      target: 'https://infinite-ocean-27248.herokuapp.com',
+      changeOrigin: true,
+    }),
+  );
 };
