@@ -8,4 +8,12 @@ module.exports = function (app) {
       changeOrigin: true,
     }),
   );
+
+  app.use(
+    proxy('sessions', {
+      target: 'https://infinite-ocean-27248.herokuapp.com/',
+      secure: false,
+      changeOrigin: true,
+    }),
+  );
 };
