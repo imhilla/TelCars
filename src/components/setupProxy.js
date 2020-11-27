@@ -4,7 +4,6 @@ module.exports = function (app) {
   app.use(
     proxy('registrations', {
       target: 'https://infinite-ocean-27248.herokuapp.com',
-      secure: false,
       changeOrigin: true,
     }),
   );
@@ -12,7 +11,6 @@ module.exports = function (app) {
   app.use(
     proxy('sessions', {
       target: 'https://infinite-ocean-27248.herokuapp.com/',
-      secure: false,
       changeOrigin: true,
     }),
   );
@@ -20,7 +18,6 @@ module.exports = function (app) {
   app.use(
     proxy('logged_in', {
       target: 'https://infinite-ocean-27248.herokuapp.com/',
-      secure: false,
       changeOrigin: true,
     }),
   );
