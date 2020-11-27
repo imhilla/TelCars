@@ -42,7 +42,10 @@ class Registration extends React.Component {
     const {
       email, password, password_confirmation, username,
     } = this.state;
-    // http://localhost:3001/registrations
+    const headers = {
+      'Content-Type': 'application/json',
+      Authorization: 'JWT fefege...',
+    };
     axios.post('https://infinite-ocean-27248.herokuapp.com/registrations', {
       user: {
         email,
@@ -50,9 +53,7 @@ class Registration extends React.Component {
         password_confirmation,
         username,
       },
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {

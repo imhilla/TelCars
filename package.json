@@ -2,6 +2,7 @@
   "name": "react-frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://infinite-ocean-27248.herokuapp.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.2",
