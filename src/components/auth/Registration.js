@@ -50,6 +50,7 @@ class Registration extends React.Component {
         password_confirmation,
         username,
       },
+      headers: { 'Access-Control-Allow-Origin': '*' },
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
