@@ -1,7 +1,12 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/no-unused-state */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { login } from '../../actions/index';
 
 class Login extends React.Component {
   constructor(props) {
@@ -23,6 +28,7 @@ class Login extends React.Component {
 
   handleSuccessfulAuth(data) {
     const { handleLogin, history } = this.props;
+    login(data.user.username);
     handleLogin(data);
     history.push('/');
   }
@@ -68,4 +74,13 @@ Login.propTypes = {
 Login.defaultProps = {
   handleLogin: {},
 };
-export default Login;
+
+const mapStateToProps = state => ({
+  login: state.login,
+});
+
+const mapDispatchToProps = dispatch => ({
+  login: login => dispatch(login(login)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

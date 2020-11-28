@@ -1,6 +1,5 @@
 const initialState = {
-  email: '',
-  password: '',
+  username: '',
 };
 
 function login(state = initialState, action) {
