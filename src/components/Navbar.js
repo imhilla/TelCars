@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 import {
-  NavLink,
+  NavLink, Switch,
   BrowserRouter as Router,
 } from 'react-router-dom';
 
@@ -12,49 +14,50 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">
-        <Router>
+        <NavLink
+          exact
+          to="/"
+          activeClassName="activeRoute"
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
+          className="lii"
+          onClick={this.handleHome}
+        >
+          HOME
+        </NavLink>
 
-          <NavLink
-            exact
-            to="/"
-            activeClassName="activeRoute"
-            activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
-            className="lii"
-          >
-            HOME
-          </NavLink>
+        <NavLink
+          to="/lifestyle"
+          exact
+          activeClassName="activeRoute"
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
+          className="lii"
+        >
+          LIFESTYLE
+        </NavLink>
 
-          <NavLink
-            to="/lifestyle"
-            activeClassName="activeRoute"
-            activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
-            className="lii"
-          >
-            LIFESTYLE
-          </NavLink>
+        <NavLink
+          exact
+          to="/shop"
+          className="lii"
+          activeClassName="activeRoute"
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
 
-          <NavLink
-            to="/shop"
-            className="lii"
-            activeClassName="activeRoute"
-            activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
-          >
-            SHOP
-          </NavLink>
+        >
+          SHOP
+        </NavLink>
 
-          <NavLink
-            to="/book"
-            className="lii"
-            activeClassName="activeRoute"
-            activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
-          >
-            BOOK
-          </NavLink>
-        </Router>
+        <NavLink
+          to="/book"
+          exact
+          className="lii"
+          activeClassName="activeRoute"
+          activeStyle={{ backgroundColor: 'rgb(142, 255, 142)' }}
+        >
+          BOOK
+        </NavLink>
       </div>
     );
   }
 }
 
-// export default withRouter(NavBar);
 export default NavBar;

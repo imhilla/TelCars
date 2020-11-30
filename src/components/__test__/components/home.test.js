@@ -6,6 +6,9 @@ import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import ReactDOM from 'react-dom';
 import '../../../setupTests';
+import {
+  BrowserRouter,
+} from 'react-router-dom';
 import Home from '../../../containers/Home';
 
 const middlewares = [thunk];
@@ -17,6 +20,10 @@ beforeEach(() => {
 });
 
 it('works', () => {
-  const wrap = mount(<Home />);
+  const wrap = mount(
+    <BrowserRouter>
+      <Home />
+    </BrowserRouter>,
+  );
   expect(wrap).toMatchSnapshot();
 });
