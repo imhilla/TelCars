@@ -2,9 +2,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import '../../../setupTests';
-import App from '../../App';
+import Book from '../../../containers/Book';
 
 it('works', () => {
-  const wrap = mount(<App />);
+  const wrap = mount(<Book />);
   expect(wrap).toMatchSnapshot();
 });

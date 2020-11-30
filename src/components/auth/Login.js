@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { connect } from 'react-redux';
+import { connect, ReactReduxContext } from 'react-redux';
 import { login } from '../../actions/index';
 
 class Login extends React.Component {
