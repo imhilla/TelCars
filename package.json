@@ -18,6 +18,7 @@
     "react-scripts": "4.0.0",
     "react-slideshow-image": "^3.3.1",
     "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "uuid": "^8.3.1",
     "web-vitals": "^0.2.4"
   },
@@ -46,12 +47,19 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.12.1",
+    "@babel/preset-react": "^7.12.7",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.0.0"
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "redux-mock-store": "^1.5.4"
   }
 }
