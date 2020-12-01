@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
@@ -17,6 +18,7 @@ class Carview extends React.Component {
     super(props);
     this.state = {
       car: [],
+      id: '',
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -25,6 +27,7 @@ class Carview extends React.Component {
     const { match } = this.props;
     const { params } = match;
     const id = params.model_id;
+    console.log(id);
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
         response.data.map(value => {
