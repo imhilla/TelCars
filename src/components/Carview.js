@@ -46,13 +46,12 @@ class Carview extends React.Component {
 
   handleChange() {
     const { history } = this.props;
-    const id = this.state;
-    history.push('/book/' + `${id}`);
-    console.log(id);
+    history.push('/configue');
   }
 
   render() {
     const { car } = this.state;
+    const { id } = car;
     const img = car.id === undefined ? (<div className="loading">Loading</div>) : (
       <img
         alt="img"
@@ -88,7 +87,7 @@ class Carview extends React.Component {
             <div>
               <Link
                 to={{
-                  pathname: '/book',
+                  pathname: '/book/' + `${id}`,
                   state: { fromDashboard: true },
                 }}
                 className="buttonbook"
