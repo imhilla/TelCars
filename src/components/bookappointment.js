@@ -35,7 +35,7 @@ export default function BookAppointment({ user, userId, history }) {
 
   const item = history.location.pathname;
   for (let i = 0; i < item.length; i += 1) {
-    if (Number.isNaN((parseInt(item.charAt(i), 10)))) {
+    if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
       console.log(parseInt(item.charAt(i), 10));
     }
   }
