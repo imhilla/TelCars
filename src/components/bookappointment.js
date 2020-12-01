@@ -32,6 +32,8 @@ export default function BookAppointment({ user, userId, history }) {
   models.forEach(value => {
     allModels.push(value.model);
     console.log(history.location.pathname);
+    const item = history.location.pathname;
+    console.log(typeof item);
   });
 
   const renderModels = allModels.map(item => (
