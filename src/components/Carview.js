@@ -27,7 +27,9 @@ class Carview extends React.Component {
     const { match } = this.props;
     const { params } = match;
     const id = params.model_id;
-    console.log(id);
+    this.setState({
+      id,
+    });
     axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
       .then(response => {
         response.data.map(value => {
@@ -41,9 +43,10 @@ class Carview extends React.Component {
       });
   }
 
-  handleChange(carid) {
+  handleChange() {
     const { history } = this.props;
-    console.log(carid);
+    const id = this.state;
+    console.log(id);
     history.push('/bookappointment');
   }
 
@@ -94,7 +97,7 @@ class Carview extends React.Component {
             </div>
             <button
               type="button"
-              onClick={this.handleChange(car.id)}
+              onClick={this.handleChange}
               className="configure"
             >
               <FaRegSun className="regsum" />
