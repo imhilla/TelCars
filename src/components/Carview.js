@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-concat */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/prefer-stateless-function */
@@ -47,7 +48,7 @@ class Carview extends React.Component {
     const { history } = this.props;
     const id = this.state;
     console.log(id);
-    history.push(`/bookappointment+ ${id}`);
+    history.push('/bookappointment' + `${id}`);
   }
 
   render() {
