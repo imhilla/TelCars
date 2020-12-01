@@ -38,6 +38,7 @@ export default function BookAppointment({ user, userId, history }) {
 
   const allModels = ['All MODELS'];
   models.forEach(value => {
+    console.log(models);
     allModels.push(value.model);
   });
 
@@ -76,7 +77,7 @@ export default function BookAppointment({ user, userId, history }) {
     }, { withCredentials: true });
     event.preventDefault();
   };
-  console.log(myid);
+  // console.log(myid);
   return (
     <div className="appointmentContainer">
       <h1>
