@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
 /* eslint-disable max-len */
 /* eslint-disable react/prefer-stateless-function */
@@ -6,7 +7,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
-export default function BookAppointment({ user, userId }) {
+export default function BookAppointment({ user, userId, history }) {
   const [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
@@ -30,6 +31,7 @@ export default function BookAppointment({ user, userId }) {
   const allModels = ['All MODELS'];
   models.forEach(value => {
     allModels.push(value.model);
+    console.log(history);
   });
 
   const renderModels = allModels.map(item => (
