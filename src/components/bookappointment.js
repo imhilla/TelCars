@@ -4,7 +4,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PropTypes, { number } from 'prop-types';
+import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function BookAppointment({ user, userId, history }) {
