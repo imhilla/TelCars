@@ -4,7 +4,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function BookAppointment({ user, userId, history }) {
@@ -37,7 +37,9 @@ export default function BookAppointment({ user, userId, history }) {
   // const newItem = item.split(',').reverse().join('');
   // console.log(newItem);
   for (let i = 0; i < item.length; i += 1) {
-    console.log(item.charAt(i));
+    if (i === number) {
+      console.log(item.charAt(i));
+    }
   }
   const renderModels = allModels.map(item => (
     <option
