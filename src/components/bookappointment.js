@@ -64,6 +64,7 @@ export default function BookAppointment({ user, userId, history }) {
     const date = '11/23/2020';
     const city = location;
     const myuserId = userId;
+    console.log(myid);
     axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
       appointment: {
         username,
@@ -75,7 +76,6 @@ export default function BookAppointment({ user, userId, history }) {
     }, { withCredentials: true });
     event.preventDefault();
   };
-  console.log(myid);
   return (
     <div className="appointmentContainer">
       <h1>
