@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
 /* eslint-disable max-len */
@@ -6,28 +7,25 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export default function BookAppointment({ user, userId, history }) {
-  const [models, setModels] = useState([]);
+  let [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
   let [myid, setMyid] = useState('');
+  let [startDate, setDate] = useState(new Date());
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
         'https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true },
       );
-      setModels(result.data);
+      models = result.data;
+      setModels(models);
     };
-    const item = history.location.pathname;
-    for (let i = 0; i < item.length; i += 1) {
-      if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
-        myid = parseInt(item.charAt(i), 10);
-        setMyid(myid);
-      }
-    }
-
     fetchData();
   }, []);
   const locations = ['LOCATIONS', 'Nairobi', 'Kisumu', 'Mombasa', 'Eldoret', 'Kiambu', 'Migori', 'Isiolo'];
@@ -36,17 +34,26 @@ export default function BookAppointment({ user, userId, history }) {
     <option key={uuidv4()} value={item}>{item}</option>
   ));
 
+  const item = history.location.pathname;
+  for (let i = 0; i < item.length; i += 1) {
+    if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
+      myid = parseInt(item.charAt(i), 10);
+    }
+  }
+
   models.forEach(value => {
     if (value.id === myid) {
       model = value.model;
-      setModel(model);
-      console.log(value.model);
     }
   });
 
   const handleLocationChange = e => {
     const mylocation = e.target.value;
     setLocation(mylocation);
+  };
+
+  const handleChange = date => {
+    setDate(date);
   };
 
   const handleSubmission = event => {
@@ -58,7 +65,7 @@ export default function BookAppointment({ user, userId, history }) {
     axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
       appointment: {
         username,
-        model: mymodel,
+        model,
         date,
         city,
         userId: myuserId,
@@ -66,7 +73,6 @@ export default function BookAppointment({ user, userId, history }) {
     }, { withCredentials: true });
     event.preventDefault();
   };
-  // console.log(myid);
   return (
     <div className="appointmentContainer">
       <h1>
@@ -88,6 +94,7 @@ export default function BookAppointment({ user, userId, history }) {
         >
           {renderLocation}
         </select>
+        <DatePicker selected={startDate} onChange={handleChange} />
         <button type="button" className="appbutton" onClick={handleSubmission}>
           Book now
         </button>
