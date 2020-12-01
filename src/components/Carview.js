@@ -47,7 +47,7 @@ class Carview extends React.Component {
   handleChange() {
     const { history } = this.props;
     const id = this.state;
-    history.push('/bookappointment' + `${id}`);
+    history.push('/book/' + `${id}`);
     console.log(id);
   }
 

@@ -100,7 +100,7 @@ class App extends React.Component {
                 />
                 <Route
                   exact
-                  path="/bookappointment"
+                  path="/book/:model_id"
                   render={props => (
                     <BookAppointment
                       {...props}
