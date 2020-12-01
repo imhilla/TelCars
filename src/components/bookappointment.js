@@ -38,8 +38,10 @@ export default function BookAppointment({ user, userId, history }) {
 
   const allModels = ['All MODELS'];
   models.forEach(value => {
-    console.log(models);
-    allModels.push(value.model);
+    if (value.id === myid) {
+      console.log(value);
+      allModels.push(value.model);
+    }
   });
 
   const renderModels = allModels.map(item => (
