@@ -36,26 +36,13 @@ export default function BookAppointment({ user, userId, history }) {
     <option key={uuidv4()} value={item}>{item}</option>
   ));
 
-  const allModels = ['All MODELS'];
   models.forEach(value => {
     if (value.id === myid) {
-      console.log(value);
-      allModels.push(value.model);
+      model = value.model;
+      setModel(model);
+      console.log(value.model);
     }
   });
-
-  const renderModels = allModels.map(item => (
-    <option
-      key={uuidv4()}
-      value={item}
-    >
-      {item}
-    </option>
-  ));
-  const handleModelChange = e => {
-    model = e.target.value;
-    setModel(model);
-  };
 
   const handleLocationChange = e => {
     const mylocation = e.target.value;
@@ -95,12 +82,6 @@ export default function BookAppointment({ user, userId, history }) {
         </p>
       </div>
       <div className="booksection">
-        <select
-          onChange={handleModelChange}
-          className="models"
-        >
-          {renderModels}
-        </select>
         <select
           onChange={handleLocationChange}
           className="locations"
