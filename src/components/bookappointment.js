@@ -20,6 +20,12 @@ export default function BookAppointment({ user, userId, history }) {
       );
       setModels(result.data);
     };
+    const item = history.location.pathname;
+    for (let i = 0; i < item.length; i += 1) {
+      if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
+        console.log(parseInt(item.charAt(i), 10));
+      }
+    }
 
     fetchData();
   }, []);
@@ -34,12 +40,6 @@ export default function BookAppointment({ user, userId, history }) {
     allModels.push(value.model);
   });
 
-  const item = history.location.pathname;
-  for (let i = 0; i < item.length; i += 1) {
-    if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
-      console.log(parseInt(item.charAt(i), 10));
-    }
-  }
   const renderModels = allModels.map(item => (
     <option
       key={uuidv4()}
