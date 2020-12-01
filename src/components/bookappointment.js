@@ -11,7 +11,7 @@ export default function BookAppointment({ user, userId, history }) {
   const [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
-  let [myid, setMyid] = useState('');
+  // let [myid, setMyid] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +37,7 @@ export default function BookAppointment({ user, userId, history }) {
   const item = history.location.pathname;
   for (let i = 0; i < item.length; i += 1) {
     if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
-      myid = parseInt(item.charAt(i), 10);
-      setMyid(myid);
+      console.log(parseInt(item.charAt(i), 10));
     }
   }
   const renderModels = allModels.map(item => (
@@ -65,7 +64,6 @@ export default function BookAppointment({ user, userId, history }) {
     const date = '11/23/2020';
     const city = location;
     const myuserId = userId;
-    console.log(myid);
     axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
       appointment: {
         username,
