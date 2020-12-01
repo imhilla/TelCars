@@ -8,7 +8,9 @@ import Shop from '../../../containers/Shop';
 
 it('works', () => {
   const wrap = mount(
-    <BrowserRouter><Shop /></BrowserRouter>,
+    <BrowserRouter>
+      <Shop />
+    </BrowserRouter>,
 
   );
   expect(wrap).toMatchSnapshot();

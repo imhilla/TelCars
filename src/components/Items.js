@@ -127,7 +127,7 @@ class Items extends React.Component {
             {workingdata[i].name}
           </p>
           <div className="dots">............</div>
-          <p className="itemdescrption">Descrption, remember to create an extra column</p>
+          <p className="itemdescrption">{workingdata[i].description}</p>
           <div className="footer">
             <FaTwitter className="icons" />
             <FaFacebookF className="icons" />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import '../../../setupTests';
-// import renderer from 'react-test-renderer';
 import {
   BrowserRouter,
 } from 'react-router-dom';

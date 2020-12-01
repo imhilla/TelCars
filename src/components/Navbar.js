@@ -1,11 +1,7 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable class-methods-use-this */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-// import { withRouter } from 'react-router';
 import {
-  NavLink, Switch,
-  BrowserRouter as Router,
+  NavLink,
 } from 'react-router-dom';
 
 import '../styles/navbar.css';

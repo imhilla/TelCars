@@ -2,7 +2,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import thunk from 'redux-thunk';
-// import toJson from 'enzyme-to-json';
 import configureMockStore from 'redux-mock-store';
 import ReactDOM from 'react-dom';
 import '../../../setupTests';
