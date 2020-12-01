@@ -36,7 +36,7 @@ export default function BookAppointment({ user, userId, history }) {
   const item = history.location.pathname;
   for (let i = 0; i < item.length; i += 1) {
     // if (parseInt(item.charAt(i), 10) === number) {
-    console.log(item.charAt(i));
+    console.log(parseInt(item.charAt(i), 10));
     // }
   }
   const renderModels = allModels.map(item => (
