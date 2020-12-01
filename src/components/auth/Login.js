@@ -29,6 +29,7 @@ class Login extends React.Component {
     login(data.user.username);
     handleLogin(data);
     history.push('/');
+    window.location.reload(false);
   }
 
   handleSubmit(event) {

@@ -36,6 +36,10 @@ class Welcome extends React.Component {
     setInterval(this.updateColor, 6000);
   }
 
+  componentWillUnmount() {
+    if (this.updateColor) clearInterval(this.updateColor);
+  }
+
   handleLogin() {
     const { history } = this.props;
     history.push('/login');

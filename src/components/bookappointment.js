@@ -1,8 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
-/* eslint-disable max-len */
-/* eslint-disable react/prefer-stateless-function */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -58,8 +56,7 @@ export default function BookAppointment({ user, userId, history }) {
 
   const handleSubmission = event => {
     const { username } = user;
-    const mymodel = model;
-    const date = '11/23/2020';
+    const date = startDate;
     const city = location;
     const myuserId = userId;
     axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
