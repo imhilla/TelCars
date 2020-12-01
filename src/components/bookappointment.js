@@ -34,10 +34,8 @@ export default function BookAppointment({ user, userId, history }) {
   });
 
   const item = history.location.pathname;
-  // const newItem = item.split(',').reverse().join('');
-  // console.log(newItem);
   for (let i = 0; i < item.length; i += 1) {
-    if (i === number) {
+    if (parseInt(i, 10) === number) {
       console.log(item.charAt(i));
     }
   }
