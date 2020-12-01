@@ -11,6 +11,7 @@ import {
 import axios from 'axios';
 import Home from '../containers/Home';
 import Carview from './Carview';
+import BookAppointment from './bookappointment';
 import Welcome from './Welcome';
 import Login from './auth/Login';
 import Registration from './auth/Registration';
@@ -93,6 +94,15 @@ class App extends React.Component {
                   path="/lifestyle"
                   render={props => (
                     <Life
+                      {...props}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/bookappointment"
+                  render={props => (
+                    <BookAppointment
                       {...props}
                     />
                   )}

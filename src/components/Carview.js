@@ -38,9 +38,10 @@ class Carview extends React.Component {
       });
   }
 
-  handleChange() {
+  handleChange(carid) {
     const { history } = this.props;
-    history.push('/configure');
+    console.log(carid);
+    history.push('/bookappointment');
   }
 
   render() {
@@ -90,7 +91,7 @@ class Carview extends React.Component {
             </div>
             <button
               type="button"
-              onClick={this.handleChange}
+              onClick={this.handleChange(car.id)}
               className="configure"
             >
               <FaRegSun className="regsum" />
