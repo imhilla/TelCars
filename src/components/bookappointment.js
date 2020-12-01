@@ -11,7 +11,7 @@ export default function BookAppointment({ user, userId, history }) {
   const [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
-  const [myid, setMyid] = useState('');
+  let [myid, setMyid] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,7 +37,8 @@ export default function BookAppointment({ user, userId, history }) {
   const item = history.location.pathname;
   for (let i = 0; i < item.length; i += 1) {
     if (!Number.isNaN((parseInt(item.charAt(i), 10)))) {
-      setMyid(parseInt(item.charAt(i), 10));
+      myid = parseInt(item.charAt(i), 10);
+      setMyid(myid);
     }
   }
   const renderModels = allModels.map(item => (
