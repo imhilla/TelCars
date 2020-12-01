@@ -43,6 +43,7 @@ class Welcome extends React.Component {
   handleLogin() {
     const { history } = this.props;
     history.push('/login');
+    window.location.reload(false);
   }
 
   handleRegistration() {
