@@ -36,8 +36,8 @@ export default function BookAppointment({ user, userId, history }) {
   const item = history.location.pathname;
   // const newItem = item.split(',').reverse().join('');
   // console.log(newItem);
-  for (let i = 0; i < item.split(',').reverse().join('').length; i += 1) {
-    console.log(item.split(',').reverse().join('').charAt(i));
+  for (let i = 0; i < item.length; i += 1) {
+    console.log(item.charAt(i));
   }
   const renderModels = allModels.map(item => (
     <option
