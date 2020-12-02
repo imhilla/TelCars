@@ -91,11 +91,11 @@ class Registration extends React.Component {
 
 Registration.propTypes = {
   handleLogin: PropTypes.func,
-  history: PropTypes.string,
+  history: PropTypes.objectOf(PropTypes.any),
 };
 
 Registration.defaultProps = {
   handleLogin: {},
-  history: '',
+  history: {},
 };
 export default Registration;
