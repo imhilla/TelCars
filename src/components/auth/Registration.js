@@ -5,6 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './registration.css';
+import image from '../../images/itemimages/teslay.webp';
 
 class Registration extends React.Component {
   constructor(props) {
@@ -66,7 +67,7 @@ class Registration extends React.Component {
       email, password, password_confirmation, username,
     } = this.state;
     return (
-      <div className="welcContainer">
+      <div className="welcContainer" style={{ backgroundImage: { image } }}>
         <div className="welcomeBack">
           <h1>Welcome back!</h1>
           <p>To keep connected with us, please log in with your personal info</p>

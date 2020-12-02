@@ -4,6 +4,10 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-image: url("https://res.cloudinary.com/dhxgtfnci/image/upload/v1606909036/back/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .welcomeBack {
@@ -15,12 +19,14 @@
 .welcomeBack h1 {
   font-size: 18px;
   padding-top: 2em;
+  color: white;
 }
 
 .welcomeBack p {
   padding: 1em;
   margin: 1em;
   font-size: 15px;
+  color: white;
 }
 
 .createAccount {
@@ -33,6 +39,7 @@
   font-size: 18px;
   padding-top: 1em;
   margin: auto;
+  color: white;
 }
 
 .regForm {
