@@ -42,6 +42,14 @@
   color: white;
 }
 
+input,
+input:hover {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+}
+
 .regForm {
   display: flex;
   flex-direction: column;
@@ -94,13 +102,6 @@
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
-}
-
-input, input:hover {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  outline: none;
 }
 
 ::-webkit-input-placeholder {
