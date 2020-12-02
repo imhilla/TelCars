@@ -1,6 +1,7 @@
 .carviewContainer {
   display: flex;
 }
+
 .carveiw {
   display: flex;
   flex-direction: row;
@@ -20,7 +21,6 @@
 }
 
 .cardetails {
-  padding-top: 50vh;
   padding: 5vw;
 }
 
