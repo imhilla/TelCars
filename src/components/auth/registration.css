@@ -6,7 +6,7 @@
 .welcomeBack p {
   padding: 1em;
   margin: 1em;
-  font-style: 15px;
+  font-size: 15px;
 }
 
 .createAccount h1 {
@@ -22,7 +22,6 @@
 }
 
 .regForm input {
-  margin-bottom: 1.5em;
   height: 23px;
   width: 80%;
   margin: 10px 1em;
@@ -49,7 +48,7 @@
 }
 
 .loginwelcome h1 {
-font-size: 18px;
+  font-size: 18px;
 }
 
 .welcomeContainer {
