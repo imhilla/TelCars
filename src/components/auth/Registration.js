@@ -66,11 +66,11 @@ class Registration extends React.Component {
       email, password, password_confirmation, username,
     } = this.state;
     return (
-      <div>
+      <div className="welcContainer">
         <div className="welcomeBack">
           <h1>Welcome back!</h1>
           <p>To keep connected with us, please log in with your personal info</p>
-          <button type="button" onClick={this.handleLogin}>LOG IN</button>
+          <button className="redirectLogin" type="button" onClick={this.handleLogin}>LOG IN</button>
         </div>
         <div className="formContainer">
           <div className="createAccount">
@@ -81,7 +81,7 @@ class Registration extends React.Component {
             <input type="text" name="username" placeholder="Username" value={username} onChange={this.handleChange} required />
             <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} required />
             <input type="password" name="password_confirmation" placeholder="Password confirmation" value={password_confirmation} onChange={this.handleChange} required />
-            <button type="submit">SIGN UP</button>
+            <button className="regB" type="submit">SIGN UP</button>
           </form>
         </div>
       </div>
