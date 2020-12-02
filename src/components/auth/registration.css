@@ -87,10 +87,22 @@
   padding-top: 20%;
 }
 
-.redirectLogin, .regB {
+.redirectLogin,
+.regB {
   background-color: blue;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+input, input:hover {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: white;
 }
