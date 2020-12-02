@@ -102,7 +102,7 @@ export default function BookAppointment({ user, userId, history }) {
 
 BookAppointment.propTypes = {
   user: PropTypes.string,
-  userId: PropTypes.string,
+  userId: PropTypes.number,
 };
 
 BookAppointment.defaultProps = {

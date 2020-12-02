@@ -124,7 +124,7 @@ class Carview extends React.Component {
 }
 
 Carview.propTypes = {
-  match: PropTypes.func,
+  match: PropTypes.objectOf(PropTypes.any),
   params: PropTypes.string,
   model_id: PropTypes.string,
   history: PropTypes.objectOf(PropTypes.any).isRequired,
@@ -133,6 +133,6 @@ Carview.propTypes = {
 Carview.defaultProps = {
   match: {},
   params: '',
-  model_id: 1,
+  model_id: '1',
 };
 export default Carview;

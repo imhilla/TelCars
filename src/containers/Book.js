@@ -11,8 +11,8 @@ class Book extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: '',
-      user_id: '',
+      user: {},
+      user_id: undefined,
     };
   }
 
@@ -40,8 +40,12 @@ class Book extends React.Component {
 }
 
 Book.propTypes = {
-  user: PropTypes.objectOf(PropTypes.any).isRequired,
-  user_id: PropTypes.objectOf(PropTypes.any).isRequired,
+  user: PropTypes.objectOf(PropTypes.any),
+  user_id: PropTypes.number,
 };
 
+Book.defaultProps = {
+  user: {},
+  user_id: undefined,
+};
 export default Book;

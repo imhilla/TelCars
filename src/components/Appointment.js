@@ -104,11 +104,11 @@ export default function Appointment({ user, userId }) {
 }
 
 Appointment.propTypes = {
-  user: PropTypes.string,
+  user: PropTypes.objectOf(PropTypes.any),
   userId: PropTypes.string,
 };
 
 Appointment.defaultProps = {
-  userId: 18,
-  user: '',
+  userId: undefined,
+  user: {},
 };

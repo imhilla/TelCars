@@ -53,12 +53,13 @@ class Home extends React.Component {
 Home.propTypes = {
   handleLogout: PropTypes.func,
   handleLogin: PropTypes.func,
-  history: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.objectOf(PropTypes.any),
 };
 
 Home.defaultProps = {
   handleLogout: () => { },
   handleLogin: () => { },
+  history: {},
 };
 
 export default Home;
