@@ -52,3 +52,12 @@
   font-size: 20px;
   color: rgb(209, 209, 209);
 }
+
+.logoutButton {
+  background-color: blue;
+  margin: 2em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
