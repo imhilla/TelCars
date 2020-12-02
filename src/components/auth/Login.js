@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { login } from '../../actions/index';
+import './registration.css';
 
 class Login extends React.Component {
   constructor(props) {
@@ -49,14 +50,14 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="welcomeContainer">
-        <div className="loginwelcome">
+      <div className="welcContainer">
+        <div className="welcomeBack">
           <h1>Welcome back</h1>
         </div>
-        <form onSubmit={this.handleSubmit} autoComplete="off" className="loginpage">
+        <form onSubmit={this.handleSubmit} autoComplete="off" className="regForm">
           <input type="email" name="email" placeholder="Email" value={email} onChange={this.handleChange} autoComplete="off" required />
           <input type="password" name="password" placeholder="Password" value={password} onChange={this.handleChange} autoComplete="off" required />
-          <button type="submit">LOG IN</button>
+          <button className="redirectLogin" type="submit">LOG IN</button>
         </form>
       </div>
     );
