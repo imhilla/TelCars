@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { connect, ReactReduxContext } from 'react-redux';
+import { connect } from 'react-redux';
 import { login } from '../../actions/index';
 
 class Login extends React.Component {
@@ -27,7 +26,7 @@ class Login extends React.Component {
   handleSuccessfulAuth(data) {
     const { handleLogin, history } = this.props;
     login(data.user.username);
-    handleLogin(data);
+    handleLogin(data.user);
     history.push('/');
   }
 
@@ -40,7 +39,7 @@ class Login extends React.Component {
       },
     }, { withCredentials: true })
       .then(response => {
-        if (response.data.status === 'created') {
+        if (response.data.logged_in) {
           this.handleSuccessfulAuth(response.data);
         }
       });
