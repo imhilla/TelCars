@@ -9,7 +9,9 @@ class Logout extends React.Component {
   }
 
   handleLogoutClick() {
-    axios.delete('https://infinite-ocean-27248.herokuapp.com/logout', { withCredentials: true });
+    // axios.delete('https://infinite-ocean-27248.herokuapp.com/logout', { withCredentials: true });
+    axios.delete('http://localhost:3001/logout', { withCredentials: true });
+
     window.location.reload(false);
   }
 

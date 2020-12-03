@@ -26,7 +26,7 @@ class Items extends React.Component {
 
   componentDidMount() {
     const { threeIndex } = this.state;
-    axios.get('https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true })
+    axios.get('http://localhost:3001/items', { withCredentials: true })
       .then(response => {
         let middle = Math.floor(response.data.length / 2);
         const first = middle;

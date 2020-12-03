@@ -42,7 +42,8 @@ class Registration extends React.Component {
     const {
       email, password, password_confirmation, username,
     } = this.state;
-    axios.post('https://infinite-ocean-27248.herokuapp.com/registrations', {
+    // axios.post('https://infinite-ocean-27248.herokuapp.com/registrations', {
+    axios.post('http://localhost:3001/users', {
       user: {
         email,
         password,
@@ -52,6 +53,7 @@ class Registration extends React.Component {
     }, { withCredentials: true })
       .then(response => {
         if (response.data.status === 'created') {
+          console.log(response);
           this.handleSuccessfulAuth(response.data);
         }
       });

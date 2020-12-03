@@ -33,7 +33,8 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
-    axios.post('https://infinite-ocean-27248.herokuapp.com/sessions', {
+    // axios.post('https://infinite-ocean-27248.herokuapp.com/sessions', {
+    axios.post('http://localhost:3001/login', {
       user: {
         email,
         password,
@@ -43,6 +44,8 @@ class Login extends React.Component {
         if (response.data.logged_in) {
           this.handleSuccessfulAuth(response.data);
         }
+      }).catch(errors => {
+        console.log(errors);
       });
     event.preventDefault();
   }
