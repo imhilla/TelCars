@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { login } from '../../actions/index';
 import './registration.css';
 
 class Login extends React.Component {
@@ -26,7 +25,6 @@ class Login extends React.Component {
 
   handleSuccessfulAuth(data) {
     const { handleLogin, history } = this.props;
-    login(data.user.username);
     handleLogin(data.user);
     history.push('/');
   }

@@ -15,6 +15,7 @@ import Carview from './Carview';
 import BookAppointment from './bookappointment';
 import Welcome from './Welcome';
 import Login from './auth/Login';
+import Logout from './auth/Logout';
 import Registration from './auth/Registration';
 import Life from '../containers/Lifestyle';
 import Configure from './Configure';
@@ -30,40 +31,21 @@ export default function App() {
     const log = 'LOGGED_IN';
     setLoggedInStatus(log);
     setUser(data);
+    localStorage.setItem('token', data.token);
   };
 
   const handleLogout = () => {
     const logout = 'NOT_LOGGED_IN';
     setLoggedInStatus(logout);
     setUser({});
+    localStorage.clear();
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://localhost:3001/users', { withCredentials: true },
-      ).then(response => {
-        console.log(response);
-        if (response.data.logged_in && loggedInStatus === 'NOT_LOGGED_IN') {
-          setLoggedInStatus('LOGGED_IN');
-          setUser(response.data.user);
-          setUserId(response.data.user_id);
-        } else if (!response.data.logged_in && loggedInStatus === 'LOGGED_IN') {
-          setLoggedInStatus('NOT_LOGGED_IN');
-          setUser({});
-          setUserId('');
-        }
-      });
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <div className="App">
       <Router>
         {
-          loggedInStatus === 'LOGGED_IN' ? (
+          localStorage.length === 1 ? (
             <Switch>
               <Route
                 exact
