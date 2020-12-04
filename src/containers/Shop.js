@@ -11,9 +11,14 @@ export default function Shop() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+      },
+    };
     const fetchData = async () => {
       const result = await axios(
-        'https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true },
+        'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
       );
       setCars(result.data);
     };

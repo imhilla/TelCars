@@ -30,7 +30,7 @@ export default function App() {
   const handleLogin = data => {
     const log = 'LOGGED_IN';
     setLoggedInStatus(log);
-    setUser(data);
+    setUser(data.user);
     localStorage.setItem('token', data.token);
   };
 

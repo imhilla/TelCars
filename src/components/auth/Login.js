@@ -25,7 +25,9 @@ class Login extends React.Component {
 
   handleSuccessfulAuth(data) {
     const { handleLogin, history } = this.props;
-    handleLogin(data.user);
+    // login(data.user.username);
+    console.log(data);
+    handleLogin(data);
     history.push('/');
   }
 
