@@ -25,16 +25,15 @@ class Login extends React.Component {
 
   handleSuccessfulAuth(data) {
     const { handleLogin, history } = this.props;
-    // login(data.user.username);
-    console.log(data);
     handleLogin(data);
     history.push('/');
+    window.location.reload(false);
   }
 
   handleSubmit(event) {
     const { email, password } = this.state;
     // axios.post('https://infinite-ocean-27248.herokuapp.com/sessions', {
-    axios.post('http://localhost:3001/login', {
+    axios.post('https://infinite-ocean-27248.herokuapp.com/login', {
       user: {
         email,
         password,

@@ -36,14 +36,14 @@ class Registration extends React.Component {
     const { handleLogin, history } = this.props;
     handleLogin(data);
     history.push('/');
+    window.location.reload(false);
   }
 
   handleSubmit(event) {
     const {
       email, password, password_confirmation, username,
     } = this.state;
-    // axios.post('https://infinite-ocean-27248.herokuapp.com/registrations', {
-    axios.post('http://localhost:3001/users', {
+    axios.post('https://infinite-ocean-27248.herokuapp.com/users', {
       user: {
         email,
         password,

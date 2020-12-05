@@ -107,3 +107,7 @@ input:hover {
 ::-webkit-input-placeholder {
   color: white;
 }
+
+.regForm input {
+  color: white;
+}
