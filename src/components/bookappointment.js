@@ -71,7 +71,13 @@ export default function BookAppointment({ user, userId, history }) {
         userId: myuserId,
       },
     };
-    axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', config, { withCredentials: true });
+    axios.post(
+      'https://infinite-ocean-27248.herokuapp.com/appointments',
+      config,
+      { withCredentials: true },
+    ).then(response => {
+      console.log(response);
+    });
     event.preventDefault();
   };
   return (
