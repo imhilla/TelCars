@@ -15,11 +15,17 @@ export default function BookAppointment({ user, userId, history }) {
   const [location, setLocation] = useState('');
   let [myid, setMyid] = useState('');
   let [startDate, setDate] = useState(new Date());
+  let [success, setSuccess] = useState('We would be glad if you set an appointment with us');
 
   useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+      },
+    };
     const fetchData = async () => {
       const result = await axios(
-        'https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true },
+        'http://localhost:3001/items', config, { withCredentials: true },
       );
       models = result.data;
       setModels(models);
@@ -63,23 +69,33 @@ export default function BookAppointment({ user, userId, history }) {
       headers: {
         Authorization: `Bearer ${localStorage.token}`,
       },
-      appointment: {
-        username,
-        model,
-        date,
-        city,
-        userId: myuserId,
-      },
+
     };
+
     axios.post(
-      'https://infinite-ocean-27248.herokuapp.com/appointments',
-      config,
+      'http://localhost:3001/appointments',
+      {
+        appointment: {
+          username,
+          model,
+          date,
+          city,
+          userId: myuserId,
+        },
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.token}`,
+        },
+
+      },
       { withCredentials: true },
     ).then(response => {
-      console.log(response);
+      setSuccess(response.data.success);
     });
     event.preventDefault();
   };
+  const mysuccess = success;
   return (
     <div className="appointmentContainer">
       <h1>
@@ -89,6 +105,7 @@ export default function BookAppointment({ user, userId, history }) {
       </h1>
       <div className="hardline" />
       <div className="appointmentcontent">
+        <p>{mysuccess}</p>
         <p>
           Please let us know what you would like to do so we can help meet your needs.
           Book an appointment.

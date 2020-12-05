@@ -13,7 +13,7 @@ export default function Appointment({ user, userId }) {
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true },
+        'http://localhost:3001/items', { withCredentials: true },
       );
       setModels(result.data);
     };
@@ -56,7 +56,7 @@ export default function Appointment({ user, userId }) {
     const date = '11/23/2020';
     const city = location;
     const myuserId = userId;
-    axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
+    axios.post('http://localhost:3001/appointments', {
       appointment: {
         username,
         model: mymodel,

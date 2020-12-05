@@ -43,7 +43,7 @@ class Registration extends React.Component {
     const {
       email, password, password_confirmation, username,
     } = this.state;
-    axios.post('https://infinite-ocean-27248.herokuapp.com/users', {
+    axios.post('http://localhost:3001/users', {
       user: {
         email,
         password,
