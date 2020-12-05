@@ -59,7 +59,10 @@ export default function BookAppointment({ user, userId, history }) {
     const date = startDate;
     const city = location;
     const myuserId = userId;
-    axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.token}`,
+      },
       appointment: {
         username,
         model,
@@ -67,7 +70,8 @@ export default function BookAppointment({ user, userId, history }) {
         city,
         userId: myuserId,
       },
-    }, { withCredentials: true });
+    };
+    axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', config, { withCredentials: true });
     event.preventDefault();
   };
   return (

@@ -32,7 +32,6 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     const { email, password } = this.state;
-    // axios.post('https://infinite-ocean-27248.herokuapp.com/sessions', {
     axios.post('https://infinite-ocean-27248.herokuapp.com/login', {
       user: {
         email,
