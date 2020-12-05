@@ -24,7 +24,6 @@ export default function BookAppointment({ user, userId, history }) {
         Authorization: `Bearer ${localStorage.token}`,
       },
     };
-    console.log('Initial state: ', store.getState());
 
     const fetchData = async () => {
       const result = await axios(
