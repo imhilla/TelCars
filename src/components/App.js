@@ -87,6 +87,15 @@ export default function App() {
                 )}
               />
               <Route
+                // exact
+                // path="/log"
+                render={props => (
+                  <Logout
+                    {...props}
+                  />
+                )}
+              />
+              <Route
                 exact
                 path="/book"
                 render={props => (

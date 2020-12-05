@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import PropTypes from 'prop-types';
 import NavBar from '../components/Navbar';
 import '../styles/home.css';
@@ -24,7 +24,6 @@ class Home extends React.Component {
 
   handleLogoutClick() {
     const { handleLogout } = this.props;
-    axios.delete('http://localhost:3001/logout', { withCredentials: true });
     handleLogout();
   }
 
@@ -34,7 +33,7 @@ class Home extends React.Component {
         <div className="homeContainer">
           <Logo />
           <NavBar />
-          <Logout />
+          <Logout handleLogout={this.handleLogoutClick} />
           <Footer />
         </div>
         <div className="descriptionContainer">

@@ -31,10 +31,8 @@ class Items extends React.Component {
         Authorization: `Bearer ${localStorage.token}`,
       },
     };
-    console.log(localStorage.token);
     axios.get('http://localhost:3001/items', config, { withCredentials: true })
       .then(response => {
-        console.log(response);
         let middle = Math.floor(response.data.length / 2);
         const first = middle;
         middle += 1;
