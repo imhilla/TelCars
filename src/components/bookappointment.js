@@ -6,6 +6,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import DatePicker from 'react-datepicker';
+import store from '../store';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
@@ -23,6 +24,8 @@ export default function BookAppointment({ user, userId, history }) {
         Authorization: `Bearer ${localStorage.token}`,
       },
     };
+    console.log('Initial state: ', store.getState());
+
     const fetchData = async () => {
       const result = await axios(
         'http://localhost:3001/items', config, { withCredentials: true },
