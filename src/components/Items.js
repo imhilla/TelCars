@@ -31,7 +31,7 @@ class Items extends React.Component {
         Authorization: `Bearer ${localStorage.token}`,
       },
     };
-    axios.get('http://localhost:3001/items', config, { withCredentials: true })
+    axios.get('https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true })
       .then(response => {
         let middle = Math.floor(response.data.length / 2);
         const first = middle;

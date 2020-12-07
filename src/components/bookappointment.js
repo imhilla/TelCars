@@ -32,7 +32,7 @@ function BookAppointment({
 
     const fetchData = async () => {
       const result = await axios(
-        'http://localhost:3001/items', config, { withCredentials: true },
+        'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
       );
       models = result.data;
       setModels(models);
@@ -82,7 +82,7 @@ function BookAppointment({
     };
 
     axios.post(
-      'http://localhost:3001/appointments',
+      'https://infinite-ocean-27248.herokuapp.com/appointments',
       {
         appointment: {
           username,
