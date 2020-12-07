@@ -140,13 +140,14 @@ function BookAppointment({
 
             <div className="appointmentsContainer">
               {
-                nowState.getAppointments.appointments.map((value, index) => (
-                  <div key={uuidv4()} className="appointments">
-                    <h3>{value.model}</h3>
-                    <p>{value.date}</p>
-                    <p>{value.city}</p>
-                  </div>
-                ))
+                nowState.getAppointments.appointments.length !== 0
+                  ? nowState.getAppointments.appointments.map((value, index) => (
+                    <div key={uuidv4()} className="appointments">
+                      <h3>{value.model}</h3>
+                      <p>{value.date}</p>
+                      <p>{value.city}</p>
+                    </div>
+                  )) : <div className="appointments">Loading..</div>
               }
             </div>
           </div>
