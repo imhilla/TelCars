@@ -46,3 +46,14 @@
   color: white;
   cursor: pointer;
 }
+
+.appointmentsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.appointments {
+  background-color: gold;
+  padding: 10px;
+  margin: 5px;
+}
