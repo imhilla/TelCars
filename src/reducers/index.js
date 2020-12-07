@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import login from './login';
+import getAppointments from './login';
 
 const rootReducer = combineReducers({
-  login,
+  getAppointments,
 });
 export default rootReducer;

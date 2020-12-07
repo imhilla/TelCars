@@ -4,19 +4,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { connect, ReactReduxContext } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import DatePicker from 'react-datepicker';
-import store from '../store';
+import { getAppointments } from '../actions/index';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-export default function BookAppointment({ user, userId, history }) {
+function BookAppointment({
+  user, userId, history, getAppointments,
+}) {
   let [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
   let [myid, setMyid] = useState('');
   let [startDate, setDate] = useState(new Date());
   let [success, setSuccess] = useState('We would be glad if you set an appointment with us');
+  let [myappointments, setAppointments] = useState([]);
 
   useEffect(() => {
     const config = {
@@ -33,6 +37,8 @@ export default function BookAppointment({ user, userId, history }) {
       setModels(models);
     };
     fetchData();
+    myappointments = getAppointments();
+    setAppointments(myappointments);
   }, []);
   const locations = ['LOCATIONS', 'Nairobi', 'Kisumu', 'Mombasa', 'Eldoret', 'Kiambu', 'Migori', 'Isiolo'];
 
@@ -99,33 +105,47 @@ export default function BookAppointment({ user, userId, history }) {
   };
   const mysuccess = success;
   return (
-    <div className="appointmentContainer">
-      <h1>
-        B&nbsp;&nbsp; o &nbsp;&nbsp;o&nbsp;&nbsp; k&nbsp;&nbsp; &nbsp;&nbsp;a
-        &nbsp;&nbsp;&nbsp;&nbsp;t &nbsp;&nbsp;e&nbsp;&nbsp;
-        s&nbsp;&nbsp; t &nbsp;-&nbsp; r&nbsp;&nbsp; i&nbsp;&nbsp; d&nbsp;&nbsp; e
-      </h1>
-      <div className="hardline" />
-      <div className="appointmentcontent">
-        <p>{mysuccess}</p>
-        <p>
-          Please let us know what you would like to do so we can help meet your needs.
-          Book an appointment.
-        </p>
-      </div>
-      <div className="booksection">
-        <select
-          onChange={handleLocationChange}
-          className="locations"
-        >
-          {renderLocation}
-        </select>
-        <DatePicker selected={startDate} onChange={handleChange} />
-        <button type="button" className="appbutton" onClick={handleSubmission}>
-          Book now
-        </button>
-      </div>
-    </div>
+    <ReactReduxContext.Consumer>
+      {({ store }) => {
+        const nowState = store.getState();
+        return (
+          <div className="appointmentContainer">
+            <h1>
+              B&nbsp;&nbsp; o &nbsp;&nbsp;o&nbsp;&nbsp; k&nbsp;&nbsp; &nbsp;&nbsp;a
+              &nbsp;&nbsp;&nbsp;&nbsp;t &nbsp;&nbsp;e&nbsp;&nbsp;
+              s&nbsp;&nbsp; t &nbsp;-&nbsp; r&nbsp;&nbsp; i&nbsp;&nbsp; d&nbsp;&nbsp; e
+            </h1>
+            <div className="hardline" />
+            <div className="appointmentcontent">
+              <p>{mysuccess}</p>
+              <p>
+                Please let us know what you would like to do so we can help meet your needs.
+                Book an appointment.
+              </p>
+            </div>
+            <div className="booksection">
+              <select
+                onChange={handleLocationChange}
+                className="locations"
+              >
+                {renderLocation}
+              </select>
+              <DatePicker selected={startDate} onChange={handleChange} />
+              <button type="button" className="appbutton" onClick={handleSubmission}>
+                Book now
+              </button>
+            </div>
+            <div>
+              {
+                nowState.getAppointments.appointments.forEach((value, index) => {
+                  console.log(value);
+                })
+              }
+            </div>
+          </div>
+        );
+      }}
+    </ReactReduxContext.Consumer>
   );
 }
 
@@ -138,3 +158,7 @@ BookAppointment.defaultProps = {
   userId: 18,
   user: '',
 };
+
+const mapStateToProps = state => ({ appointments: state.appointments });
+
+export default connect(mapStateToProps, { getAppointments })(BookAppointment);

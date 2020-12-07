@@ -1,33 +1,19 @@
-import axios from 'axios';
-
-const config = {
-  headers: {
-    Authorization: `Bearer ${localStorage.token}`,
-  },
-};
-
-function axiosTest() {
-  const promise = axios.get(
-    'http://localhost:3001/appointments', config, { withCredentials: true },
-  );
-  const dataPromise = promise.then(response => response.data);
-  return dataPromise;
-}
-
 const initialState = {
-  appointments: axiosTest().then(data => data),
+  appointments: [],
+  loading: true,
 };
 
-function login(state = initialState, action) {
+function getAppointments(state = initialState, action) {
   switch (action.type) {
-    case 'All STATE':
+    case 'GET_APPOINTMENTS':
       return {
         ...state,
-        all: action.payload,
+        appointments: action.payload,
+        loading: false,
       };
     default:
       return state;
   }
 }
 
-export default login;
+export default getAppointments;
