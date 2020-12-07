@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { connect, ReactReduxContext } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import DatePicker from 'react-datepicker';
+import { v4 as uuidv4 } from 'uuid';
 import { getAppointments } from '../actions/index';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
@@ -137,9 +138,13 @@ function BookAppointment({
             </div>
             <div>
               {
-                nowState.getAppointments.appointments.forEach((value, index) => {
-                  console.log(value);
-                })
+                nowState.getAppointments.appointments.map((value, index) => (
+                  <div key={uuidv4()}>
+                    <h1>{value.model}</h1>
+                    <h1>{value.date}</h1>
+                    <h1>{value.city}</h1>
+                  </div>
+                ))
               }
             </div>
           </div>
