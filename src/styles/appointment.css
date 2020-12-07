@@ -49,11 +49,11 @@
 
 .appointmentsContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .appointments {
-  background-color: gold;
+  background-color: rgb(226, 209, 255);
   padding: 10px;
   margin: 5px;
 }
