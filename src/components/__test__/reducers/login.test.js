@@ -1,4 +1,4 @@
-import login from '../../../reducers/login';
+import login from '../../../reducers/allreducers';
 
 describe('INITIAL_STATE', () => {
   test('is correct', () => {
