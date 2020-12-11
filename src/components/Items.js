@@ -3,7 +3,6 @@
 /* eslint-disable prefer-const */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import axios from 'axios';
 import {
   FaTwitter, FaFacebookF, FaPinterestP, FaAngleLeft, FaAngleRight,
 } from 'react-icons/fa';
