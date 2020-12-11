@@ -40,12 +40,11 @@ export const logOut = () => ({
 });
 
 export const postAppointments = appointments => async dispatch => {
+  console.log(appointments);
   try {
     const res = await axios.post(
       'http://localhost:3001/appointments',
-      {
-        appointments,
-      },
+      appointments,
       {
         headers: {
           Authorization: `Bearer ${localStorage.token}`,

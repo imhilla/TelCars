@@ -17,6 +17,7 @@ class Book extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props);
     const { user, user_id } = this.props;
     this.setState({
       user,

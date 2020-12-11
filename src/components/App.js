@@ -23,7 +23,7 @@ import Configure from './Configure';
 import Shop from '../containers/Shop';
 import Book from '../containers/Book';
 
-export default function App(props) {
+export default function App() {
   const [loggedInStatus, setLoggedInStatus] = useState('NOT_LOGGED_IN');
   const [user, setUser] = useState({});
   const [user_id, setUserId] = useState('');

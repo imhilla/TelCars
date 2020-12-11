@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -56,11 +57,13 @@ export default function Appointment({ user, userId }) {
   };
 
   const handleSubmission = event => {
-    const { username } = user;
+    // const { username } = user;
+    const username = 'Hillary';
     const mymodel = model;
     const date = '11/23/2020';
     const city = location;
-    const myuserId = userId;
+    // const myuserId = userId;
+    const myuserId = 2;
     const appointment = {
       appointment: {
         username,
@@ -70,6 +73,7 @@ export default function Appointment({ user, userId }) {
         userId: myuserId,
       },
     };
+    console.log(appointment);
     dispatch(postAppointments(appointment));
     event.preventDefault();
   };

@@ -6,12 +6,12 @@ function getAppointments(state = {}, action) {
         appointments: action.payload,
       };
     case 'GET_ITEMS':
-      console.log(action.payload);
       return {
         ...state,
         items: action.payload,
       };
     case 'POST_APPOINTMENTS':
+      console.log(action.payload);
       return {
         ...state,
         appointments: action.payload,
