@@ -31,8 +31,11 @@ export default function App() {
   const handleLogin = data => {
     const log = 'LOGGED_IN';
     setLoggedInStatus(log);
-    setUser(data.user);
     localStorage.setItem('token', data.token);
+    localStorage.setItem('id', data.user.id);
+    localStorage.setItem('username', data.user.username);
+    setUser(localStorage.username);
+    setUserId(localStorage.id);
   };
 
   const handleLogout = () => {
@@ -46,7 +49,7 @@ export default function App() {
     <div className="App">
       <Router>
         {
-          localStorage.length === 1 ? (
+          localStorage.length >= 1 ? (
             <Switch>
               <Route
                 exact
@@ -109,46 +112,47 @@ export default function App() {
               />
 
             </Switch>
-          ) : (
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <Welcome
-                    {...props}
-                    loggedInStatus={loggedInStatus}
-                    handleLogin={handleLogin}
-                    handleLogout={handleLogout}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/signup"
-                render={props => (
-                  <Registration
-                    {...props}
-                    loggedInStatus={loggedInStatus}
-                    handleLogin={handleLogin}
-                    handleLogout={handleLogout}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/login"
-                render={props => (
-                  <Login
-                    {...props}
-                    loggedInStatus={loggedInStatus}
-                    handleLogin={handleLogin}
-                    handleLogout={handleLogout}
-                  />
-                )}
-              />
-            </Switch>
           )
+            : (
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={props => (
+                    <Welcome
+                      {...props}
+                      loggedInStatus={loggedInStatus}
+                      handleLogin={handleLogin}
+                      handleLogout={handleLogout}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/signup"
+                  render={props => (
+                    <Registration
+                      {...props}
+                      loggedInStatus={loggedInStatus}
+                      handleLogin={handleLogin}
+                      handleLogout={handleLogout}
+                    />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/login"
+                  render={props => (
+                    <Login
+                      {...props}
+                      loggedInStatus={loggedInStatus}
+                      handleLogin={handleLogin}
+                      handleLogout={handleLogout}
+                    />
+                  )}
+                />
+              </Switch>
+            )
         }
       </Router>
     </div>

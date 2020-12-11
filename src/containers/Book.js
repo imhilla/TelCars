@@ -1,7 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
 import Logo from '../components/Logo';
 import NavBar from '../components/Navbar';
@@ -17,11 +16,9 @@ class Book extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
-    const { user, user_id } = this.props;
     this.setState({
-      user,
-      user_id,
+      user: localStorage.username,
+      user_id: localStorage.id,
     });
   }
 
@@ -40,13 +37,4 @@ class Book extends React.Component {
   }
 }
 
-Book.propTypes = {
-  user: PropTypes.objectOf(PropTypes.any),
-  user_id: PropTypes.number,
-};
-
-Book.defaultProps = {
-  user: {},
-  user_id: undefined,
-};
 export default Book;
