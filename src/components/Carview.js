@@ -36,7 +36,9 @@ class Carview extends React.Component {
         Authorization: `Bearer ${localStorage.token}`,
       },
     };
-    axios.get('https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true })
+    // http://localhost:3001
+    axios.get('http://localhost:3001/items', config, { withCredentials: true })
+      // axios.get('https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true })
       .then(response => {
         response.data.map(value => {
           if (value.id === parseInt(id, 10)) {

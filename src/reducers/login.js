@@ -1,6 +1,6 @@
 const initialState = {
   appointments: [],
-  loading: true,
+  items: [],
 };
 
 function getAppointments(state = initialState, action) {
@@ -9,7 +9,12 @@ function getAppointments(state = initialState, action) {
       return {
         ...state,
         appointments: action.payload,
-        loading: false,
+      };
+    case 'GET_ITEMS':
+      console.log(action.payload);
+      return {
+        ...state,
+        items: action.payload,
       };
     default:
       return state;

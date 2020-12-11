@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -22,7 +24,7 @@ import Configure from './Configure';
 import Shop from '../containers/Shop';
 import Book from '../containers/Book';
 
-export default function App() {
+export default function App(props) {
   const [loggedInStatus, setLoggedInStatus] = useState('NOT_LOGGED_IN');
   const [user, setUser] = useState({});
   const [user_id, setUserId] = useState('');

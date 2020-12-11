@@ -56,7 +56,9 @@ export default function Appointment({ user, userId }) {
     const date = '11/23/2020';
     const city = location;
     const myuserId = userId;
-    axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
+    // http://localhost:3001
+    axios.post('http://localhost:3001/appointments', {
+      // axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
       appointment: {
         username,
         model: mymodel,

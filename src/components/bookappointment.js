@@ -1,3 +1,5 @@
+/* eslint-disable react/no-this-in-sfc */
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
@@ -32,7 +34,9 @@ function BookAppointment({
 
     const fetchData = async () => {
       const result = await axios(
-        'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
+        // http://localhost:3001
+        'http://localhost:3001/items', config, { withCredentials: true },
+        // 'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
       );
       models = result.data;
       setModels(models);
@@ -82,7 +86,9 @@ function BookAppointment({
     };
 
     axios.post(
-      'https://infinite-ocean-27248.herokuapp.com/appointments',
+      // http://localhost:3001
+      'http://localhost:3001/appointments',
+      // 'https://infinite-ocean-27248.herokuapp.com/appointments',
       {
         appointment: {
           username,

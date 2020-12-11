@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
@@ -25,36 +27,29 @@ class Items extends React.Component {
   }
 
   componentDidMount() {
+    const { response } = this.props;
     const { threeIndex } = this.state;
-    const config = {
-      headers: {
-        Authorization: `Bearer ${localStorage.token}`,
-      },
-    };
-    axios.get('https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true })
-      .then(response => {
-        let middle = Math.floor(response.data.length / 2);
-        const first = middle;
-        middle += 1;
-        const last = middle + 1;
-        threeIndex.push(first);
-        threeIndex.push(middle);
-        threeIndex.push(last);
-        let fill = [];
-        response.data.forEach((value, index) => {
-          threeIndex.forEach(val => {
-            if (index + 1 === val) {
-              fill.push(value);
-              this.setState({
-                workingdata: fill,
-              });
-            }
+    let middle = Math.floor(response.length / 2);
+    const first = middle;
+    middle += 1;
+    const last = middle + 1;
+    threeIndex.push(first);
+    threeIndex.push(middle);
+    threeIndex.push(last);
+    let fill = [];
+    response.forEach((value, index) => {
+      threeIndex.forEach(val => {
+        if (index + 1 === val) {
+          fill.push(value);
+          this.setState({
+            workingdata: fill,
           });
-        });
-        this.setState({
-          data: response.data,
-        });
+        }
       });
+    });
+    this.setState({
+      data: response,
+    });
   }
 
   handleChangeLeft() {
@@ -156,4 +151,5 @@ class Items extends React.Component {
     );
   }
 }
+
 export default Items;

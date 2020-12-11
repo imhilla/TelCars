@@ -9,9 +9,20 @@ const config = {
 
 export const getAppointments = () => async dispatch => {
   try {
-    const res = await axios.get('https://infinite-ocean-27248.herokuapp.com/appointments', config, { withCredentials: true });
+    const res = await axios.get('http://localhost:3001/appointments', config, { withCredentials: true });
     dispatch({
       type: 'GET_APPOINTMENTS',
+      payload: res.data,
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const getItems = () => async dispatch => {
+  try {
+    const res = await axios.get('http://localhost:3001/items', config, { withCredentials: true });
+    dispatch({
+      type: 'GET_ITEMS',
       payload: res.data,
     });
   } catch (e) {
