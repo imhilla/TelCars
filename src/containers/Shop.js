@@ -18,9 +18,7 @@ export default function Shop() {
     };
     const fetchData = async () => {
       const result = await axios(
-        // http://localhost:3001
-        'http://localhost:3001/items', config, { withCredentials: true },
-        // 'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
+        'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
       );
       setCars(result.data);
     };

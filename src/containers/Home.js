@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import {
   useDispatch, useSelector,
 } from 'react-redux';
-import { getItems, setUser } from '../actions/index';
+import { getItems } from '../actions/index';
 import NavBar from '../components/Navbar';
 import '../styles/home.css';
 import Logo from '../components/Logo';
@@ -16,13 +16,11 @@ import Logout from '../components/auth/Logout';
 const Home = ({ handleLogout, handleLogin }) => {
   const [, rerender] = useState(false);
 
-  // const currentUser = useSelector(state => state.currentUser);
   const currentItems = useSelector(state => state.getAppointments);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setUser());
     dispatch(getItems());
     const timer1 = setTimeout(() => rerender(null), 2000);
     return () => {

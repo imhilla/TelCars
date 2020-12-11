@@ -1,5 +1,3 @@
-/* eslint-disable react/no-this-in-sfc */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
@@ -34,9 +32,7 @@ function BookAppointment({
 
     const fetchData = async () => {
       const result = await axios(
-        // http://localhost:3001
-        'http://localhost:3001/items', config, { withCredentials: true },
-        // 'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
+        'https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true },
       );
       models = result.data;
       setModels(models);
@@ -86,9 +82,7 @@ function BookAppointment({
     };
 
     axios.post(
-      // http://localhost:3001
-      'http://localhost:3001/appointments',
-      // 'https://infinite-ocean-27248.herokuapp.com/appointments',
+      'https://infinite-ocean-27248.herokuapp.com/appointments',
       {
         appointment: {
           username,
@@ -146,7 +140,7 @@ function BookAppointment({
 
             <div className="appointmentsContainer">
               {
-                nowState.getAppointments.appointments.length > 0
+                nowState.getAppointments.appointments !== undefined
                   ? nowState.getAppointments.appointments.map((value, index) => (
                     <div key={uuidv4()} className="appointments">
                       <h3>{value.model}</h3>

@@ -9,7 +9,7 @@ const config = {
 
 export const getAppointments = () => async dispatch => {
   try {
-    const res = await axios.get('http://localhost:3001/appointments', config, { withCredentials: true });
+    const res = await axios.get('https://infinite-ocean-27248.herokuapp.com/appointments', config, { withCredentials: true });
     dispatch({
       type: 'GET_APPOINTMENTS',
       payload: res.data,
@@ -20,7 +20,7 @@ export const getAppointments = () => async dispatch => {
 };
 export const getItems = () => async dispatch => {
   try {
-    const res = await axios.get('http://localhost:3001/items', config, { withCredentials: true });
+    const res = await axios.get('https://infinite-ocean-27248.herokuapp.com/items', config, { withCredentials: true });
     dispatch({
       type: 'GET_ITEMS',
       payload: res.data,
@@ -30,19 +30,10 @@ export const getItems = () => async dispatch => {
   }
 };
 
-export const setUser = () => ({
-  type: 'SET_USER',
-  payload: 'Rei',
-});
-
-export const logOut = () => ({
-  type: 'LOG_OUT',
-});
-
 export const postAppointments = appointments => async dispatch => {
   try {
     const res = await axios.post(
-      'http://localhost:3001/appointments',
+      'https://infinite-ocean-27248.herokuapp.com/appointments',
       appointments,
       {
         headers: {
