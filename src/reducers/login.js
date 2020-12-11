@@ -11,6 +11,11 @@ function getAppointments(state = {}, action) {
         ...state,
         items: action.payload,
       };
+    case 'POST_APPOINTMENTS':
+      return {
+        ...state,
+        appointments: action.payload,
+      };
     default:
       return state;
   }

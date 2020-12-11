@@ -38,3 +38,25 @@ export const setUser = () => ({
 export const logOut = () => ({
   type: 'LOG_OUT',
 });
+
+export const postAppointments = appointments => async dispatch => {
+  try {
+    const res = await axios.post(
+      'http://localhost:3001/appointments',
+      {
+        appointments,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.token}`,
+        },
+      }, { withCredentials: true },
+    );
+    dispatch({
+      type: 'POST_APPOINTMENTS',
+      payload: res.data,
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};

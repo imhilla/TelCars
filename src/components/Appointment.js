@@ -1,34 +1,26 @@
 /* eslint-disable prefer-const */
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import { getItems } from '../actions/index';
+import { getItems, postAppointments } from '../actions/index';
 import '../styles/appointment.css';
 
 export default function Appointment({ user, userId }) {
-  const items = useSelector(state => state.items);
+  const currentItems = useSelector(state => state.getAppointments);
   const dispatch = useDispatch();
-  const [models, setModels] = useState([]);
+  const [, rerender] = useState(false);
+
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
-  const config = {
-    headers: {
-      Authorization: `Bearer ${localStorage.token}`,
-    },
-  };
 
   useEffect(() => {
     dispatch(getItems());
-    const fetchData = async () => {
-      const result = await axios(
-        'http://localhost:3001/items', config, { withCredentials: true },
-      );
-      setModels(result.data);
-    };
 
-    fetchData();
+    const timer1 = setTimeout(() => rerender(null), 2000);
+    return () => {
+      clearTimeout(timer1);
+    };
   }, []);
 
   const locations = ['LOCATIONS', 'Nairobi', 'Kisumu', 'Mombasa', 'Eldoret', 'Kiambu', 'Migori', 'Isiolo'];
@@ -38,9 +30,11 @@ export default function Appointment({ user, userId }) {
   ));
 
   const allModels = ['All MODELS'];
-  models.forEach(value => {
-    allModels.push(value.model);
-  });
+  if (currentItems.items) {
+    currentItems.items.forEach(value => {
+      allModels.push(value.model);
+    });
+  }
 
   const renderModels = allModels.map(item => (
     <option
@@ -67,9 +61,7 @@ export default function Appointment({ user, userId }) {
     const date = '11/23/2020';
     const city = location;
     const myuserId = userId;
-    // http://localhost:3001
-    axios.post('http://localhost:3001/appointments', {
-      // axios.post('https://infinite-ocean-27248.herokuapp.com/appointments', {
+    const appointment = {
       appointment: {
         username,
         model: mymodel,
@@ -77,10 +69,10 @@ export default function Appointment({ user, userId }) {
         city,
         userId: myuserId,
       },
-    }, { withCredentials: true });
+    };
+    dispatch(postAppointments(appointment));
     event.preventDefault();
   };
-  console.log(items);
 
   return (
     <div className="appointmentContainer">
