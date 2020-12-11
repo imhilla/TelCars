@@ -1,25 +1,36 @@
 /* eslint-disable prefer-const */
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import { getItems } from '../actions/index';
 import '../styles/appointment.css';
 
 export default function Appointment({ user, userId }) {
+  const items = useSelector(state => state.items);
+  const dispatch = useDispatch();
   const [models, setModels] = useState([]);
   let [model, setModel] = useState('');
   const [location, setLocation] = useState('');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.token}`,
+    },
+  };
 
   useEffect(() => {
+    dispatch(getItems());
     const fetchData = async () => {
       const result = await axios(
-        'https://infinite-ocean-27248.herokuapp.com/items', { withCredentials: true },
+        'http://localhost:3001/items', config, { withCredentials: true },
       );
       setModels(result.data);
     };
 
     fetchData();
   }, []);
+
   const locations = ['LOCATIONS', 'Nairobi', 'Kisumu', 'Mombasa', 'Eldoret', 'Kiambu', 'Migori', 'Isiolo'];
 
   const renderLocation = locations.map(item => (
@@ -69,6 +80,7 @@ export default function Appointment({ user, userId }) {
     }, { withCredentials: true });
     event.preventDefault();
   };
+  console.log(items);
 
   return (
     <div className="appointmentContainer">

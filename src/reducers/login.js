@@ -1,9 +1,4 @@
-const initialState = {
-  appointments: [],
-  items: [],
-};
-
-function getAppointments(state = initialState, action) {
+function getAppointments(state = {}, action) {
   switch (action.type) {
     case 'GET_APPOINTMENTS':
       return {

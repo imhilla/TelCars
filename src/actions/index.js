@@ -29,3 +29,12 @@ export const getItems = () => async dispatch => {
     console.log(e);
   }
 };
+
+export const setUser = () => ({
+  type: 'SET_USER',
+  payload: 'Rei',
+});
+
+export const logOut = () => ({
+  type: 'LOG_OUT',
+});

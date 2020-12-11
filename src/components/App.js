@@ -11,7 +11,6 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import axios from 'axios';
 import Home from '../containers/Home';
 import Carview from './Carview';
 import BookAppointment from './bookappointment';
