@@ -1,10 +1,10 @@
-import login from '../../../reducers/allreducers';
+import getAppointments from '../../../reducers/allreducers';
 
 describe('INITIAL_STATE', () => {
   test('is correct', () => {
-    const action = { type: 'LOGIN' };
-    const initialState = { appointments: [], loading: true };
+    const action = { type: 'GET_APPOINTMENTS' };
+    const initialState = {};
 
-    expect(login(undefined, action)).toEqual(initialState);
+    expect(getAppointments(undefined, action)).toEqual(initialState);
   });
 });

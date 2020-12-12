@@ -30,7 +30,7 @@ export default function Appointment({ user, userId }) {
   ));
 
   const allModels = ['All MODELS'];
-  if (currentItems.items) {
+  if (currentItems) {
     currentItems.items.forEach(value => {
       allModels.push(value.model);
     });

@@ -35,7 +35,8 @@ const Home = ({ handleLogout, handleLogin }) => {
   const handleLogoutClick = () => {
     handleLogout();
   };
-  const itemContainer = currentItems.items === undefined
+
+  const itemContainer = currentItems === undefined
     ? (<div>Loading</div>)
     : (
       <Items response={currentItems.items} />);

@@ -8,6 +8,7 @@ import '../../../setupTests';
 import {
   BrowserRouter,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Home from '../../../containers/Home';
 
 const middlewares = [thunk];
@@ -20,9 +21,12 @@ beforeEach(() => {
 
 it('works', () => {
   const wrap = mount(
-    <BrowserRouter>
-      <Home />
-    </BrowserRouter>,
+    <Provider store={store}>
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    </Provider>,
+
   );
   expect(wrap).toMatchSnapshot();
 });
