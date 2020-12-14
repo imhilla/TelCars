@@ -1,0 +1,110 @@
+.welcContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://res.cloudinary.com/dhxgtfnci/image/upload/v1606909036/back/back.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.welcomeBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcomeBack h1 {
+  font-size: 18px;
+  padding-top: 2em;
+  color: white;
+}
+
+.welcomeBack p {
+  padding: 1em;
+  margin: 1em;
+  font-size: 15px;
+  color: white;
+}
+
+.createAccount {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.createAccount h1 {
+  font-size: 18px;
+  padding-top: 1em;
+  margin: auto;
+  color: white;
+}
+
+input,
+input:hover {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+}
+
+.regForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.regForm input {
+  height: 23px;
+  width: 80%;
+  margin: 10px 1em;
+  color: white;
+}
+
+.formContainer {
+  width: 100%;
+}
+
+.regForm button {
+  margin: 1.2em 0;
+}
+
+.loginpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginpage input {
+  margin: 1em 0;
+  height: 20px;
+  width: 80%;
+}
+
+.loginwelcome h1 {
+  font-size: 18px;
+}
+
+.welcomeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  padding-top: 20%;
+}
+
+.redirectLogin,
+.regB {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}

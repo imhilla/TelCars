@@ -1,0 +1,11 @@
+.lifestyleContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 1em;
+}
+
+.lifeimg {
+  width: 180px;
+  height: auto;
+}

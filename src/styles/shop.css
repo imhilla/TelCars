@@ -1,0 +1,28 @@
+.shopcars {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+  grid-gap: 10px;
+}
+
+#itemsimage {
+  background-color: gray;
+}
+
+.shopmodel {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+}
+
+.shopprice {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.price {
+  color: gray;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}

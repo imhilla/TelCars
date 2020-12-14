@@ -1,0 +1,59 @@
+.appointmentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.appointmentContainer h1 {
+  font-size: 17px;
+  padding-top: 3em;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+}
+
+.hardline {
+  height: 1px;
+  width: 300px;
+  background-color: gray;
+}
+
+.appointmentcontent {
+  width: 70%;
+}
+
+.booksection {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 2em;
+}
+
+.models {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.locations {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.appbutton {
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: blue;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.appointmentsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.appointments {
+  background-color: rgb(226, 209, 255);
+  padding: 10px;
+  margin: 5px;
+}
