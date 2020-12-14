@@ -1,0 +1,85 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+@media only screen and (max-width: 690px) {
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100vh;
+    border-right: 1px solid rgb(231, 224, 224);
+    position: fixed;
+  }
+
+  .descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding-left: 30%;
+  }
+}
+
+@media only screen and (min-width: 690px) {
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100vh;
+    border-right: 1px solid rgb(231, 224, 224);
+  }
+
+  .descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+  }
+}
+
+.logoo {
+  display: flex;
+  justify-content: center;
+  font-family: "Lobster", cursive;
+  font-size: 13px;
+  text-decoration: underline;
+  font-style: italic;
+  transform: rotate(-25deg);
+  height: 30vh;
+  padding: 1em 0 0 0.3em;
+  width: 100%;
+}
+
+.descriptionContainer h1 {
+  font-size: 20px;
+  padding-top: 2em;
+  font-family: "Roboto", sans-serif;
+}
+
+.descriptionContainer h2 {
+  font-size: 13px;
+  color: gray;
+  font-style: italic;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.dots {
+  font-size: 20px;
+  color: rgb(209, 209, 209);
+}
+
+.logoutButton {
+  background-color: blue;
+  margin: 2em;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}

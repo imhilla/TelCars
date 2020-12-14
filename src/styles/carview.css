@@ -1,0 +1,96 @@
+.carviewContainer {
+  display: flex;
+}
+
+.carveiw {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.carim img {
+  padding-top: 20vh;
+  margin: auto;
+}
+
+.loading {
+  text-align: center;
+  margin: auto;
+}
+
+.cardetails {
+  padding: 5vw;
+}
+
+.carname {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 0.3em;
+  padding-top: 4em;
+}
+
+.upon {
+  font-size: 10px;
+  color: gray;
+}
+
+.reviewsContainer {
+  display: flex;
+  font-size: 12px;
+  background-color: rgb(142, 255, 142);
+  padding: 5px 10px;
+}
+
+.reviewsContainer p {
+  font-size: 12px;
+}
+
+.modelContainer {
+  font-size: 12px;
+  background-color: rgb(231, 231, 231);
+  padding: 5px 10px;
+}
+
+.total {
+  font-size: 12px;
+  background-color: rgb(142, 255, 142);
+  padding: 5px 10px;
+}
+
+.buttonbook {
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.configure {
+  margin-top: 2em;
+  padding: 5px 12px;
+  border-radius: 5px;
+  background-color: rgb(78, 194, 78);
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.rightfa {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.regsum {
+  padding: 3px;
+}
+
+.config {
+  padding: 3px;
+}
